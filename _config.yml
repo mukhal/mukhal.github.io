@@ -3,10 +3,10 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Muhammad Khalifa's Blog
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Data Science and Machine Learning Tips and Ideas
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -18,10 +18,10 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email:skyypolt@gmail.com
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: mohammadkhalifa
   instagram:
   linkedin:
   pinterest:
@@ -34,7 +34,7 @@ footer-links:
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus:
+disqus:MuhammadKhalifa
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
