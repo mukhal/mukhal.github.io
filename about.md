@@ -8,9 +8,9 @@ I'm a software engineer fascinated by Machine Learning and NLP. I have made this
 
 ## Current projects
 
-#### Currently I'm doing research on early rumors detection.
-#### I'm also working on implementing automatic sumamrization with deep neural networks.
-#### I'm also working on a mobile application using Native Script
+* Currently I'm doing research on early rumors detection.
+* I'm also working on implementing automatic summarization with deep neural networks.
+* I'm also working on a mobile application using Native Script
 
 
 
