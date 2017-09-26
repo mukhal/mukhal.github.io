@@ -3,7 +3,7 @@ layout: post
 title: Predicting Movie Genre from Movie Title
 ---
 
-In this post we will attempt at the interesting classification problem from only its title. It would be very interesting to be able to make such prediction. It can be used to cluster movies based on genre. Plus it's a great way to explore various classification problems and the very famous word embeddings as well.
+In this post we will attempt at the interesting classification problem : Predicting a movie genre from only its title. It would be very interesting to be able to make such prediction. It can be used to cluster movies based on genre. Plus it's a great way to explore various classification problems and the very famous word embeddings as well.
 
 
 ```python
@@ -325,12 +325,11 @@ data[list(genres)].mean().plot(kind='bar')
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x4018f908>
 
 
 
 
-![png](genre-predicting-imgs/1.png)
+![class distribution](./genre-predicting-imgs/1.png)
 
 
 We can see we have very imbalanced data with less than 10% positive examples in about 6 classes.
