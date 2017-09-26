@@ -335,7 +335,7 @@ data[list(genres)].mean().plot(kind='bar')
 We can see we have very imbalanced data with less than 10% positive examples in about 6 classes.
 We will have to deal with this to be able to evaluate or models correctly
 
-#### creating balanced dataset for each genre by means of undersampling
+### creating balanced dataset for each genre by means of undersampling
 
 
 ```python
