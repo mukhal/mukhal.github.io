@@ -330,7 +330,7 @@ data[list(genres)].mean().plot(kind='bar')
 
 
 
-![png](genre%20predicting%20with%20balancing_files/genre%20predicting%20with%20balancing_16_1.png)
+![png](genre-predicting-imgs/1.png)
 
 
 We can see we have very imbalanced data with less than 10% positive examples in about 6 classes.
