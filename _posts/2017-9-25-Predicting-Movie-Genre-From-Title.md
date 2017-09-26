@@ -329,7 +329,7 @@ data[list(genres)].mean().plot(kind='bar')
 
 
 
-![class distribution](./genre-predicting-imgs/1.png)
+![class distribution](https://github.com/mohammadKhalifa/mohammadkhalifa.github.io/blob/master/_posts/genre-predicting-imgs/1.png)
 
 
 We can see we have very imbalanced data with less than 10% positive examples in about 6 classes.
