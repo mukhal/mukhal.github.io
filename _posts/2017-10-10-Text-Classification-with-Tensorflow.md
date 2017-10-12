@@ -1,4 +1,10 @@
+---
+layout: post
+title: Text Classification with Tensorflow!
+---
 
+In this post, I will walk you through using Tensorflow to classify news articles.
+Before you begin, you should have tensorflow, numpy and scikit-learn installed.
 
 ```python
 import tensorflow as tf
