@@ -48,17 +48,6 @@ test_y = twenty_test.target
 ```
 
 
-```python
-np.unique(test_y)
-```
-
-
-
-
-    array([0, 1, 2, 3], dtype=int64)
-
-
-
 ### Preparing data for training
 When doing classification using neural networks, we must have an output layer with k neurons where k is the total number of classes. If an instance belongs to a certain class, the output value for the corresponding neuron for that class should be 1 and all other values should be zero. Thus to be able to train our neural network, we have to transform the class labels of the articles to a vector having 1 at the correspoing label and 0 at all other positions. This type of vectors is known as one-hot vector.
 
