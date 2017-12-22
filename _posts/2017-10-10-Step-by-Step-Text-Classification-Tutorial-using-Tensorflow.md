@@ -69,6 +69,8 @@ However, we'll an input layer of size equal to the vocabulary size, A hidden lay
 an output layer of 4 output neurons corresponding to the 4 classes we have.
 
 ![neural network](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.svg/400px-Artificial_neural_network.svg.png)
+
+
 [*photo credit*](https://en.wikibooks.org/wiki/Artificial_Neural_Networks/Neural_Network_Basics)
  
 ### Setting model parameters
