@@ -222,11 +222,6 @@ clf.fit(train_x,twenty_train.target)
 ```
 
 
-```python
-y_pred = clf.predict(test_x)
-print ('SVM Testing accuracy : ', metrics.accuracy_score(twenty_test.target,y_pred))
-print ('SVM F1-score : ', metrics.f1_score(twenty_test.target,y_pred,average='macro'))
-```
 
     SVM Testing accuracy :  0.91041931385
     SVM F1-score :  0.910699838044
