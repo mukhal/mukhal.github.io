@@ -6,6 +6,8 @@ title: Text Classification with Tensorflow
 In this post, I will walk you through using Tensorflow to classify news articles.
 Before you begin, you should have tensorflow, numpy and scikit-learn installed.
 
+
+
 ```python
 import tensorflow as tf
 import numpy as np
@@ -45,6 +47,18 @@ test_x = tfidf.transform(twenty_test.data) # transform test data to tfidf repres
 test_y = twenty_test.target
 ```
 
+
+```python
+np.unique(test_y)
+```
+
+
+
+
+    array([0, 1, 2, 3], dtype=int64)
+
+
+
 ### Preparing data for training
 When doing classification using neural networks, we must have an output layer with k neurons where k is the total number of classes. If an instance belongs to a certain class, the output value for the corresponding neuron for that class should be 1 and all other values should be zero. Thus to be able to train our neural network, we have to transform the class labels of the articles to a vector having 1 at the correspoing label and 0 at all other positions. This type of vectors is known as one-hot vector.
 
@@ -52,10 +66,9 @@ When doing classification using neural networks, we must have an output layer wi
 ```python
 # transforming target classes into one-hot vectors
 def vector_to_one_hot(vector,no_classes):
-    #vector += 1 # classes become 0,1,.... no_classes-1
-    m = np.zeros([vector.shape[0],no_classes])
-    for i,t in np.ndenumerate(vector):
-        m[i,t]=1
+    vector=vector.astype(np.int32)
+    m = np.zeros((vector.shape[0], no_classes))
+    m[np.arange(vector.shape[0]), vector]=1
     return m
 
 train_y =vector_to_one_hot(train_y,no_classes)
@@ -114,7 +127,9 @@ biases = {
 ```python
 def neural_net (X):
     layer_1 = tf.add(tf.matmul(X, weights['h1']),biases['b1'])
+    layer_1 = tf.nn.sigmoid(layer_1)
     out_layer = tf.add(tf.matmul(layer_1,weights['out']), biases['out'])
+    out_layer = tf.nn.sigmoid(out_layer)
     return out_layer
 ```
 
@@ -174,7 +189,7 @@ with tf.Session() as sess:
         if step % 10 == 0 :
             
             cur_loss,cur_accuracy = sess.run([loss,accuracy],feed_dict={X:batch_x,Y:batch_y}) 
-            print ('loss = %2.f , accuracy = %.2f , at step %d' %(cur_loss, cur_accuracy,step))
+            print ('loss = %.2f , accuracy = %.2f , at step %d' %(cur_loss, cur_accuracy,step))
     
 
     print ("done optimization")
@@ -187,23 +202,23 @@ with tf.Session() as sess:
           metrics.f1_score(twenty_test.target, y_p,average='macro'))
 ```
 
-    loss =  1 , accuracy = 0.62 , at step 10
-    loss =  0 , accuracy = 0.88 , at step 20
-    loss =  1 , accuracy = 0.81 , at step 30
-    loss =  0 , accuracy = 1.00 , at step 40
-    loss =  0 , accuracy = 0.94 , at step 50
-    loss =  0 , accuracy = 0.94 , at step 60
-    loss =  0 , accuracy = 0.81 , at step 70
-    loss =  0 , accuracy = 1.00 , at step 80
-    loss =  0 , accuracy = 1.00 , at step 90
-    loss =  0 , accuracy = 1.00 , at step 100
-    loss =  0 , accuracy = 1.00 , at step 110
-    loss =  0 , accuracy = 1.00 , at step 120
-    loss =  0 , accuracy = 0.94 , at step 130
-    loss =  0 , accuracy = 1.00 , at step 140
+    loss = 1.30 , accuracy = 0.38 , at step 10
+    loss = 1.18 , accuracy = 0.88 , at step 20
+    loss = 1.02 , accuracy = 0.75 , at step 30
+    loss = 0.97 , accuracy = 0.88 , at step 40
+    loss = 0.90 , accuracy = 0.88 , at step 50
+    loss = 0.84 , accuracy = 0.94 , at step 60
+    loss = 0.86 , accuracy = 0.88 , at step 70
+    loss = 0.77 , accuracy = 1.00 , at step 80
+    loss = 0.83 , accuracy = 0.94 , at step 90
+    loss = 0.80 , accuracy = 1.00 , at step 100
+    loss = 0.75 , accuracy = 1.00 , at step 110
+    loss = 0.76 , accuracy = 1.00 , at step 120
+    loss = 0.78 , accuracy = 0.94 , at step 130
+    loss = 0.84 , accuracy = 0.88 , at step 140
     done optimization
-    Testing Accuracy: 0.868488
-    f1 score :  0.867772860804
+    Testing Accuracy: 0.914867
+    f1 score :  0.914819748906
     
 
 We can see we have a very good accuracy and f1-score on test data.
