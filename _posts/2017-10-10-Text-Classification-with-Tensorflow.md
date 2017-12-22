@@ -242,8 +242,8 @@ print ('SVM F1-score : ', metrics.f1_score(twenty_test.target,y_pred,average='ma
     SVM F1-score :  0.910699838044
     
 
-we can see the SVM slightly outperforms our neural network.  
-I strongly suggest You try on your own to play a little with the neural network layer structure and hyperparatmers and try to improve its performance. You can also add regularization and see how it goes.
+we can see the NN approach slightly outperforms the SVM.
+I strongly suggest You try on your own to play a little with the neural network layer structure and hyperparatmers and try to further improve its performance. You can also add regularization and see how it goes.
 
 ### Conclusion
 In this tutorial we applied a simple neural network model on text classification. We represented our articles using TF-IDF vector space represenation. We then used cross entropy as our loss function. We trained the model and got very good accuracy and f1-score. We also tried and SVM model on the data and compared perfomance between the two models.  
