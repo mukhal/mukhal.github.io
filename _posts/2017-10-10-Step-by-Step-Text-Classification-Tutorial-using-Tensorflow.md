@@ -91,6 +91,10 @@ num_classes = no_classes
 
 ### Defining input and output
 
+With tensorflow, inputs and outputs to network are defined as placeholders.  
+The training data is the fed to these placeholder at training time.  
+Note we define the first dimension to be None meaning we don't have a fixed input size (batch size) and tensorflow will deduce that at training time.
+
 
 ```python
 X = tf.placeholder("float", [None, num_input]) # place holder for nn input
