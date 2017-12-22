@@ -64,6 +64,13 @@ train_y =vector_to_one_hot(train_y,no_classes)
 test_y = vector_to_one_hot(test_y, no_classes)
 ```
 
+We'll use a very simple architecture like the one shown in the picture. 
+However, we'll an input layer of size equal to the vocabulary size, A hidden layer of our choice and
+an output layer of 4 output neurons corresponding to the 4 classes we have.
+
+![neural network](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.svg/400px-Artificial_neural_network.svg.png)
+*photo credit* : https://en.wikibooks.org/wiki/Artificial_Neural_Networks/Neural_Network_Basics
+ 
 ### Setting model parameters
 
 
