@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Text Classification with Tensorflow
+title: Step-by-Step Text Classification Tutorial using Tensorflow
 ---
 
 In this post, I will walk you through using Tensorflow to classify news articles.
