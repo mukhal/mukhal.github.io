@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Step-by-Step Text Classification Tutorial using Tensorflow
+author: Muhammad Khalifa
 ---
 
 In this post, I will walk you through using Tensorflow to classify news articles.
