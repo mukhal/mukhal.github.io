@@ -25,6 +25,7 @@ $$`
 Where `$\theta$` are the decoder parameters and `$\phi$` are the encoder parameters. Note that this loss is the negative of what is known as the variational lower bound of the model. It can be proven that maximizing the lowerbound is equivalent to minimizing the KL Divergence between the true posterior `$p(z|x)$` and the approximate posterior `$q(z|x)$`. Check out [this](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/) amazing post to understand more. In the paper we discuss, the compressed form of the sentence is treated as the latent variable (hence the name of the paper), which is then used to reconstruct the original sentence again. 
 
 
+![Autoencoder Sentence Compression Model](/images/asc-model.png)
 
 #### Compression model
  Back to our language generation setting, the encoder is a bi-LSTM encoding the input sentence. Following that, another [pointer network](https://arxiv.org/abs/1506.03134) attends over the encoder states to produce the compressed input sentence. These two networks form the compression model  `$q_{\phi}(c|s)$`
