@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Discussion: Language as a Latent Variable: Discrete Generative Models for Sentence Compression"
+title: "Paper Discussion: Discrete Generative Models for Sentence Compression"
 author: Muhammad Khalifa
 ---
 
