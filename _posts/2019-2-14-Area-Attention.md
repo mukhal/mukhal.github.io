@@ -3,6 +3,7 @@ layout: post
 title: "Paper Discussion: Area Attention"
 author: Muhammad Khalifa
 comments: true
+published: false
 ---
 
 **Paper Brief**  : Since the attention mechanism has been proposed in [Bahdanau et. al](https://arxiv.org/abs/1409.0473),  it has become an almost essential component in NLP models. The idea of sequence-to-sequence attention can be simply expressed as follows: Given the current state of the decoder (the query), what are the important elements in the input (keys and values) that I need to focus on to better solve the task at hand.
