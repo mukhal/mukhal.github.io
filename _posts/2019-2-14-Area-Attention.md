@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Paper Discussion: Area Attention"
+title: "Paper Discussion: Pay Less Attention with Lightweight and Dynamic Convolutions"
 author: Muhammad Khalifa
 comments: true
+published: false
 ---
 
-**Paper Brief**  : Since the attention mechanism has been proposed in [Bahdanau et. al](https://arxiv.org/abs/1409.0473),  it has become an almost essential component in NLP models. The idea of sequence-to-sequence attention can be simply expressed as follows: Given the current state of the decoder (the query), what are the important elements in the input (keys and values) that I need to focus on to better solve the task at hand.
-Almost all previous uses of attention have considered attending to single entities, usually an input token, sentence or an image grid. The [paper](https://arxiv.org/abs/1810.10126) we're about to discuss asks a simple question: Instead of considereing single entities for attention, why don't we consider an aggregate of an area of adjacent items. *(The paper was rejected in ICLR 2019, but I thought the idea is worth exploring nonetheless)*
+**Paper Brief**  : While [Self-attention]()
 
 
 
