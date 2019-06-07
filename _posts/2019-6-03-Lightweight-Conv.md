@@ -67,24 +67,91 @@ $$
 `
 
 **LConv Implementation** :
-Upon reading the paper, I was very interested in knowing how lightweight convolutions were implemented. So, I took a look at the module implementation on [Github](https://github.com/pytorch/fairseq/blob/72291287c8bedd868eaeb2cc9bb6a15134d1cdb5/fairseq/modules/lightweight_convolution.py). Interestingly, the authors implement *LConv* by transforming the convolution operation into matrix multiplication by a set of [*Band Matrices*](https://en.wikipedia.org/wiki/Band_matrix). Band Matrices are a type of sparse matrices where non-zero entries are concentrated around the main diagonal along with any other diagonals on either side. Below is an example of band matrix.
+Upon reading the paper, I was very interested in knowing how lightweight convolutions were implemented. So, I took a look at the module implementation on [Github](https://github.com/pytorch/fairseq/blob/72291287c8bedd868eaeb2cc9bb6a15134d1cdb5/fairseq/modules/lightweight_convolution.py). Interestingly, the authors implement *LConv* by transforming the convolution operation into matrix multiplication by a set of [*Band Matrices*](https://en.wikipedia.org/wiki/Band_matrix). Band Matrices are a type of sparse matrices where non-zero entries are concentrated around the main diagonal along with any other diagonals on either side. Below is an example of band matrix. They claim that this solution is faster than the existing CUDA convolutions on shorter sequences
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2e3206cd86e5b01a5389351ad8e310665f3ff8d6" width="200" height="200" />
+| <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2e3206cd86e5b01a5389351ad8e310665f3ff8d6" width="200" height="200" /> |
+|:--:|
+| *Example Band Matrix*|
 
- Now let's understand the implementation idea using an example. Imagine we're about to do a lightweight convoution where the filter size $K=2$, the weight sharing coefficient $H=2$ and the input dimension `$d=4$`. 
+ Now let's understand the implementation idea using an example. Given an input $X \in \mathbb{R}^{3 \times 4}$, imagine we're about to do a lightweight convoution with a filter of size $K=2$, and using weight sharing where $H=2$ (meaning that $W \in \mathbb{R}^{H=2 \times K=2}$) and the input dimension `$d=4$`. 
+ 
+ For instance let 
 
+`
+$$
+W = 
+\begin{bmatrix}
+1 & 2  \\ 
+1 & 2  \\ 
+\end{bmatrix}
+$$
+`
+Convolving $W$ around $X$ gives the following results:
 
 `
 $$
 \begin{bmatrix}
-1 & 2  & 4 \\ 
-3 & 2  & 1 \\ 
- 2& 2  & 4 \\ 
-0 & 0 & 0 
+1 & 2  & 3 & 1 \\ 
+3 & 2  & 1 & 3\\ 
+4& 4  & 2 & 1\\ 
+0 & 0 & 0 & 0 \\
 \end{bmatrix}  * 
-\begin{bmatrix}
-1 & 1  &\aug& 2 & 2 \\ 
-1 & 1  &\aug& 2 & 2 \\ 
+\left[
+\begin{array}{cc|cc}
+1 & 1  & 2 & 2 \\ 
+1 & 1  & 2 & 2 \\ 
+\end{array}  
+\right] = \begin{bmatrix}
+4 & 4  & 8 & 8 \\ 
+7 & 6  & 6 & 8\\
+4 & 4 & 4 & 2\\ 
 \end{bmatrix}  
 $$
 `
+
+Now let's see how we can obtain this result using the band matrices methods. The preceding operation will be divided into $H=2$ different matrix multiplications of a band matrix with the relevant part of the input matrix. Which are the outputs of convolving using $W_{1,:}$ and $W_{2,:}$, respectively:
+
+`
+$$
+\begin{bmatrix}
+1 & 1  & 0 & 0 \\ 
+0 & 1  & 1 & 0\\ 
+0& 0  & 1 & 1\\ 
+\end{bmatrix}  
+\begin{bmatrix}
+1 & 2 \\ 
+3 & 2 \\
+4 & 4 \\ 
+0 & 0 \\ 
+\end{bmatrix}  = 
+\begin{bmatrix}
+4 & 4 \\ 
+7 & 6 \\
+4 & 4 \\ 
+\end{bmatrix}
+$$
+`
+
+and 
+
+`
+$$
+\begin{bmatrix}
+2 & 2  & 0 & 0 \\ 
+0 & 2  & 2 & 0\\ 
+0& 0  & 2 & 2\\ 
+\end{bmatrix}  
+\begin{bmatrix}
+3 & 1 \\ 
+1 & 3 \\
+2 & 1 \\ 
+0 & 0 \\ 
+\end{bmatrix}  = 
+\begin{bmatrix}
+8 & 8 \\ 
+6 & 8 \\
+4 & 2 \\ 
+\end{bmatrix}
+$$
+`
+which are then combined to obtain the output matrix.
