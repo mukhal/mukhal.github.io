@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Paper Discussion: Pay Less Attention with Lightweight and Dynamic Convolutions"
+title: "Lightweight and Dynamic Convolutions Explained"
 author: Muhammad Khalifa
 comments: true
 published: true
 ---
 
-**Paper Brief**  : While [Self-attention](https://arxiv.org/abs/1706.03762) has recently dominated the state-of-the-art arena for various NLP tasks, Self-attention suffers from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.
+I have recently came across a very interesting paper named [**Pay Less Attention with Lightweight and Dynamic Convolutions**](https://arxiv.org/abs/1901.10430). The prime motivation of the paper is that [Self-attention](https://arxiv.org/abs/1706.03762) models suffer from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.
 
 
 
-## Approach 
-Given a sequence of words `$X \in \mathbb{R}^{n \times d}$`, where $n$ is the sequence length and $d$ is the word embeddings dimension, we want to tranform $X$ into output matrix of the same shape `$O \in \mathbb{R}^{n \times d}$`:
+### And What are these Lightweight Convolutions Anyway?
+Given a sequence of words `$X \in \mathbb{R}^{n \times d}$`, where $n$ is the sequence length and $d$ is the word embeddings dimension, we want to tranform $X$ into an output matrix of the same shape `$O \in \mathbb{R}^{n \times d}$`:
 
 **Self Attention** : Self attention will compute a Key matrix $K$ and a query matrix $Q$ and a value matrix $V$ through linear tranformations of $X$. Then the output is computed by :
 
@@ -30,7 +30,7 @@ $$
 |:--:| 
 | *2D Depthwise Convolutions using 3 filters of size 5x5. [Figure source](https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728)* |
 
-Now considering the one-dimensional case: To output a matrix `$O \in \mathbb{R}^{n \times d}$` using vanilla convolutions, we need $d$ filters each having size $d \times k$. This means that using normal convolutions, we need $d^{2} k$ parameters. See the figure below for a convolution. Howeverm,
+Now considering the one-dimensional case: To output a matrix `$O \in \mathbb{R}^{n \times d}$` using vanilla convolutions, we need $d$ filters each having size $d \times k$. This means that using normal convolutions, we need $d^{2} k$ parameters, while with depthwise convolutions, all we need are $d k$ parameters. See the figure below for a 1-dimensional depthwise-convolution on a $5 \times 5$ matrix with a filter of size $K=2$.
 
 | <img src="/images/depthwise-conv-1d.gif" width="400" height="300" /> |
 |:--:|
@@ -39,9 +39,9 @@ Now considering the one-dimensional case: To output a matrix `$O \in \mathbb{R}^
 
 **Lightweight Convolution**: The proposed Lightweight Convolutions are built on top of three main components 
 
-1. **Depthwise convolutions** explained above.
-2. **Softmax-normalization**: That is, the filter weights are normalized along the temporal timension $k$ with a *Softmax* operation. This is a novel idea altough its partly borrowed from self-attention. Softmax Normalization forces the convolution filters to compute a weighted sum of all sequence elements (words, tokens, etc.) and thus learn the contribution of each element to the final output.
-3. **Weight Sharing**: To use even fewer parameters, the filter weights are tied across the embeddings dimension $d$ by grouping together every adjacent $d/H$ weights. This shrinks the parameters required even further from $(d \times k)$ to $(H \times k)$
+1. **Depthwise convolutions**: explained above.
+2. **Softmax-normalization**: That is, the filter weights are normalized along the temporal timension $k$ with a *Softmax* operation. This is a novel idea altough its partly borrowed from self-attention. Softmax Normalization forces the convolution filters to compute a weighted sum of sequence elements (words, tokens, etc.) and thus learn the contribution of each element to the final output.
+3. **Weight Sharing**: To use even fewer parameters, the filter weights are tied across the embeddings dimension $d$ by grouping together every adjacent $d/H$ weights. This shrinks the parameters required even further from $dK$ to $HK$
 
 | <img src="/images/lightweight-module.PNG" width="250" height="200" /> |
 |:--:|
@@ -67,7 +67,7 @@ $$
 `
 
 **LConv Implementation** :
-Upon reading the paper, I was very interested in knowing how lightweight convolutions were implemented. So, I took a look at the module implementation on [Github](https://github.com/pytorch/fairseq/blob/72291287c8bedd868eaeb2cc9bb6a15134d1cdb5/fairseq/modules/lightweight_convolution.py). Interestingly, the authors implement *LConv* by transforming the convolution operation into matrix multiplication by a set of [*Band Matrices*](https://en.wikipedia.org/wiki/Band_matrix). Band Matrices are a type of sparse matrices where non-zero entries are concentrated around the main diagonal along with any other diagonals on either side. Below is an example of band matrix. They claim that this solution is faster than the existing CUDA convolutions on shorter sequences
+Upon reading the paper, I was very interested in knowing how lightweight convolutions were implemented. So, I took a look at the module implementation on [Github](https://github.com/pytorch/fairseq/blob/72291287c8bedd868eaeb2cc9bb6a15134d1cdb5/fairseq/modules/lightweight_convolution.py). Interestingly, the authors implement *LConv* by transforming the convolution operation into matrix multiplication by a set of [*Band Matrices*](https://en.wikipedia.org/wiki/Band_matrix). Band Matrices are a type of sparse matrices where non-zero entries are concentrated around the main diagonal along with any other diagonals on either side. Below is an example of band matrix. They claim that this solution is faster than the existing CUDA convolutions on shorter sequences.
 
 | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2e3206cd86e5b01a5389351ad8e310665f3ff8d6" width="200" height="200" /> |
 |:--:|
@@ -154,4 +154,55 @@ $$
 \end{bmatrix}
 $$
 `
-which are then combined to obtain the output matrix.
+which are then combined to obtain the output matrix. 
+
+Now let's take a look at the *PyTorch* implementation 
+
+The following lines expand and reshape the convolution filter weights in a way such that *batch matrix multiplication* can be done:
+
+{% highlight python %}
+weight = self.weight.view(H, K)
+weight = weight.view(1, H, K).expand(T*B, H, K).contiguous()
+weight = weight.view(T, B*H, K).transpose(0, 1)
+{% endhighlight %}
+
+
+Now, we need to create the band matrices using the convolution filter weights. The `as_strided` function  serves this purpose by creating a strided view into `weight_expanded`. It takes the output shape `(B*H, T, K)` and the strides or jumps we need to traverse the input array in each dimension which are :
+* For the `B*H` dimension we don't need any strides so while traversing the array using that dimension, we need to jump total number of elements per one step `T*(T+K-1)`.
+* For the temporal dimension `T`, we need a stride of *one* so we use we jump by the total number of elements `T+K-1`  our plus one element for the stride us `T+K` elements which are.
+* for the last dimension, we have want no strides so we jump only one element at a time.
+
+
+{% highlight python %}
+weight_expanded = weight.new_zeros(B*H, T, T+K-1, requires_grad=False)
+weight_expanded.as_strided((B*H, T, K), (T*(T+K-1), T+K, 1)).copy_(weight)# creating the band matrices using the
+# as_strided function
+weight_expanded = weight_expanded.narrow(2, P, T)
+{% endhighlight %}
+
+
+### Now let's move to Dynamic Convolutions
+One limitation of Lightweight Convolutions as opposed to self-attention is that the weights assigned to sequence elements do not change according to context. That is, the convolution weights used at the timestep $i$ are the same when sliding the filter one more step at $i+1$. 
+
+Dynamic Convolutions remedy that by using a *time-dependent* kernel that changes dynamically based on the current timestep (Not the whole context as with self-attention):
+
+
+`
+$$
+\begin{align}
+DynamicConv(X, i, c) = LightConv(X, f(Xi)_{h,:},i,c)
+\end{align}
+$$
+`
+
+where $f(X_i)$ is a computed using a linear transformation using with learnt weight matrix $W^Q \in \mathbb{R}^{H \times k \times d}$. Thus, the filter weight for positions for position $j$ and head $h$ are computed by
+$$
+\sum_{c=1}^{d}W_{h,j,c}^{Q}. X_{i,c}
+$$.
+
+Note that to compute the attention weights, the above equation will be computed at $O(n)$ times in contrast to computing self-attention which computed them in $O(n^2)$ (The cost of multiplying $KQ^{T}$. Dynamic Convolutions are very memory hungry (just look at $W^Q$!). So, it was essential to shrink the number parameters through both Depthwise operation and weight sharing, in order to be able to implement Dynamic Convolutions on current hardware.
+
+
+### Conclusion
+In this post, we went through the origin of the idea of Lightweight Convolutions. We saw how it is partly based on Depthwise Convolutions, Softmax normalization and weight sharing. We delved into the implementation idea and source code used by the authors where convolution was implemented as a batch matrix multiplication by a set of band matrices.
+Finally, we explored the interesting concept of time-depended kernels where convolution weight depend on the current timestep.
