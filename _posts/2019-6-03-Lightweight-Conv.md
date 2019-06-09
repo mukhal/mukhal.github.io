@@ -181,7 +181,7 @@ weight_expanded = weight_expanded.narrow(2, P, T)
 {% endhighlight %}
 
 
-### Now let's move to Dynamic Convolutions
+### Ok, How about Dynamic Convolutions?
 One limitation of Lightweight Convolutions as opposed to self-attention is that the weights assigned to sequence elements do not change according to context. That is, the convolution weights used at the timestep $i$ are the same when sliding the filter one more step at $i+1$. 
 
 Dynamic Convolutions remedy that by using a *time-dependent* kernel that changes dynamically based on the current timestep (Not the whole context as with self-attention):
@@ -195,7 +195,7 @@ DynamicConv(X, i, c) = LightConv(X, f(Xi)_{h,:},i,c)
 $$
 `
 
-where $f(X_i)$ is a computed using a linear transformation using with learnt weight matrix $W^Q \in \mathbb{R}^{H \times k \times d}$. Thus, the filter weight for positions for position $j$ and head $h$ are computed by
+where $f(X_i)$ is a matrix computed by means of a linear transformation with learnt weight matrix $W^Q \in \mathbb{R}^{H \times k \times d}$. Thus, the filter weight for positions for position $j$ and head $h$ are computed by
 $$
 \sum_{c=1}^{d}W_{h,j,c}^{Q}. X_{i,c}
 $$.
@@ -204,5 +204,5 @@ Note that to compute the attention weights, the above equation will be computed 
 
 
 ### Conclusion
-In this post, we went through the origin of the idea of Lightweight Convolutions. We saw how it is partly based on Depthwise Convolutions, Softmax normalization and weight sharing. We delved into the implementation idea and source code used by the authors where convolution was implemented as a batch matrix multiplication by a set of band matrices.
-Finally, we explored the interesting concept of time-depended kernels where convolution weight depend on the current timestep.
+In this article, we saw how the simple but interesting idea of Lightweight Convolutions originated. We also discussed how it is partly based on Depthwise Convolutions, Softmax normalization and weight sharing. We delved into the implementation idea and source code used by the authors where convolution was implemented as a batch matrix multiplication by a set of band matrices.
+Finally, we explored the interesting concept of time-depended kernels where convolution weights are not fixed but rather depend on the current timestep.
