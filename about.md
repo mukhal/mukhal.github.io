@@ -4,9 +4,11 @@ title: About
 permalink: /about/
 ---
 
-I'm a software engineer fascinated by Machine Learning and NLP. I have made this blog to share some insights and ideas I have worked on. Doing some of this work has been a great journey for me and I hope it will be for you too.
+I'm a second-year computer science master's at Cairo University. 
+I'm fascinated by Natural Language Processing. 
+In this tiny-part-of-the-world blog, I share some insights, discuss some recent ML/NLP papers and share my thoughts on current research trends.
 
 
 ### Contact me
 
-[skyypolt@gmail.com](mailto:skyypolt@gmail.com)
+[muhammad.e.khalifa@gmail.com](mailto:muhammad.e.khalifa@gmail.com)
