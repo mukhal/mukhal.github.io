@@ -4,10 +4,14 @@ title: About
 permalink: /about/
 ---
 
-I'm a second-year computer science master's at Cairo University. 
+I'm a second-year computer science master's at Cairo University. I'm doing my thesis on Transfer Learning in low-resource NLP.
 I'm fascinated by Natural Language Processing. 
 In this tiny-part-of-the-world blog, I share some insights, discuss some recent ML/NLP papers and share my thoughts on current research trends.
 
+
+### Publications 
+Khalifa, Muhammad, and Khaled Shaalan. "Character convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks." Computer Speech & Language 58 (2019): 335-346.
+[link](https://www.sciencedirect.com/science/article/pii/S0885230818301657?via%3Dihub)
 
 ### Contact me
 
