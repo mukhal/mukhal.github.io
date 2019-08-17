@@ -1,7 +1,12 @@
+I'm a second-year computer science master's at Cairo University. I'm doing my thesis on Transfer Learning in low-resource NLP.
+I'm fascinated by Natural Language Processing. 
+In this tiny-part-of-the-world blog, I share some insights, discuss some recent ML/NLP papers and share my thoughts on current research trends.
 
 
-> A Man with Passion
+### Publications 
+[1] Khalifa, Muhammad, and Khaled Shaalan. "Character convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks." Computer Speech & Language 58 (2019): 335-346.
+[*link*](https://www.sciencedirect.com/science/article/pii/S0885230818301657?via%3Dihub)
 
+### Contact me
 
-Hi, I'm Muhammad Khalifa. I'm a Machine Learning Engineer at [Sypron](http://www.sypron.com/). I'm also a CS master's student at Cairo University and my thesis is in Sentence Simplification.
-This blog is to discuss some recent NLP developments, ideas and maybe share some tutorials.
+[muhammad.e.khalifa@gmail.com](mailto:muhammad.e.khalifa@gmail.com)
