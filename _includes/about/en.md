@@ -4,8 +4,10 @@ In this tiny-part-of-the-world blog, I share some insights, discuss some recent 
 
 
 ### Publications 
-[1] Khalifa, Muhammad, and Khaled Shaalan. "Character convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks." Computer Speech & Language 58 (2019): 335-346.
+[1] Muhammad Khalifa, and Khaled Shaalan. "Character convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks." Computer Speech & Language 58 (2019): 335-346.
 [*link*](https://www.sciencedirect.com/science/article/pii/S0885230818301657?via%3Dihub)
+
+[2] Muhammad Khalifa "Semantic Source Code Search: A Study of the Past and a Glimpse at the Future." [*Arxiv preprint*](https://arxiv.org/abs/1908.06738) (*Assignment paper for a course on research methods*)
 
 ### Contact me
 
