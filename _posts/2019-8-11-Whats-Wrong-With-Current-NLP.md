@@ -3,7 +3,7 @@ layout: post
 title: "Current Issues with Transfer Learning in NLP"
 author: Muhammad Khalifa
 comments: true
-published: true
+published: false
 ---
 
 
@@ -13,7 +13,7 @@ published: true
 
 ### Computational Intensity
 
-**Transfer Learning** is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SOTA results achieved recently have been mainly driven by a two-step scheme: 
+**Transfer Learning** is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SoTA results achieved recently have been mainly driven by a two-step scheme: 
 1. **Pre-train** a monster model for Language Modeling on a large general-purpose corpus (The more data the better). 
 2. **Finetune** the whole model (or a subset thereof) on the target task.
 
@@ -47,6 +47,13 @@ It's true that we use transfer learning in our everyday life. For instance, if w
 One might argue, however, that as long as an approach produces good results, whether it's similar or not to how humans learn doesn't actually matter. Maybe, but I presume that if we aim at building machines that achieve human-level intelligence, we must not get carried away with approaches that are singinifcantly dissimilar to the way our brains work.
 
 
+### Do we Have TRUE Language Understanding?
+The previous point leads us to this question: If we do not 
+
+### Low-resource languages
+The previous point leads us to this question: If we do not 
+
+
 ### High Carbon Footprint
 Believe it or not, but training these models has a negative effect on the environment. [(Strubell et. al)](https://arxiv.org/pdf/1906.02243.pdf) compare the estimated $CO_2$ emissions from training Big Transformer architecture to emissions caused by other $CO_2$ sources. Suprisingly, training a single Transformer arhcitectue with neural architecture search emits approximately 6.0x the amount of $CO_2$ emitted through the lifetime of a car.
 <img src="/images/carbon-footprint.png" width="400" height="300" />
@@ -54,3 +61,9 @@ Believe it or not, but training these models has a negative effect on the enviro
 
 
  [(Schwartz et. al)](https://arxiv.org/pdf/1907.10597) introduce what they call *Green AI*, which is the practice of making AI both more *efficient* and *inclusive*. Similar to what we discussed above, they strongly suggest adding efficiency as another metric alongside task accuracy. They also believe it's necessary for research papers to include the "price tag" or the cost  of model training. This should encourage the research towards more efficient and less resource-demanding model architectures.
+
+
+
+
+
+> Disclamier: This post by no means undermines the great effort being made in the NLP field. The progress being made is truly impressive. Yet, I believe that without putting our hands on the issues with the current methods, we will not be able to improve them. This way, we may strike a balance between the exploitation of current proposed approaches to make them even better, and exploration of completely novel approaches.
