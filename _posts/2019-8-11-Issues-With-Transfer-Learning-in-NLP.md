@@ -13,7 +13,7 @@ published: false
 
 ### Computational Intensity
 
-**Transfer Learning** is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SoTA results achieved recently have been mainly driven by a two-step scheme: 
+The most successful form of **Transfer Learning** in NLP today is **Sequential Transfer Learning (STL)**. STL is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SOTA results achieved recently have been mainly driven by a two-step scheme: 
 1. **Pre-train** a monster model for Language Modeling on a large general-purpose corpus (The more data the better). 
 2. **Finetune** the whole model (or a subset thereof) on the target task.
 
@@ -23,7 +23,7 @@ published: false
 
 
 ### Difficult Reproducibility
-Reproducibility is a already becoming a problem in machine learning research. [(Dacrema et. al)](https://arxiv.org/pdf/1907.06902) analyzed 18 different proposed Neural-based Recommendation Systems and *found that only 7 of them were reproducible with reasonable effort*. Generally speaking, to be able to use or build upon a particular research idea, it's imperative for that idea to be easily reproducible. With the substantial computational resources needed to train these huge NLP models and reproduce their results, small tech companies, startups, research labs and independent researchers will not be able to compete.
+Reproducibility is a already becoming a problem in machine learning research. For example, [(Dacrema et. al)](https://arxiv.org/pdf/1907.06902) analyzed 18 different proposed Neural-based Recommendation Systems and *found that only 7 of them were reproducible with reasonable effort*. Generally speaking, to be able to use or build upon a particular research idea, it's imperative for that idea to be easily reproducible. With the substantial computational resources needed to train these huge NLP models and reproduce their results, small tech companies, startups, research labs and independent researchers will not be able to compete.
 
 
 ### Leaderboards Are No Longer Enough
@@ -34,21 +34,31 @@ Anna Rogers argues in her [blog post](https://hackingsemantics.xyz/2019/leaderbo
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-I suggest you check the above thread for various comments on the problem.  Rohit Pgarg suggests comparing the performance of models on a two-dimensional scale of both task accuracy and computational resource. See the plot below. Also there's a very interesting comment by Alexandr Savinov where he suggests to use how much of input information the algorithm is able to "pack" to one unit of output (model parameter) representation for one unit of CPU time.
+I suggest you check the above thread for various comments on the problem.  Rohit Pgarg suggests comparing the performance of models on a two-dimensional scale of both task accuracy and computational resource. See the plot below. I suggest we add another dimension that corresponds to the amount of data the model has been trained on. However, this visualization will not provide an insight into which model is generally better. Also there's a very interesting comment by Alexandr Savinov where he suggests to use how much of input information the algorithm is able to "pack" to one unit of output (model parameter) representation for one unit of CPU time.
 
 |<img src="/images/scatter-tl.png" width="700" height="400" />|
 |:--:| 
 | Using Computational Resource as an additional metric to task accuracy in comparing models performance|
 
 
-### This is NOT How We Learn Language
+### This is Not How we Learn Language
 It's true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. However, Our brains as humans take a different path towards language learning. Children do not need to see millions of contexts including a specific word to grasp the meaning of the word or to know how to use it. The common pretrain-then-finetune scheme seems to lack a significant resemblance to the way humans learn. 
 
 One might argue, however, that as long as an approach produces good results, whether it's similar or not to how humans learn doesn't actually matter. Maybe, but I presume that if we aim at building machines that achieve human-level intelligence, we must not get carried away with approaches that are singinifcantly dissimilar to the way our brains work.
 
 
-### Do we Have TRUE Language Understanding?
-The previous point leads us to this question: If we do not 
+### Shallow Language Understanding
+The language modeling task is indeed a complex task. Take for instance the two sentences: "The man in the red shirt is running fast. He must be..." and "The contestant in the red shirt is running fast. He must be. In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
+
+So how deep do these pretrained models actually understand language? Unfortunately, not so much. [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) analyze the performance of BERT on the Argument Reasoning and Comprehension task (ARCT) [(Habernal et. al, 2018)](https://arxiv.org/abs/1708.01425). ARCT  can be described as follows: Given a Claim $C$ and a Reason $R$, the task is to select the correct Warrant $W$ over another distractor, the alternative warrant $A$. The correct warrant satisfies $R \land C \rightarrow W$ while the alternative warrant satisfies $R \land C \rightarrow \neg A $. See the figure below. 
+
+Remarkably, BERT achieves a very competitive accuracy of 77%, which is only 3 points below the human baseline. 
+
+
+|<img src="/images/arct.png" width="450" height="350" />|
+|:--:| 
+| Sample of the Argument Reasoning and Comprehension Task. Source: [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459)  |
+
 
 ### Low-resource languages
 The previous point leads us to this question: If we do not 
