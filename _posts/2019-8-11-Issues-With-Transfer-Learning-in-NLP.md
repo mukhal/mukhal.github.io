@@ -3,7 +3,7 @@ layout: post
 title: "Current Issues with Transfer Learning in NLP"
 author: Muhammad Khalifa
 comments: true
-published: false
+published: true
 ---
 
 
@@ -48,16 +48,20 @@ One might argue, however, that as long as an approach produces good results, whe
 
 
 ### Shallow Language Understanding
-The language modeling task is indeed a complex task. Take for instance the two sentences: "The man in the red shirt is running fast. He must be..." and "The contestant in the red shirt is running fast. He must be. In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
+The language modeling task is indeed a complex task. Take for instance the sentence: "The man in the red shirt is running fast. He must be..." and "The contestant in the red shirt is running fast. He must be. In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
 
 So how deep do these pretrained models actually understand language? Unfortunately, not so much. [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) analyze the performance of BERT on the Argument Reasoning and Comprehension task (ARCT) [(Habernal et. al, 2018)](https://arxiv.org/abs/1708.01425). ARCT  can be described as follows: Given a Claim $C$ and a Reason $R$, the task is to select the correct Warrant $W$ over another distractor, the alternative warrant $A$. The correct warrant satisfies $R \land C \rightarrow W$ while the alternative warrant satisfies $R \land C \rightarrow \neg A $. See the figure below. 
-
-Remarkably, BERT achieves a very competitive accuracy of 77%, which is only 3 points below the human baseline. 
-
 
 |<img src="/images/arct.png" width="450" height="350" />|
 |:--:| 
 | Sample of the Argument Reasoning and Comprehension Task. Source: [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459)  |
+
+Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which is only 3 points below the human baseline. At first, this would suggest that BERT has a quite strong reasoning ability. To investigate further, [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) employed what is known as "probing". That is, they finetuned BERT on this task, yet the input to BERT was only both the correct and the alternative warrants without exposing it to either the claim or the reason. The hypothesis is that if BERT relies on some statistical cues in the warrants, it should still perfom well even if it has only seen the warrants without any other information. Interestingly, their results show only a drop of 6% in accuracy over using both Reason and Claim. This suggests that BERT is not actually performing any type of reasoning but that the warrants themselves have sufficient cues for BERT to be able to reach such high accuracy. Moreover, by replacing the test set with an adversarial one that is free of these cues the BERT relies on, BERT was only able to achieve an accuracy of 53%, which is just above random chance.
+
+
+
+
+
 
 
 ### Low-resource languages
