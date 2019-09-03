@@ -13,7 +13,7 @@ published: true
 
 ### Computational Intensity
 
-The most successful form of **Transfer Learning** in NLP today is **Sequential Transfer Learning (STL)**. STL is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SOTA results achieved recently have been mainly driven by a two-step scheme: 
+The most successful form of **Transfer Learning** in NLP today is **Sequential Transfer Learning (STL)**, which is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SOTA results achieved recently have been mainly driven by a two-step scheme: 
 1. **Pre-train** a monster model for Language Modeling on a large general-purpose corpus (The more data the better). 
 2. **Finetune** the whole model (or a subset thereof) on the target task.
 
@@ -26,7 +26,7 @@ The most successful form of **Transfer Learning** in NLP today is **Sequential T
 Reproducibility is a already becoming a problem in machine learning research. For example, [(Dacrema et. al)](https://arxiv.org/pdf/1907.06902) analyzed 18 different proposed Neural-based Recommendation Systems and *found that only 7 of them were reproducible with reasonable effort*. Generally speaking, to be able to use or build upon a particular research idea, it's imperative for that idea to be easily reproducible. With the substantial computational resources needed to train these huge NLP models and reproduce their results, small tech companies, startups, research labs and independent researchers will not be able to compete.
 
 
-### Leaderboards Are No Longer Enough
+### Task Leaderboards Are No Longer Enough
 Anna Rogers argues in her [blog post](https://hackingsemantics.xyz/2019/leaderboards/?utm_campaign=NLP%20News&utm_medium=email&utm_source=Revue%20newsletter) why `more data & compute = SOTA` is NOT research news. She argues that the main problem with leaderboards is that the rank of a model is totally dependent on its task score with no consideration given to the amount of data, compute or training time needed to achieve that score. 
 
 
@@ -42,21 +42,30 @@ I suggest you check the above thread for various comments on the problem.  Rohit
 
 
 ### This is Not How we Learn Language
-It's true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. However, Our brains as humans take a different path towards language learning. Children do not need to see millions of contexts including a specific word to grasp the meaning of the word or to know how to use it. The common pretrain-then-finetune scheme seems to lack a significant resemblance to the way humans learn. 
+It's true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. However, Our brains as humans take a different path towards language learning. Children do not need to see millions of contexts including a specific word to grasp the meaning of the word or to know how to use it. The pretraining step lacks a significant resemblance to the way humans learn. 
 
 One might argue, however, that as long as an approach produces good results, whether it's similar or not to how humans learn doesn't actually matter. Maybe, but I presume that if we aim at building machines that achieve human-level intelligence, we must not get carried away with approaches that are singinifcantly dissimilar to the way our brains work.
 
 
 ### Shallow Language Understanding
-The language modeling task is indeed a complex task. Take for instance the sentence: "The man in the red shirt is running fast. He must be..." and "The contestant in the red shirt is running fast. He must be. In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
-
+The language modeling task is indeed a complex task. Take for instance the sentence: "The man in the red shirt is running fast. He must be..." In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
 So how deep do these pretrained models actually understand language? Unfortunately, not so much. [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) analyze the performance of BERT on the Argument Reasoning and Comprehension task (ARCT) [(Habernal et. al, 2018)](https://arxiv.org/abs/1708.01425). ARCT  can be described as follows: Given a Claim $C$ and a Reason $R$, the task is to select the correct Warrant $W$ over another distractor, the alternative warrant $A$. The correct warrant satisfies $R \land C \rightarrow W$ while the alternative warrant satisfies $R \land C \rightarrow \neg A $. See the figure below. 
 
 |<img src="/images/arct.png" width="450" height="350" />|
 |:--:| 
 | Sample of the Argument Reasoning and Comprehension Task. Source: [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459)  |
 
-Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which is only 3 points below the human baseline. At first, this would suggest that BERT has a quite strong reasoning ability. To investigate further, [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) employed what is known as "probing". That is, they finetuned BERT on this task, yet the input to BERT was only both the correct and the alternative warrants without exposing it to either the claim or the reason. The hypothesis is that if BERT relies on some statistical cues in the warrants, it should still perfom well even if it has only seen the warrants without any other information. Interestingly, their results show only a drop of 6% in accuracy over using both Reason and Claim. This suggests that BERT is not actually performing any type of reasoning but that the warrants themselves have sufficient cues for BERT to be able to reach such high accuracy. Moreover, by replacing the test set with an adversarial one that is free of these cues the BERT relies on, BERT was only able to achieve an accuracy of 53%, which is just above random chance.
+Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which is only 3 points below the human baseline. At first, this would suggest that BERT has a quite strong reasoning ability. To investigate further, [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) employed what is known as "probing". That is, they finetuned BERT on this task, yet the input to BERT was only both the correct and the alternative warrants without exposing it to either the claim or the reason. The hypothesis is that if BERT relies on some statistical cues in the warrants, it should still perfom well even if it has only seen the warrants without any other information. Interestingly, their results show only a drop of 6% in accuracy over using both Reason and Claim. This suggests that BERT is not actually performing any type of reasoning but that the warrants themselves have sufficient cues for BERT to be able to reach such high accuracy. Remarkably, by replacing the test set with an adversarial one that is free of these cues the BERT relies on, BERT was only able to achieve an accuracy of 53%, which is just above random chance.
+
+
+Another related paper is [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf) titled "Can a Machine Really Finish your Sentence?". They consider the task of Commonsense Natural Language Inference where a machine should select the most likely follow up to given sentence. For instance,given the sentence: "The team played so well", the system should select "They won the game" as a follow up. The authors argue that altough BERT was able to achieve almost 86% accuracy (only 2 points below human-baseline), such high accuracy is not due high-level form of reasoning on BERT's side but due to BERT learning to pick up on dataset-specific distributional biases. They showed that by creating a more difficult dataset (HellaSwag) by means of **Adversarial Filtering** (which is a technique that aims to produce an adversarial dataset for any possible train, test split), BERT accuracy dropped to as low as 
+
+
+|<img src="/images/hellaswag.png" width="450" height="350" />|
+|:--:| 
+| Performance of BERT on SWAG compare to HellaSwag. Source: [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf)  |
+
+The paper also discusses the different between the two concepts of "Dataset Performance" and "Task Performance". Performing very well on a dataset for a specific task by no means indicates solving the underlying task. They argue for the importance of contunally adversarial dataset creation in order to produce datasets that can trully  
 
 
 
@@ -64,12 +73,11 @@ Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which
 
 
 
-### Low-resource languages
-The previous point leads us to this question: If we do not 
+{%### Low-resource languages%}
 
 
 ### High Carbon Footprint
-Believe it or not, but training these models has a negative effect on the environment. [(Strubell et. al)](https://arxiv.org/pdf/1906.02243.pdf) compare the estimated $CO_2$ emissions from training Big Transformer architecture to emissions caused by other $CO_2$ sources. Suprisingly, training a single Transformer arhcitectue with neural architecture search emits approximately 6.0x the amount of $CO_2$ emitted through the lifetime of a car.
+Believe it or not, but training these grandiose models has a negative effect on the environment. [(Strubell et. al)](https://arxiv.org/pdf/1906.02243.pdf) compare the estimated $CO_2$ emissions from training Big Transformer architecture to emissions caused by other $CO_2$ sources. Suprisingly, training a single Transformer arhcitectue with neural architecture search emits approximately 6.0x the amount of $CO_2$ emitted through the lifetime of a car.
 <img src="/images/carbon-footprint.png" width="400" height="300" />
 
 
