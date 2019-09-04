@@ -3,7 +3,7 @@ layout: post
 title: "Current Issues with Transfer Learning in NLP"
 author: Muhammad Khalifa
 comments: true
-published: false
+published: true
 ---
 
 
