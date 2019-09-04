@@ -51,7 +51,7 @@ One might argue, however, that as long as an approach produces good results, whe
 The language modeling task is indeed a complex task. Take for instance the sentence: "The man in the red shirt is running fast. He must be..." In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
 So how deep do these pretrained models actually understand language? Unfortunately, not so much. [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) analyze the performance of BERT on the Argument Reasoning and Comprehension task (ARCT) [(Habernal et. al, 2018)](https://arxiv.org/abs/1708.01425). ARCT  can be described as follows: Given a Claim $C$ and a Reason $R$, the task is to select the correct Warrant $W$ over another distractor, the alternative warrant $A$. The correct warrant satisfies $R \land C \rightarrow W$ while the alternative warrant satisfies $R \land C \rightarrow \neg A $. See the figure below. 
 
-|<img src="/images/arct.png" width="450" height="350" />|
+|<img src="/images/arct.PNG" width="450" height="350" />|
 |:--:| 
 | Sample of the Argument Reasoning and Comprehension Task. Source: [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459)  |
 
@@ -61,7 +61,7 @@ Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which
 Another related paper is [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf) titled "Can a Machine Really Finish your Sentence?". They consider the task of Commonsense Natural Language Inference where a machine should select the most likely follow up to given sentence. For instance,given the sentence: "The team played so well", the system should select "They won the game" as a follow up. The authors argue that altough BERT was able to achieve almost 86% accuracy (only 2 points below human-baseline), such high accuracy is not due high-level form of reasoning on BERT's side but due to BERT learning to pick up on dataset-specific distributional biases. They showed that by creating a more difficult dataset (HellaSwag) by means of **Adversarial Filtering** (which is a technique that aims to produce an adversarial dataset for any possible train, test split), BERT accuracy dropped to as low as 
 
 
-|<img src="/images/hellaswag.png" width="450" height="350" />|
+|<img src="/images/hellaswag.PNG" width="450" height="350" />|
 |:--:| 
 | Performance of BERT on SWAG compare to HellaSwag. Source: [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf)  |
 
