@@ -3,7 +3,7 @@ layout: post
 title: "Current Issues with Transfer Learning in NLP"
 author: Muhammad Khalifa
 comments: true
-published: true
+published: false
 ---
 
 
@@ -69,11 +69,6 @@ The paper also discusses the different between the two concepts of "Dataset Perf
 
 
 
-
-
-
-
-{% ### Low-resource languages %}
 
 
 ### High Carbon Footprint
