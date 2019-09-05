@@ -73,7 +73,7 @@ The paper also discusses the different between the two concepts of "Dataset Perf
 
 ### High Carbon Footprint
 Believe it or not, but training these grandiose models has a negative effect on the environment. [(Strubell et. al)](https://arxiv.org/pdf/1906.02243.pdf) compare the estimated $CO_2$ emissions from training Big Transformer architecture to emissions caused by other $CO_2$ sources. Suprisingly, training a single Transformer arhcitectue with neural architecture search emits approximately 6.0x the amount of $CO_2$ emitted through the lifetime of a car.
-<img src="/images/carbon-footprint.png" width="400" height="300" />
+<img src="/images/carbon-footprint.PNG" width="400" height="300" />
 
 
 
