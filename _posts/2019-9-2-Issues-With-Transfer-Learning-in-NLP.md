@@ -41,10 +41,8 @@ I suggest you check the above thread for various comments on the problem.  Rohit
 | Using Computational Resource as an additional metric to task accuracy in comparing models performance|
 
 
-### This is Not How we Learn Language
-It's true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. However, Our brains as humans take a different path towards language learning. Children do not need to see millions of contexts including a specific word to grasp the meaning of the word or to know how to use it. The pretraining step lacks a significant resemblance to the way humans learn. 
-
-One might argue, however, that as long as an approach produces good results, whether it's similar or not to how humans learn doesn't actually matter. Maybe, but I presume that if we aim at building machines that achieve human-level intelligence, we must not get carried away with approaches that are singinifcantly dissimilar to the way our brains work.
+### It is not like How We Learn
+Children learn language through noisy, ambiguous input and minimal supervision. A child can start to pick up the meaning of a word from just a few exposures to that word. This is very unlike the pretraining step used in STL settings where a model need to see millions of contexts including a specific word to grasp the meaning of the word. There is a very important question of whether it is possible to learn semantics from raw text only without any external supervision. If you're interested in a twitter debate on this topic see this [thread](https://twitter.com/jacobandreas/status/1023246560082063366). If the answer is no, that means that pre-training these models does not actually give them true language understanding. While it's true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. But is that the path that we humans take towards language learning? I do not think so. One might argue, however, that as long as an approach produces good results, whether it is similar or not to how humans learn does not actually matter. Unfortunately, some of the good results produced by these models are questionable as we will see next.
 
 
 ### Shallow Language Understanding
@@ -58,14 +56,14 @@ So how deep do these pretrained models actually understand language? Unfortunate
 Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which is only 3 points below the human baseline. At first, this would suggest that BERT has a quite strong reasoning ability. To investigate further, [(Niven et. al, 2019)](https://www.aclweb.org/anthology/P19-1459) employed what is known as "probing". That is, they finetuned BERT on this task, yet the input to BERT was only both the correct and the alternative warrants without exposing it to either the claim or the reason. The hypothesis is that if BERT relies on some statistical cues in the warrants, it should still perfom well even if it has only seen the warrants without any other information. Interestingly, their results show only a drop of 6% in accuracy over using both Reason and Claim. This suggests that BERT is not actually performing any type of reasoning but that the warrants themselves have sufficient cues for BERT to be able to reach such high accuracy. Remarkably, by replacing the test set with an adversarial one that is free of these cues the BERT relies on, BERT was only able to achieve an accuracy of 53%, which is just above random chance.
 
 
-Another related paper is [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf) titled "Can a Machine Really Finish your Sentence?". They consider the task of Commonsense Natural Language Inference where a machine should select the most likely follow up to given sentence. For instance,given the sentence: "The team played so well", the system should select "They won the game" as a follow up. The authors argue that altough BERT was able to achieve almost 86% accuracy (only 2 points below human-baseline), such high accuracy is not due high-level form of reasoning on BERT's side but due to BERT learning to pick up on dataset-specific distributional biases. They showed that by creating a more difficult dataset (HellaSwag) by means of **Adversarial Filtering** (which is a technique that aims to produce an adversarial dataset for any possible train, test split), BERT accuracy dropped to as low as 
+Another related paper is [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf) titled "Can a Machine Really Finish your Sentence?". They consider the task of Commonsense Natural Language Inference where a machine should select the most likely follow up to given sentence. For instance,given the sentence: "The team played so well", the system should select "They won the game" as a follow up. The authors argue that altough BERT was able to achieve almost 86% accuracy (only 2 points below human-baseline), such high accuracy is not due high-level form of reasoning on BERT's side but due to BERT learning to pick up on dataset-specific distributional biases. They showed that by creating a more difficult dataset (HellaSwag) by means of **Adversarial Filtering** (which is a technique that aims to produce an adversarial dataset for any possible train, test split), BERT accuracy dropped to as low as 53%. The paper discusses the subtle distinction between **Dataset Performance** and **Task Performance**. Performing very well on a dataset for a specific task by no means indicates solving the underlying task.
 
-
-|<img src="/images/hellaswag.PNG" width="450" height="350" />|
+|<img src="/images/hellaswag.PNG" width="550" height="350" />|
 |:--:| 
 | Performance of BERT on SWAG compare to HellaSwag. Source: [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf)  |
 
-The paper also discusses the different between the two concepts of "Dataset Performance" and "Task Performance". Performing very well on a dataset for a specific task by no means indicates solving the underlying task. They argue for the importance of contunally adversarial dataset creation in order to produce datasets that can trully  
+
+Clearly, there is something going on here. Is it possible that BERT's good results are actually driven by its ability to hijack the target datasets by leveraging various distributinoal cues and biases? Can more investigation into BERT's results lead to other similar findings and conclusions? If so, then I believe we will not only need to build better models, but also better datasets. We need to have datsets that can actually reflect the difficuly of the underlying task rather than make it easy for the model to achieve deceiving accuracies and leaderboard scores.
 
 
 
@@ -78,9 +76,3 @@ Believe it or not, but training these grandiose models has a negative effect on 
 
 
  [(Schwartz et. al)](https://arxiv.org/pdf/1907.10597) introduce what they call *Green AI*, which is the practice of making AI both more *efficient* and *inclusive*. Similar to what we discussed above, they strongly suggest adding efficiency as another metric alongside task accuracy. They also believe it's necessary for research papers to include the "price tag" or the cost  of model training. This should encourage the research towards more efficient and less resource-demanding model architectures.
-
-
-
-
-
-> Disclamier: This post by no means undermines the great effort being made in the NLP field. The progress being made is truly impressive. Yet, I believe that without putting our hands on the issues with the current methods, we will not be able to improve them. This way, we may strike a balance between the exploitation of current proposed approaches to make them even better, and exploration of completely novel approaches.
