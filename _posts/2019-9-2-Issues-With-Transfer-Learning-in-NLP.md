@@ -66,7 +66,7 @@ Another related paper is [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.078
 | Performance of BERT on SWAG compare to HellaSwag. Source: [(Zellers et. al, 2019)](https://arxiv.org/pdf/1905.07830.pdf)  |
 
 
-Clearly, there is something going on here. Is it possible that BERT's good results are actually driven by its ability to hijack the target datasets by leveraging various distributinoal cues and biases? Can more investigation into BERT's results lead to other similar findings and conclusions? If so, then I believe we will not only need to build better models, but also better datasets. We need to have datsets that can actually reflect the difficuly of the underlying task rather than make it easy for the model to achieve deceiving accuracies and leaderboard scores.
+Clearly, there is something going on here. Is it possible that BERT's good results are actually driven by its ability to hijack the target datasets by leveraging various distributinoal cues and biases? Can more investigation into BERT's results lead to other similar findings and conclusions? If so, then I believe we will not only need to build better models, but also better datasets. We need to have datsets that can actually reflect the difficuly of the underlying task rather than make it easy for the model to achieve deceiving SOTA accuracies and leaderboard scores.
 
 
 
