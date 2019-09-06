@@ -78,7 +78,5 @@ Believe it or not, but training these grandiose models has a negative effect on 
 
 
 
- [(Schwartz et. al)](https://arxiv.org/pdf/1907.10597) introduce what they call *Green AI*, which is the practice of making AI both more *efficient* and *inclusive*. Similar to what we discussed above, they strongly suggest adding efficiency as another metric alongside task accuracy. They also believe it's necessary for research papers to include the "price tag" or the cost  of model training. This should encourage the research towards more efficient and less resource-demanding model architectures.
+ In a much relevant context, [(Schwartz et. al)](https://arxiv.org/pdf/1907.10597) introduce what they call *Green AI*, which is the practice of making AI both more *efficient* and *inclusive*. Similar to what we discussed above, they strongly suggest adding efficiency as another metric alongside task accuracy. They also believe it's necessary for research papers to include the "price tag" or the cost  of model training. This should encourage the research towards more efficient and less resource-demanding model architectures.
 
-
-There 
