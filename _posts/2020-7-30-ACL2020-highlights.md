@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My ACL 2020 Highlights"
+title: "ACL 2020: My Highlights"
 author: Muhammad Khalifa
 comments: true
 published: true
