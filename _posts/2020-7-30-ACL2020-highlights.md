@@ -44,12 +44,50 @@ This has been a headline topic for ACL 2020, with many papers focusing on the an
 # Evaluation of NLP Systems
 Several papers addressed the current state of evaluation metrics of NLP systems, with a lot of focus on text generation metrics. A paper titled [Tangled up in BLEU: Reevaluating the Evaluation of Automatic Machine Translation Evaluation Metrics](https://www.aclweb.org/anthology/2020.acl-main.448.pdf). The paper addresses variability in correlation between human and automatic evaluation depending on the quality of the MT systems used. They also discuss *outlier* systems (systems that are much worse than other systems) that can significantly impact the correlation score. Another interesting paper by Google Research proposed [BLEURT](https://www.aclweb.org/anthology/2020.acl-main.704.pdf), which is a BERT-based metric for evaluation of machine translation systems. BLEURT is pre-trained in a multi-task fashion on a 1.8M artifically produced sentence-pairs obtained by perturbation of sentences through masking tokens, paraphrasing by backtranslation, and dropping random words. Pre-training tasks include automatic metrics such as BLEU and ROUGE, textual entailment, and backtranslation likelihood. BLEURT shows better agreement with huamn annotation than other commonly used metrics such as BLEU, METEOR, and BERTScore.
 
-The best paper award was given to [Beyond Accuracy: Behavioral Testing of NLP Models with CheckList](https://arxiv.org/pdf/2005.04118.pdf), a very interesting paper that highlights various shortfalls in the way NLP systems are currently being tested. It proposing testing NLP models as a software engineer would a piece of code. The paper proposes creating a two-dimensional "checklist". The first dimension encompasses the different testing subjects (What to test) such as vocabulary and negation. The second dimesion represents different testing scenarious such as minimum functionality test (make sure that the model basically works), and perturbation tests, where you perturb the input expecting or not expecting the model's output to change in return. They also provide an [open-source tool](https://github.com/marcotcr/checklist) that makes writing such tests at scale very handy through integrations with Jupyter notebooks. Testing SoTA models both commercial and research showing striking failure rates (bugs) on various testing aspects. I really suggest watcing the paper presentation [video](https://slideslive.com/38929272).
+The **best paper** award was given to [Beyond Accuracy: Behavioral Testing of NLP Models with CheckList](https://arxiv.org/pdf/2005.04118.pdf), a very interesting paper that highlights various shortfalls in the way NLP systems are currently being tested. It proposing testing NLP models as a software engineer would a piece of code. The paper proposes creating a two-dimensional "checklist". The first dimension encompasses the different testing subjects (What to test) such as vocabulary and negation. The second dimesion represents different testing scenarious such as minimum functionality test (make sure that the model basically works), and perturbation tests, where you perturb the input expecting or not expecting the model's output to change in return. They also provide an [open-source tool](https://github.com/marcotcr/checklist) that makes writing such tests at scale very handy through integrations with Jupyter notebooks. Testing SoTA models both commercial and research showing striking failure rates (bugs) on various testing aspects. I really suggest watcing the paper presentation [video](https://slideslive.com/38929272).
 
 Other papers investigated current evaluation [implicit discourse relation classification](https://www.aclweb.org/anthology/2020.acl-main.480.pdf), and [open-domain dialogue generation](https://www.aclweb.org/anthology/2020.acl-main.333.pdf) 
 
 
 # Low-resource NLP
-Low-resource NLP is one of my favorite topics (unsuprisingly, my master's research is on low-resource summarization). It is good news for me (and for you, I hope) that low-resource languages are receiving more attention than before. The current research stage is like a race where high-resource languages take the lead and it is expected to be the case for a long time. Thus, in my opinion, we need to double or even triple our research on low-resource settings to just begin to achieve as high performance as is seen with high-resource languages.
+Low-resource NLP is one of my favorite topics (unsuprisingly, my master's research is on low-resource summarization). I think it is good news that low-resource languages are receiving more attention than before. The current research stage is like a race where high-resource languages take the lead and it is expected to be the case for a long time. Thus, in my opinion, we need to double or even triple our research on low-resource settings to just begin achieving as high performance as is seen with high-resource languages. 
 
-Back to ACL, an interesting [paper](https://www.mitpressjournals.org/doi/pdf/10.1162/tacl_a_00294) attempts low-resource dependency parsing using the semi-supervised technique of self-training.
+
+Back to ACL, an interesting [paper](https://www.aclweb.org/anthology/2020.acl-main.523.pdf) proposes to leverage sentence-level labels to pre-train a sequence tagger model to improve low-resource NER. In addition to pre-training, they also employ a multi-task setting through using the sentence classification loss as an auxiliary loss during training. They show some improvement on NER for 3 low-resource languages: Vietnamese, Thai, and Indonesian. Another interesting [paper](https://www.aclweb.org/anthology/2020.acl-main.437.pdf) models discusses the viability of using the learned discret variable (learned from raw text) as features for low-resource classification. More specifically, after training a VAE on raw text, the VAE encoder is fixed and used to encode text into latent variables while a set of task-specific parameters are trained on top. Other papers adressed low resouce [goal-oriented dialog](https://www.aclweb.org/anthology/2020.acl-main.57.pdf), [question generation](https://www.aclweb.org/anthology/2020.acl-main.601.pdf), and [entity linking](https://www.aclweb.org/anthology/2020.acl-main.601.pdf).
+
+Back to ACL, an interesting [paper](https://www.mitpressjournals.org/doi/pdf/10.1162/tacl_a_00294) attempts low-resource dependency parsing using the semi-supervised technique of self-training. 
+
+
+# Keynote talks
+
+I enjoyed all three keynote talks. Here, I will summarize the first keynote by Kathleen Mckeon on **Rewriting the Past: Assessing the Field through the Lens of Language Generation**. Honeslty, it was an engaging talk that went over the history of NLP models starting from the 1980s. Interestingly, the talk took the form of a series on interviews done by Mckeon with key contributors in the field. Starting with the **present**, Mckeon asked her interviewees *what is the greatest achievement of neural nets in NLP?* The main answers were: 
+    * Can be used by millions of users
+    * Does not need linguistic knowledge
+
+*Why do they work well?*
+    * The learn good represenations of word semantics
+    * attention!
+    * They fit a highly non-linear function to the data.
+
+Now for the **past**:
+    * 1980s: focus was on linguistics, centering theory, philosophy, and intent
+    * 1990s: focus on data analysis at larger scale, using coropora to analyze word choice and constraints.
+    * 1990s- 2000s: the rise of statistical NLP: mutual information models, jaccard index, and moving to classical machine learning (SVM, Naive Bayes, etc)
+
+Lastly for the **future**, she asked *what is deep learning not suited for?*:
+    * constraint on choice in language generation: while we speak with a purpose, say what we mean, and plan our longer speaches, nerual NLG do not.
+    * they still generate non-truthful generations
+    * they leverage spurious correlations in the dataset
+
+*How about the data?*:
+    * we still need to investigate how good is the data we are training on
+    * Why is the model doing what it is doing?
+
+We also need to learn from other disciplines: psychology, neuroscience, and cognitive science, etc. We need to study more *worthy* and harder tasks such as summarization of very long documents, and working on small data.
+
+
+
+
+
+
+
