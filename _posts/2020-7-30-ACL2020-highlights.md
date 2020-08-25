@@ -3,11 +3,11 @@ layout: post
 title: "My ACL 2020 Highlights"
 author: Muhammad Khalifa
 comments: true
-published: false
+published: true
 ---
 
 
-This post is a bit late, but I really wanted to write. ACL 2020 has been very special, since it is my first conference to attend. I have found the virtual version to be very nice (Altough my testimony is a bit undermined by the fact that I have not experienced an actual conference before. So, I cannot really compare the virtual version to the actual one). Anyway, I found the discussions, Q&A, and the live talks were very engaging and interesting!
+This post is a bit late, but I really wanted to write. ACL 2020 has been very special, since it is my first conference to attend. I have found the virtual version to be very nice (Altough my testimony is a bit undermined by the fact that I have not experienced an actual conference before. So, I cannot really compare the virtual version to the actual one). Anyway, I found the discussions, Q&A, chat rooms, and the live talks were very engaging and interesting!
 
 
 
@@ -60,34 +60,29 @@ Back to ACL, an interesting [paper](https://www.mitpressjournals.org/doi/pdf/10.
 
 # Keynote talks
 
-I enjoyed all three keynote talks. Here, I will summarize the first keynote by Kathleen Mckeon on **Rewriting the Past: Assessing the Field through the Lens of Language Generation**. Honeslty, it was an engaging talk that went over the history of NLP models starting from the 1980s. Interestingly, the talk took the form of a series on interviews done by Mckeon with key contributors in the field. Starting with the **present**, Mckeon asked her interviewees *what is the greatest achievement of neural nets in NLP?* The main answers were: 
-    * Can be used by millions of users
-    * Does not need linguistic knowledge
+I enjoyed all three keynote talks. Here, I conclude by summarizing the first keynote by Kathleen Mckeon on **Rewriting the Past: Assessing the Field through the Lens of Language Generation**. Honeslty, it was an engaging talk that went over the history of NLP models starting from the 1980s. Interestingly, the talk took the form of a series on interviews done by Mckeon with key contributors in the field. Starting with the **present**, which is highly characterized by deep neural models. Mckeon asked her interviewees ***what is the greatest achievement of neural nets in NLP?** The main answers were: 
+* Can be operated by almost anyone as they do not need linguistic knowledge
+* Learnign from raw data
 
-*Why do they work well?*
-    * The learn good represenations of word semantics
-    * attention!
-    * They fit a highly non-linear function to the data.
+**Why do they work well?**
+* The learn good represenations of word semantics
+* attention!
+* They fit a highly non-linear function to the data.
 
 Now for the **past**:
-    * 1980s: focus was on linguistics, centering theory, philosophy, and intent
-    * 1990s: focus on data analysis at larger scale, using coropora to analyze word choice and constraints.
-    * 1990s- 2000s: the rise of statistical NLP: mutual information models, jaccard index, and moving to classical machine learning (SVM, Naive Bayes, etc)
+* **1980s**: focus was on linguistics, centering theory, philosophy, and intent
+* **1990s**: focus on data analysis at larger scale, using coropora to analyze word choice and constraints.
+* **1990s - 2000s**: the rise of statistical NLP: mutual information models, jaccard index, and moving to classical machine learning (SVM, Naive Bayes, etc)
 
-Lastly for the **future**, she asked *what is deep learning not suited for?*:
-    * constraint on choice in language generation: while we speak with a purpose, say what we mean, and plan our longer speaches, nerual NLG do not.
-    * they still generate non-truthful generations
-    * they leverage spurious correlations in the dataset
+Lastly for the **future**, she asked **what is deep learning not suited for?**:
+* constraint on choice in language generation: while we speak with a purpose, say what we mean, and plan our longer speaches, nerual NLG do not.
+* they still generate non-truthful generations
+* they leverage spurious correlations in the dataset
 
-*How about the data?*:
-    * we still need to investigate how good is the data we are training on
-    * Why is the model doing what it is doing?
+**How about the data?**
+* we still need to investigate how good is the data we are training on
+* Why is the model doing what it is doing?
 
-We also need to learn from other disciplines: psychology, neuroscience, and cognitive science, etc. We need to study more *worthy* and harder tasks such as summarization of very long documents, and working on small data.
-
-
-
-
-
+We also need to learn from **other disciplines**: psychology, neuroscience, and cognitive science, etc. We need to study more *worthy* and harder tasks such as summarization of very long documents, and working on small data.
 
 
