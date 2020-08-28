@@ -4,8 +4,9 @@ title: Predicting Movie Genre from Movie Title
 author: Muhammad Khalifa
 ---
 
-In this post we will attempt at the interesting classification problem : Predicting a movie genre from only its title. It would be very interesting to be able to make such prediction. It can be used to cluster movies based on genre. Plus it's a great way to explore various classification problems and the very famous word embeddings as well.
+> In this post we will attempt at the interesting classification problem : Predicting a movie genre from only its title. It would be very interesting to be able to make such prediction. It can be used to cluster movies based on genre. Plus it's a great way to explore various classification problems and the very famous word embeddings as well.
 
+<!--more-->
 
 ```python
 import numpy, pandas as pd

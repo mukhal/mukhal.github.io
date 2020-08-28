@@ -7,8 +7,9 @@ published: true
 ---
 
 
-ACL 2020 has been very special, since it is my first conference to attend. I have found the virtual version to be very nice (Altough my testimony is a bit undermined by the fact that I have not experienced an actual conference before. So, I cannot really compare the virtual version to the actual one). Anyway, I found the discussions, Q&A, chat rooms, and the live talks were very engaging and interesting!
+> ACL 2020 has been very special, since it is my first conference to attend. I have found the virtual version to be very nice (Altough my testimony is a bit undermined by the fact that I have not experienced an actual conference before. So, I cannot really compare the virtual version to the actual one). Anyway, I found the discussions, Q&A, chat rooms, and the live talks were very engaging and interesting!
 
+<!--more-->
 
 
 There are many trends in this year's ACL 2020, with specific focus on interpretability, low-resource, transformers limitations, and some novel and interestings tasks and datasets.

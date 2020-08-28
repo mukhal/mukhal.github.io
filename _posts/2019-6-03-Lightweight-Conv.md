@@ -6,10 +6,10 @@ comments: true
 published: true
 ---
 
-I have recently came across a very interesting paper named [**Pay Less Attention with Lightweight and Dynamic Convolutions**](https://arxiv.org/abs/1901.10430). The prime motivation of the paper is that [Self-attention](https://arxiv.org/abs/1706.03762) models suffer from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.
+> I have recently came across a very interesting paper named [**Pay Less Attention with Lightweight and Dynamic Convolutions**](https://arxiv.org/abs/1901.10430). The prime motivation of the paper is that [Self-attention](https://arxiv.org/abs/1706.03762) models suffer from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.
 
 
-
+<!--more-->
 ### And What are these Lightweight Convolutions Anyway?
 Given a sequence of words `$X \in \mathbb{R}^{n \times d}$`, where $n$ is the sequence length and $d$ is the word embeddings dimension, we want to tranform $X$ into an output matrix of the same shape `$O \in \mathbb{R}^{n \times d}$`:
 
