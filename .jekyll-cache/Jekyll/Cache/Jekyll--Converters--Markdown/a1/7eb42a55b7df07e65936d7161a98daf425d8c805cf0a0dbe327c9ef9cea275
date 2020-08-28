@@ -1,0 +1,12 @@
+I"�
+<p>I am a computer science master’s student at <em>Cairo University</em>. My master’s work is on low-resource multi-dialectal Arabic NLU and abstractive summarization. Thus, my main research interests are Natural Language Generation, Unsupervised Learning, and Low-Resource NLU. My interests are driven by the urgent need to save scarce-data languages and tasks by building fully unsupervised approaches that perform comparably to supervised ones. I am currently doing a research internship at Naver Labs Europe working on controlled text generation with Energy-based models and supervised by Marc Deymetman and Hady Elsahar. Before that, I worked as a Machine learning engineer at Sypron Solutions, where I built a data-driven predictive maintenance and multi-node stream processing pipeline with <em>Spark Streaming</em> and <em>Kafka</em></p>
+
+<p>I have done research on <a href="https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks/citations">character-level</a> models for Arabic NER comparing CNN to Bi-LSTMs.</p>
+
+<p><strong>Updates:</strong></p>
+
+<p><strong>July 21th, 2020:</strong> My paper on book success prediction (with Professor Aminul Islam) via pre-trained embeddings and readability scores is now live on <a href="https://arxiv.org/abs/2007.11073">arxiv</a>.</p>
+
+<p><strong>May 5th, 2020:</strong> Started an Internship in NAVER Labs Europe working on Controlled Text Generation with distributional constraints!</p>
+
+:ET
