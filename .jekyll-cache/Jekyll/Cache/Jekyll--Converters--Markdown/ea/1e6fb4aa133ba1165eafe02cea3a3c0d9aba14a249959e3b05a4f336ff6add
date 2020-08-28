@@ -1,0 +1,84 @@
+I"�<blockquote>
+  <p><strong>Paper Brief</strong>  : Since the attention mechanism has been proposed in <a href="https://arxiv.org/abs/1409.0473">Bahdanau et. al</a>,  it has become an almost essential component in NLP models. The idea of sequence-to-sequence attention can be simply expressed as follows: Given the current state of the decoder (the query), what are the important elements in the input (keys and values) that I need to focus on to better solve the task at hand.
+Almost all previous uses of attention have considered attending to single entities, usually an input token, sentence or an image grid. The <a href="https://arxiv.org/abs/1810.10126">paper</a> we’re about to discuss asks a simple question: Instead of considereing single entities for attention, why don’t we consider an aggregate of an area of adjacent items. <em>(The paper was rejected in ICLR 2019, but I thought the idea is worth exploring nonetheless)</em></p>
+</blockquote>
+
+<!--more-->
+<h2 id="approach">Approach</h2>
+
+<p><strong>1-D Attention</strong> : with language-related tasks, area attention spans adjacent elements in a linear 1-dimensional memory. The figure below shows an original memory (encoder hidden states, for eg.) with 4 elements. From these 4 elements, four 1-item areas, three 2-item areas and two 3-item areas can be extracted.</p>
+
+<p><img src="/images/1d-aa.PNG" alt="" /></p>
+
+<p><strong>2-D Attention</strong> : with image-related tasks, area attention spans adjacent elements in a linear 2-dimensional memory. In this case the number of different combinations is apparently larger than the 1-dimensional case.</p>
+
+<p><img src="/images/2d-aa.PNG" alt="" /></p>
+
+<p><strong>Aggregate Keys and Values</strong> : The authors proposed to use the mean of the item keys as the new key for the resulting area, and the sum of item values as the value for the output area. Another idea they used to enrich the area representation is to add the standard deviation of the constituent item keys.</p>
+
+<p><strong>Merging all area features</strong>: Three main features are combined to produce the final area key representation: mean of keys of each item, standard deviation of item keys as well, and the width and height of the area:</p>
+
+<ul>
+  <li>The mean of the item keys as the new key for the resulting area</li>
+  <li>Standard deviation of the constituent item keys.</li>
+  <li>height and width of the area projected through a learned embeddings matrix.</li>
+</ul>
+
+<p>Features are combined by means of a single-layer perceptron followed by a linear transformation.</p>
+
+<p><strong>Faster Computation with Summed Area Table</strong> : To compute the area atttention with maximum value <code class="language-plaintext highlighter-rouge">$A$</code> for a memory of size <code class="language-plaintext highlighter-rouge">$M$</code>, we need <code class="language-plaintext highlighter-rouge">$O(|M| A^2)$</code> steps. This becomes obvious when you understand that to compute the area attention of maxium size $A$ you will need <code class="language-plaintext highlighter-rouge">$A+ (A-1) + (A-2) + .. + 1$ = $A(A+1) / 2 = O(A^2)$</code> steps. To overcome such expensive computations, the authors propose to use a pre-computed summed area table that is calculated only once, then it’s used to compute the area attention in a constant time.</p>
+
+<p>Letting <code class="language-plaintext highlighter-rouge">$I_{x,y} = v_{x,y} + I_{x,y-1} + I_{x-1,y}$</code>
+where <code class="language-plaintext highlighter-rouge">$x$</code> and <code class="language-plaintext highlighter-rouge">$y$</code> are the coordinated of the item in the memory.</p>
+
+<p>Now to calculate <code class="language-plaintext highlighter-rouge">$v_{x1,y1,x2,y2}$</code>, which is the area located with the top-left corner at <code class="language-plaintext highlighter-rouge">$(x_1, y_1)$</code> and the bottom-right corner at <code class="language-plaintext highlighter-rouge">$(x_2, y_2)$</code>, we can simply use the pre-computed sum table as follows 
+<code class="language-plaintext highlighter-rouge">$v_{x1,y1,x2,y2} = I_{x2,y2} + I_{x1,y1} - I_{x2,y1} - I_{x1,y2}$</code>.</p>
+
+<p>See the sketch below for a sample case where <code class="language-plaintext highlighter-rouge">$(x_1,y_1)=(0,0)$</code> and <code class="language-plaintext highlighter-rouge">$(x_2,y_2)= (1,1)$</code></p>
+
+<p><img src="/images/aa-sum.PNG" alt="" /></p>
+
+<p>To obtain the mean of an area, all you have to do is to divide <code class="language-plaintext highlighter-rouge">$v_{x1,y1,x2,y2}$</code> by the number of elements in the area. The standard deviation of an area can be calculated in a similar manner but with a slightly different equation.</p>
+
+<h2 id="results">Results</h2>
+
+<p>The authors mainly experiment with two NLP tasks: Machine Translation and Image Captioning.</p>
+
+<h3 id="machine-translation">Machine Translation</h3>
+<p>Experiments were done on the WMT’14 English-German and English-French datasets.</p>
+<h4 id="token-level-nmt">Token-level NMT</h4>
+<p><strong>Transformer</strong> : Using 4 configurations of the transformer (Tiny, Small, Base and Big)</p>
+
+<p><img src="/images/transformer-aa.PNG" alt="" /></p>
+
+<p><strong>LSTM</strong> : 2-layer LSTM is used for encoder and decoder. <a href="https://arxiv.org/abs/1508.04025">Luong</a> dot product attention is used.</p>
+
+<p><img src="/images/lstm-aa.PNG" alt="" /></p>
+
+<h4 id="chacracter-level-nmt">Chacracter-level NMT</h4>
+<p>I won’t show the results here. But you can view them in the paper.</p>
+
+<h3 id="image-captioning">Image captioning</h3>
+<p>Experiments were done on the COCO dataset. The model implemented follows <a href="https://aclweb.org/anthology/P18-1238">Sharman et al., 2018</a> employing both a pre-trained Inception-ResNet and a Transformer for Encoding the image and another Transfromer for decoding the caption text. See the figure below.</p>
+
+<p><img src="/images/sharman.PNG" alt="" /></p>
+
+<p><img src="/images/ic-aa.PNG" alt="" /></p>
+
+<h2 id="comments-on-the-results">Comments on the results</h2>
+
+<ul>
+  <li>
+    <p>For MT, we notice that improvements are on avreage by ~1 BLEU score points especially on the Base and Big Transformer configurations. This is one of the main reasons the reviewers were not convinced of the significance of the area attention proposed as BLEU score has high variance nature.</p>
+  </li>
+  <li>
+    <p>On the LSTM token-level NMT, the improvement are on average even less than 1 BLEU point. In some cases like the 512 cells, improvement is merely 0.13 BLEU points which is indeed insignificant.</p>
+  </li>
+  <li>
+    <p>For Image Caption, the same as before applies and in some cases such as Cells=512 and Head= 4, Area Attention causes performance to become even worse.</p>
+  </li>
+</ul>
+
+<p>In the end, although the idea of computing attention on multiple granularity levels is somehow novel and interesting, the experiments shown in the paper don’t really reflect the significance of the approach on improving the performance of MT and IC. However, this idea may turn out to be useful in other tasks and other settings.</p>
+
+:ET

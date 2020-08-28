@@ -1,0 +1,782 @@
+I"_�<blockquote>
+  <p>In this post we will attempt at the interesting classification problem : Predicting a movie genre from only its title. It would be very interesting to be able to make such prediction. It can be used to cluster movies based on genre. Plus it’s a great way to explore various classification problems and the very famous word embeddings as well.</p>
+</blockquote>
+
+<!--more-->
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">numpy</span><span class="p">,</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'movies.csv'</span><span class="p">,</span><span class="n">quotechar</span><span class="o">=</span><span class="s">'"'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movieId</th>
+      <th>title</th>
+      <th>genres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Toy Story (1995)</td>
+      <td>Adventure|Animation|Children|Comedy|Fantasy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Jumanji (1995)</td>
+      <td>Adventure|Children|Fantasy</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Grumpier Old Men (1995)</td>
+      <td>Comedy|Romance</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Waiting to Exhale (1995)</td>
+      <td>Comedy|Drama|Romance</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Father of the Bride Part II (1995)</td>
+      <td>Comedy</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="preprocessing-data">Preprocessing data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1"># drop non ascii titles
+</span><span class="k">def</span> <span class="nf">is_ascii</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">128</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="ow">not</span> <span class="n">is_ascii</span><span class="p">(</span><span class="n">t</span><span class="p">))].</span><span class="n">index</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="processing-title">Processing title</h3>
+<p>We strip away numbers, parenthesis… etc</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">re</span>
+<span class="k">def</span> <span class="nf">process_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span> 
+    <span class="c1"># strip away numbers and parenthesis
+</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'('</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">')'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'\d+'</span><span class="p">,</span><span class="s">''</span><span class="p">,</span><span class="n">title</span><span class="p">)</span>
+    <span class="c1"># strip away "part" word
+</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'[Pp]art'</span><span class="p">,</span><span class="s">''</span><span class="p">,</span><span class="n">title</span><span class="p">)</span>
+    <span class="c1">#strip II and III and IV
+</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'II'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'III'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'IV'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">title</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">process_title</span><span class="p">)</span> 
+<span class="c1">#drop empty titles
+</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span><span class="s">''</span><span class="p">].</span><span class="n">index</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="converting-to-binary-classification">Converting to binary classification</h3>
+<p>This is a multilabel classification problem, we will convert it to set of binary classification problems</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1"># drop movies with no genres
+</span><span class="n">data</span><span class="p">[</span><span class="s">'genres'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'genres'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">gs</span><span class="p">:</span><span class="n">gs</span><span class="p">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1"># get all genres
+</span><span class="n">genres</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">gs</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">'genres'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'|'</span><span class="p">):</span>
+    <span class="n">genres</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span>
+<span class="n">genres</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'(no genres listed)'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'genres'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">gs</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">gs</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'|'</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movieId</th>
+      <th>title</th>
+      <th>genres</th>
+      <th>sci-fi</th>
+      <th>horror</th>
+      <th>fantasy</th>
+      <th>adventure</th>
+      <th>western</th>
+      <th>musical</th>
+      <th>children</th>
+      <th>...</th>
+      <th>romance</th>
+      <th>film-noir</th>
+      <th>crime</th>
+      <th>drama</th>
+      <th>animation</th>
+      <th>action</th>
+      <th>comedy</th>
+      <th>documentary</th>
+      <th>war</th>
+      <th>imax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Toy Story</td>
+      <td>adventure|animation|children|comedy|fantasy</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Jumanji</td>
+      <td>adventure|children|fantasy</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Grumpier Old Men</td>
+      <td>comedy|romance</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Waiting to Exhale</td>
+      <td>comedy|drama|romance</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Father of the Bride</td>
+      <td>comedy</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div>
+
+<h4 id="converting-to-lower-case">Converting to lower case</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="checking-class-distribution">Checking class distribution</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s">'movieId'</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">#sorting genres by frequency occurence
+</span><span class="n">g_sorted_freq</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+
+<span class="c1"># dropping the 6 least common genres
+</span><span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">g_sorted_freq</span><span class="p">[:</span><span class="mi">6</span><span class="p">]:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">genres</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c1"># checking classes distribution
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'portion of positive examples'</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">genres</span><span class="p">)].</span><span class="n">mean</span><span class="p">().</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="https://github.com/mohammadKhalifa/mohammadkhalifa.github.io/blob/master/_posts/genre-predicting-imgs/1.png" alt="class distribution" /></p>
+
+<p>We can see we have very imbalanced data with less than 10% positive examples in about 6 classes.
+We will have to deal with this to be able to evaluate or models correctly</p>
+
+<h3 id="creating-balanced-dataset-for-each-genre-by-means-of-undersampling">creating balanced dataset for each genre by means of undersampling</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="n">balanced_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">positive_examples</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">negative_examples</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">].</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">positive_examples</span><span class="p">.</span><span class="n">index</span><span class="p">))</span>
+    <span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="o">=</span> <span class="n">positive_examples</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">negative_examples</span><span class="p">)</span>
+    
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="treating-it-as-text-classification-using-naive-bayes">Treating it as text classification using Naive Bayes</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">RegexpTokenizer</span><span class="p">(</span><span class="s">r'\w+'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">learn_counts</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">cnt_word_given_class</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span> <span class="p">:</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">train</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">target</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'title'</span><span class="p">]):</span>
+            <span class="n">cnt_word_given_class</span><span class="p">[</span><span class="n">word</span><span class="p">][</span><span class="n">row</span><span class="p">[</span><span class="n">target</span><span class="p">]]</span><span class="o">+=</span><span class="mf">1.0</span>
+    <span class="n">cnt_classes</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">].</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">}</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnt_word_given_class</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">classes</span><span class="p">,</span> <span class="n">cnt_classes</span><span class="p">,</span> <span class="n">cnt_word_given_class</span><span class="p">,</span> <span class="n">V</span> 
+
+<span class="k">def</span> <span class="nf">get_class_prob_given_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">cnt_w_c</span><span class="p">,</span> <span class="n">cnt_c</span><span class="p">,</span><span class="n">classes</span><span class="p">,</span><span class="n">K</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">K</span> <span class="o">+</span> <span class="n">cnt_w_c</span><span class="p">[</span><span class="n">word</span><span class="p">][</span><span class="n">c</span><span class="p">])</span>  <span class="o">/</span> <span class="p">(</span><span class="n">cnt_c</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">K</span><span class="o">*</span><span class="n">V</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">}</span> 
+
+<span class="k">def</span> <span class="nf">get_text_class</span> <span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">cnt_w_c</span><span class="p">,</span> <span class="n">cnt_c</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">K</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">probs</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="n">word_probs</span> <span class="o">=</span> <span class="n">get_class_prob_given_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">cnt_w_c</span><span class="p">,</span><span class="n">cnt_c</span><span class="p">,</span><span class="n">classes</span><span class="p">,</span><span class="n">K</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">:</span>
+                <span class="n">probs</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="n">math</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">word_probs</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">probs</span><span class="p">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">probs</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="n">f1_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">train</span><span class="p">,</span><span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">],</span><span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">classes</span><span class="p">,</span><span class="n">cnt_c</span><span class="p">,</span><span class="n">cnt_w_c</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">learn_counts</span><span class="p">(</span><span class="n">train</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">get_text_class</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cnt_w_c</span><span class="p">,</span><span class="n">cnt_c</span><span class="p">,</span> <span class="n">V</span><span class="p">))</span>
+    <span class="n">f1_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="n">test</span><span class="p">[</span><span class="n">g</span><span class="p">]))</span>
+    <span class="k">print</span> <span class="s">'for genre %s , f1 score is %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f1_scores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="k">print</span> <span class="s">'average f1 score over all genres : %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>for genre sci-fi , f1 score is 0.71
+for genre horror , f1 score is 0.70
+for genre fantasy , f1 score is 0.66
+for genre adventure , f1 score is 0.67
+for genre thriller , f1 score is 0.56
+for genre mystery , f1 score is 0.64
+for genre romance , f1 score is 0.61
+for genre crime , f1 score is 0.62
+for genre drama , f1 score is 0.50
+for genre action , f1 score is 0.64
+for genre comedy , f1 score is 0.58
+for genre documentary , f1 score is 0.67
+for genre war , f1 score is 0.65
+average f1 score : 0.63
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="classification-using-word-embeddings">Classification using word embeddings</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># glove word embeddings
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">embeddings</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'glove.6B/glove.6B.50d.txt'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">embeddings</span><span class="p">[</span><span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1"># transform text (a title) to an embedding by averaging word embeddings
+</span>
+
+<span class="k">def</span> <span class="nf">get_mean_embeddings</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span><span class="n">embeddings</span><span class="p">):</span>
+    <span class="n">means</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings</span><span class="p">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span> <span class="p">:</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+        <span class="n">means</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">([</span><span class="n">embeddings</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">embeddings</span> <span class="k">else</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">means</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">get_mean_embeddings</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span><span class="n">embeddings</span><span class="p">):</span>
+    <span class="n">dim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings</span><span class="p">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span>
+                <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">([</span><span class="n">embeddings</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+                         <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">embeddings</span><span class="p">]</span> <span class="ow">or</span>
+                        <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dim</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span>
+            <span class="p">])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="trying-out-different-models--svm--logistic-regression-knn-random-forests">Trying out different models  (SVM , Logistic Regression, KNN, Random Forests)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">sklearn.svm</span> <span class="k">as</span> <span class="n">svm</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">'rbf'</span><span class="p">)</span>
+<span class="n">f1_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">genre_data</span> <span class="o">=</span> <span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+    <span class="n">train</span><span class="p">,</span><span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">genre_data</span><span class="p">,</span><span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">train_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">test_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature_matrix</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">g</span><span class="p">])</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature_matrix</span><span class="p">)</span>
+    <span class="n">f1_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">g</span><span class="p">],</span><span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s">'for "%s" , f1 score = %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">f1_scores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="k">print</span> <span class="s">'average f1 score over all genres : %.2f '</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>for "sci-fi" , f1 score = 0.70
+for "horror" , f1 score = 0.68
+for "fantasy" , f1 score = 0.62
+for "adventure" , f1 score = 0.66
+for "thriller" , f1 score = 0.63
+for "mystery" , f1 score = 0.58
+for "romance" , f1 score = 0.62
+for "crime" , f1 score = 0.56
+for "drama" , f1 score = 0.59
+for "action" , f1 score = 0.67
+for "comedy" , f1 score = 0.62
+for "documentary" , f1 score = 0.64
+for "war" , f1 score = 0.65
+average f1 score over all genres : 0.63 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">genre_data</span> <span class="o">=</span> <span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+    <span class="n">train</span><span class="p">,</span><span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">genre_data</span><span class="p">,</span><span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">train_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">test_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature_matrix</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">g</span><span class="p">])</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature_matrix</span><span class="p">)</span>
+    <span class="n">f1_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">g</span><span class="p">],</span><span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s">'for "%s" , f1 score = %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">f1_scores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="k">print</span> <span class="s">'average f1 score over all genres : %.2f '</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>for "sci-fi" , f1 score = 0.66
+for "horror" , f1 score = 0.68
+for "fantasy" , f1 score = 0.62
+for "adventure" , f1 score = 0.65
+for "thriller" , f1 score = 0.62
+for "mystery" , f1 score = 0.57
+for "romance" , f1 score = 0.60
+for "crime" , f1 score = 0.59
+for "drama" , f1 score = 0.57
+for "action" , f1 score = 0.66
+for "comedy" , f1 score = 0.61
+for "documentary" , f1 score = 0.62
+for "war" , f1 score = 0.66
+average f1 score over all genres : 0.60 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">sklearn.neighbors</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">sklearn</span><span class="p">.</span><span class="n">neighbors</span><span class="p">.</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">genre_data</span> <span class="o">=</span> <span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+    <span class="n">train</span><span class="p">,</span><span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">genre_data</span><span class="p">,</span><span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">train_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">test_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature_matrix</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">g</span><span class="p">])</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature_matrix</span><span class="p">)</span>
+    <span class="n">f1_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">g</span><span class="p">],</span><span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s">'for "%s" , f1 score = %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">f1_scores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="k">print</span> <span class="s">'average f1 score over all genres : %.2f '</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>for "sci-fi" , f1 score = 0.65
+for "horror" , f1 score = 0.68
+for "fantasy" , f1 score = 0.63
+for "adventure" , f1 score = 0.64
+for "thriller" , f1 score = 0.52
+for "mystery" , f1 score = 0.55
+for "romance" , f1 score = 0.54
+for "crime" , f1 score = 0.48
+for "drama" , f1 score = 0.48
+for "action" , f1 score = 0.59
+for "comedy" , f1 score = 0.56
+for "documentary" , f1 score = 0.63
+for "war" , f1 score = 0.59
+average f1 score over all genres : 0.61 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">:</span>
+    <span class="n">genre_data</span> <span class="o">=</span> <span class="n">balanced_data</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+    <span class="n">train</span><span class="p">,</span><span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">genre_data</span><span class="p">,</span><span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">train_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">test_feature_matrix</span> <span class="o">=</span> <span class="n">get_mean_embeddings</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature_matrix</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">g</span><span class="p">])</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature_matrix</span><span class="p">)</span>
+    <span class="n">f1_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">g</span><span class="p">],</span><span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s">'for "%s" , f1 score = %.2f'</span> <span class="o">%</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">f1_scores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="k">print</span> <span class="s">'average f1 score over all genres : %.2f '</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>for "sci-fi" , f1 score = 0.63
+for "horror" , f1 score = 0.64
+for "fantasy" , f1 score = 0.61
+for "adventure" , f1 score = 0.60
+for "thriller" , f1 score = 0.58
+for "mystery" , f1 score = 0.53
+for "romance" , f1 score = 0.54
+for "crime" , f1 score = 0.57
+for "drama" , f1 score = 0.54
+for "action" , f1 score = 0.64
+for "comedy" , f1 score = 0.58
+for "documentary" , f1 score = 0.59
+for "war" , f1 score = 0.65
+average f1 score over all genres : 0.59 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Ok. This was an attempt to predict movies genres using titles only. At first we explored Naive Bayes. Then we introduced word embeddings where we used glove word embeddings to obtain an embedding for the whole title by averaging word embeddings of the constituent words title word embeddings. We used an SVM with RBF as kernel, Logistic regression model, KNN, and Random Forests.</p>
+
+<p>We can see that best models on average for all genres are Naive Bayes, SVM and Logistic Regression.
+However these model may vary on individual genres.</p>
+
+<p>We also saw how to deal with imbalanced data by performing undersampling.</p>
+
+:ET

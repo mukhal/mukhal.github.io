@@ -1,0 +1,4 @@
+I"`<blockquote>
+  <p>I have recently came across a very interesting paper named <a href="https://arxiv.org/abs/1901.10430"><strong>Pay Less Attention with Lightweight and Dynamic Convolutions</strong></a>. The prime motivation of the paper is that <a href="https://arxiv.org/abs/1706.03762">Self-attention</a> models suffer from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.</p>
+</blockquote>
+:ET

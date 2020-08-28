@@ -1,121 +1,22 @@
-#
-# This file contains configuration flags to customize your site
-#
-
-# Name of your site (displayed in the header)
-name: Muhammad Khalifa
-title: Khalifa's NLP Blog
-SEOTitle: Khalifa's Blog
-
-# Short bio or description (displayed in the header)
-description: NLP ideas, techniques and tutorials
-header-img: img/home-bg.jpg
-
-avatar: https://avatars3.githubusercontent.com/u/5109053?v=4&s=460
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: skyypolt@gmail.com
-  facebook:
-  flickr:
-  github: mohammadkhalifa
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: 
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: Muhammad-Khalifa
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-# Publish posts or collection documents with a future date.
-#future: true
-
-# SNS settings
-RSS: false
-github_username: mohammadKhalifa
-
+title: Khalifa's Blog
+name: "Khalifa's ML/NLP Blog"
+author: Muhammad Khalifa
+twitter_username: mkhalifaaaa
+baseurl: "/"
+description: Recording some sparse bits on knowledge.
+profile_url: "http://mohammadkhalifa.github.io/"
 
 # Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-# If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-# make sure you have this gem installed
-# `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+exclude:
+  - Gemfile
+  - Gemfile.lock
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
-
-
-
-# Disqus settings
-disqus_username: muhammadkhalifa
-
-# Netease settings
-netease_comment: false
-
-
-
-# Analytics settings
-# Baidu Analytics 
-# ba_track_id: [your track id]
-
-# Google Analytics
-
-# Sidebar settings
-#sidebar: true                           # whether or not using Sidebar.
-#sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-#sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
-
-# MathJax rendering for layout:page (e.g. post preview)
-page-mathjax: false
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge

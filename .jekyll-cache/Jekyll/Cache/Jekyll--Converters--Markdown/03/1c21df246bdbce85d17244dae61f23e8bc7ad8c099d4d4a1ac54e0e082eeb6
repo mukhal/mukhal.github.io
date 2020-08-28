@@ -1,0 +1,88 @@
+I"q5<blockquote>
+  <p>Natural Language Processing (NLP) has recently witnessed dramatic progress with state-of-the-art results being published every few days. Leaderboard madness is diriving the most common NLP benchmarks such as GLUE and SUPERGLUE with scores that are getting closer and closer to human-level performance. Most of these results are driven by transfer learning from large scale datasets through super large (Billions of parameters) models. My aim in this article is to point out the issues and challenges facing transfer learning and point out some possible solutions to such problems.</p>
+</blockquote>
+
+<!--more-->
+<h3 id="computational-intensity">Computational Intensity</h3>
+
+<p>The most successful form of <strong>Transfer Learning</strong> in NLP today is <strong>Sequential Transfer Learning (STL)</strong>, which is typically employed in the form of <a href="https://arxiv.org/abs/1801.06146">Language Modeling Pre-training</a>. Almost all SOTA results achieved recently have been mainly driven by a two-step scheme:</p>
+<ol>
+  <li><strong>Pre-train</strong> a monster model for Language Modeling on a large general-purpose corpus (The more data the better).</li>
+  <li><strong>Finetune</strong> the whole model (or a subset thereof) on the target task.</li>
+</ol>
+
+<p><a href="https://arxiv.org/abs/1802.05365">ELMO</a>, <a href="https://arxiv.org/abs/1810.04805">BERT</a>, <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">GPT</a>, <a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a>, <a href="https://arxiv.org/abs/1906.08237">XLNET</a> and <a href="https://arxiv.org/abs/1907.11692">RoBERTa</a> are all instances of the same technique. One major problem with these methods is the tremendous resource craveness. What I mean by resources is both <em>data</em> and <em>compute power</em>. For instance, it has been estimated that it costs around <a href="https://twitter.com/eturner303/status/1143174828804857856">$250,000</a> to train XLNET on 512 TPU v3 chips with only 1-2% gain over BERT in 3/4 datasets.</p>
+
+<p>This takes us to the next issue:</p>
+
+<h3 id="difficult-reproducibility">Difficult Reproducibility</h3>
+<p>Reproducibility is a already becoming a problem in machine learning research. For example, <a href="https://arxiv.org/pdf/1907.06902">Dacrema et al.)</a> analyzed 18 different proposed Neural-based Recommendation Systems and <em>found that only 7 of them were reproducible with reasonable effort</em>. Generally speaking, to be able to use or build upon a particular research idea, it’s imperative for that idea to be easily reproducible. With the substantial computational resources needed to train these huge NLP models and reproduce their results, small tech companies, startups, research labs and independent researchers will not be able to compete.</p>
+
+<h3 id="task-leaderboards-are-no-longer-enough">Task Leaderboards Are No Longer Enough</h3>
+<p>Anna Rogers argues in her <a href="https://hackingsemantics.xyz/2019/leaderboards/?utm_campaign=NLP%20News&amp;utm_medium=email&amp;utm_source=Revue%20newsletter">blog post</a> why <code class="language-plaintext highlighter-rouge">more data &amp; compute = SOTA</code> is NOT research news. She argues that the main problem with leaderboards is that the rank of a model is totally dependent on its task score with no consideration given to the amount of data, compute or training time needed to achieve that score.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here&#39;s a summary post on problems with huge models that dominate <a href="https://twitter.com/hashtag/NLProc?src=hash&amp;ref_src=twsrc%5Etfw">#NLProc</a> these days. I put together several different discussion threads with/by <a href="https://twitter.com/yoavgo?ref_src=twsrc%5Etfw">@yoavgo</a>, <a href="https://twitter.com/jaseweston?ref_src=twsrc%5Etfw">@jaseweston</a>, <a href="https://twitter.com/sleepinyourhat?ref_src=twsrc%5Etfw">@sleepinyourhat</a>, <a href="https://twitter.com/bkbrd?ref_src=twsrc%5Etfw">@bkbrd</a>, <a href="https://twitter.com/alex_conneau?ref_src=twsrc%5Etfw">@alex_conneau</a>, <a href="https://twitter.com/SeeTedTalk?ref_src=twsrc%5Etfw">@SeeTedTalk</a>. <a href="https://t.co/MokmmEYx91">https://t.co/MokmmEYx91</a></p>&mdash; Anna Rogers (@annargrs) <a href="https://twitter.com/annargrs/status/1152194347942731776?ref_src=twsrc%5Etfw">July 19, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I suggest you check the above thread for various comments on the problem.  Rohit Pgarg suggests comparing the performance of models on a two-dimensional scale of both task accuracy and computational resource. See the plot below. I suggest we add another dimension that corresponds to the amount of data the model has been trained on. However, this visualization will not provide an insight into which model is generally better. Also there’s a very interesting comment by Alexandr Savinov where he suggests to use how much of input information the algorithm is able to “pack” to one unit of output (model parameter) representation for one unit of CPU time.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/images/scatter-tl.png" width="700" height="400" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Using Computational Resource as an additional metric to task accuracy in comparing models performance</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="it-is-not-like-how-we-learn">It is not like How We Learn</h3>
+<p>Children learn language through noisy, ambiguous input and minimal supervision. A child can start to pick up the meaning of a word from just a few exposures to that word. This is very unlike the pretraining step used in STL settings where a model need to see millions of contexts including a specific word to grasp the meaning of the word. There is a very important question of whether it is possible to learn semantics from raw text only without any external supervision. If you’re interested in a twitter debate on this topic see this <a href="https://twitter.com/jacobandreas/status/1023246560082063366">thread</a>. If the answer is no, that means that pre-training these models does not actually give them true language understanding. While it’s true that we use transfer learning in our everyday life. For instance, if we know how to drive a manual car, it becomes very easy for us to utilize the acquired knowledge (such as of using the brakes and the gas pedal) to the task of driving an automatic car. But is that the path that we humans take towards language learning? Not likely. One might argue, however, that as long as an approach produces good results, whether it is similar or not to how humans learn does not actually matter. Unfortunately, some of the good results produced by these models are questionable as we will see in the next section.</p>
+
+<p>From another perspective, humans assume a continual (lifelong) learning path towards language learning. Whenever we learn a new task, this learning usually does not interfere with previously learned tasks. On the other hand, the prevalent machine learning models (including transfer learning approaches) that are only trained on a single task usually fail to make use of previously aquired knowledge when the distrubtion of the new training data shifts— a phenomenon known as <em>catastrophic forgetting</em> <a href="https://www.sciencedirect.com/science/article/pii/S0079742108605368">(McCloskey et al., 1989)</a>, <a href="https://arxiv.org/pdf/1906.01076v1.pdf">(d’Autume et al., 2019)</a>.</p>
+
+<h3 id="shallow-language-understanding">Shallow Language Understanding</h3>
+<p>The language modeling task is indeed a complex task. Take for instance the sentence: “The man in the red shirt is running fast. He must be…” In order for the model to complete that sentence, the model has to understand what running fast usually implies i.e being in a hurry.
+So how deep do these pretrained models actually understand language? Unfortunately, not so much. <a href="https://www.aclweb.org/anthology/P19-1459">Niven et al., 2019</a> analyze the performance of BERT on the Argument Reasoning and Comprehension task (ARCT) <a href="https://arxiv.org/abs/1708.01425">(Habernal et al., 2018)</a>. ARCT  can be described as follows: Given a Claim $C$ and a Reason $R$, the task is to select the correct Warrant $W$ over another distractor, the alternative warrant $A$. The correct warrant satisfies $R \land C \rightarrow W$ while the alternative warrant satisfies $R \land C \rightarrow \neg A $. See the figure below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/images/arct.PNG" width="450" height="350" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Sample of the Argument Reasoning and Comprehension Task. Source: <a href="https://www.aclweb.org/anthology/P19-1459">(Niven et al., 2019)</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Remarkably, BERT achieves a very competitive accuracy of 77% on this task, which is only 3 points below the human baseline. At first, this would suggest that BERT has a quite strong reasoning ability. To investigate further, <a href="https://www.aclweb.org/anthology/P19-1459">Niven et al., 2019</a> employed what is known as “probing”. That is, they finetuned BERT on this task, yet the input to BERT was only both the correct and the alternative warrants without exposing it to either the claim or the reason. The hypothesis is that if BERT relies on some statistical cues in the warrants, it should still perfom well even if it has only seen the warrants without any other information. Interestingly, their results show only a drop of 6% in accuracy over using both Reason and Claim. This suggests that BERT is not actually performing any type of reasoning but that the warrants themselves have sufficient cues for BERT to be able to reach such high accuracy. Remarkably, by replacing the test set with an adversarial one that is free of these cues the BERT relies on, BERT was only able to achieve an accuracy of 53%, which is just above random chance.</p>
+
+<p>Another related paper is <a href="https://arxiv.org/pdf/1905.07830.pdf">(Zellers et al., 2019)</a> titled “Can a Machine Really Finish your Sentence?”. They consider the task of Commonsense Natural Language Inference where a machine should select the most likely follow up to given sentence. For instance,given the sentence: “The team played so well”, the system should select “They won the game” as a follow up. The authors argue that altough BERT was able to achieve almost 86% accuracy (only 2 points below human-baseline), such high accuracy is not due high-level form of reasoning on BERT’s side but due to BERT learning to pick up on dataset-specific distributional biases. They showed that by creating a more difficult dataset (HellaSwag) by means of <strong>Adversarial Filtering</strong> (which is a technique that aims to produce an adversarial dataset for any possible train, test split), BERT accuracy dropped to as low as 53%. The paper discusses the subtle distinction between <strong>Dataset Performance</strong> and <strong>Task Performance</strong>. Performing very well on a dataset for a specific task by no means indicates solving the underlying task.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/images/hellaswag.PNG" width="550" height="350" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Performance of BERT on SWAG compare to HellaSwag. Source: <a href="https://arxiv.org/pdf/1905.07830.pdf">(Zellers et al., 2019)</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Clearly, there is something going on here. Is it possible that BERT’s good results are actually driven by its ability to hijack the target datasets by leveraging various distributinoal cues and biases? Can more investigation into BERT’s results lead to other similar findings and conclusions? If so, then I believe we will not only need to build better models, but also better datasets. We need to have datsets that can actually reflect the difficuly of the underlying task rather than make it easy for the model to achieve deceiving accuracies and leaderboard scores.</p>
+
+<h3 id="high-carbon-footprint">High Carbon Footprint</h3>
+<p>Believe it or not, but training these grandiose models has a negative effect on the environment. <a href="https://arxiv.org/pdf/1906.02243.pdf">Strubell et al.</a> compare the estimated $CO_2$ emissions from training Big Transformer architecture to emissions caused by other $CO_2$ sources. Suprisingly, training a single Transformer arhcitectue with neural architecture search emits approximately 6.0x the amount of $CO_2$ emitted through the lifetime of a car.
+<img src="/images/carbon-footprint.PNG" width="400" height="300" /></p>
+
+<p><a href="https://arxiv.org/pdf/1907.10597">Schwartz et al.</a> introduce what they call <em>Green AI</em>, which is the practice of making AI both more <em>efficient</em> and <em>inclusive</em>. Similar to what we discussed above, they strongly suggest adding efficiency as another metric alongside task accuracy. They also believe it’s necessary for research papers to include the “price tag” or the cost  of model training. This should encourage the research towards more efficient and less resource-demanding model architectures.</p>
+:ET

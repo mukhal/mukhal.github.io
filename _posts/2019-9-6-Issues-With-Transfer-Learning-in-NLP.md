@@ -10,7 +10,7 @@ published: true
 > Natural Language Processing (NLP) has recently witnessed dramatic progress with state-of-the-art results being published every few days. Leaderboard madness is diriving the most common NLP benchmarks such as GLUE and SUPERGLUE with scores that are getting closer and closer to human-level performance. Most of these results are driven by transfer learning from large scale datasets through super large (Billions of parameters) models. My aim in this article is to point out the issues and challenges facing transfer learning and point out some possible solutions to such problems.
 
 
-
+<!--more-->
 ### Computational Intensity
 
 The most successful form of **Transfer Learning** in NLP today is **Sequential Transfer Learning (STL)**, which is typically employed in the form of [Language Modeling Pre-training](https://arxiv.org/abs/1801.06146). Almost all SOTA results achieved recently have been mainly driven by a two-step scheme: 
