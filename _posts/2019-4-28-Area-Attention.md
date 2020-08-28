@@ -5,6 +5,7 @@ author: Muhammad Khalifa
 comments: true
 ---
 
+> Discussion of a recent pre-print using a variant of attention called Area Attention: Instead of considereing single entities for attention, why don't we consider an aggregate of an area of adjacent items. *(The paper was rejected in ICLR 2019, but I thought the idea is worth exploring nonetheless)*
 
 
 

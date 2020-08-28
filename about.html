@@ -7,8 +7,8 @@ permalink: /about/
 
 
 <div class="en post-container">
-    {% capture about_en %}{% include about/en.md %}{% endcapture %}
-    {{ about_en | markdownify }}
+    {% capture bio %}{% include about/bio.html %}{% endcapture %}
+    {{ bio }}
 </div>
 
 
