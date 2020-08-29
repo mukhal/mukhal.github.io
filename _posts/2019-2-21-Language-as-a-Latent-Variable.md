@@ -19,27 +19,27 @@ The main idea of the paper is that an autoencoder that takes a sentence as input
 
 
 
-`$$
+$$
 \begin{equation}
     L(\theta, \phi) = -\mathbb{E}_{z \sim q_{\phi}}[log p_{\theta}(x|z)] + KL (q_{\phi}(z|x) || p(z))
 \end{equation}
-$$`
+$$
 
-Where `$\theta$` are the decoder parameters and `$\phi$` are the encoder parameters. Note that this loss is the negative of what is known as the variational lower bound of the model. It can be proven that maximizing the lowerbound is equivalent to minimizing the KL Divergence between the true posterior `$p(z|x)$` and the approximate posterior `$q(z|x)$`. Check out [this](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/) amazing post to understand more. In the paper we discuss, the compressed form of the sentence is treated as the latent variable (hence the name of the paper), which is then used to reconstruct the original sentence again. 
+Where $\theta$ are the decoder parameters and $\phi$ are the encoder parameters. Note that this loss is the negative of what is known as the variational lower bound of the model. It can be proven that maximizing the lowerbound is equivalent to minimizing the KL Divergence between the true posterior $p(z|x)$ and the approximate posterior $q(z|x)$. Check out [this](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/) amazing post to understand more. In the paper we discuss, the compressed form of the sentence is treated as the latent variable (hence the name of the paper), which is then used to reconstruct the original sentence again. 
 
 
 ![Autoencoder Sentence Compression Model](/images/asc-model.png)
 
 #### Compression model
- Back to our language generation setting, the encoder is a bi-LSTM encoding the input sentence. Following that, another [pointer network](https://arxiv.org/abs/1506.03134) attends over the encoder states to produce the compressed input sentence. These two networks form the compression model  `$q_{\phi}(c|s)$`
+ Back to our language generation setting, the encoder is a bi-LSTM encoding the input sentence. Following that, another [pointer network](https://arxiv.org/abs/1506.03134) attends over the encoder states to produce the compressed input sentence. These two networks form the compression model  $q_{\phi}(c|s)$
 
 #### Reconstruction model
- This includes the compressor and the decoder together outputting the reconstructed sentence with probability `$p_{\theta}(s|c)$`. The reconstruction occurs as follows: the compressor LSTM encodes the compressed sample. Then, the decoder LSTM attends to the compressor hidden states to output the reconstructed sentence
+ This includes the compressor and the decoder together outputting the reconstructed sentence with probability $p_{\theta}(s|c)$. The reconstruction occurs as follows: the compressor LSTM encodes the compressed sample. Then, the decoder LSTM attends to the compressor hidden states to output the reconstructed sentence
 
 
 #### Unsupervised Model Training
 
-* **Reconstruction model** : Decoder parameters `$\theta$` are updated directly with gradient ascent.
+* **Reconstruction model** : Decoder parameters $\theta$ are updated directly with gradient ascent.
 
 $$
 \begin{equation}
@@ -64,7 +64,7 @@ $$
 l(s,c) = log p_{\theta}(s|c) - \lambda (log q_{\phi}(c|s) - log p(c))
 $$
 
-where $\lambda$ is a hyperparameter used to control the weight of the KL divergence on the objective function. During experiments, $\lambda$ was set to 0.1 to reduce the effect of the compression since the pretrained-language model`$p(c)$` tends to prefer shorter sentences. If compressed sentences are very short, this will force the decoder to rely on its own outputs rather than the output from the compressor.
+where $\lambda$ is a hyperparameter used to control the weight of the KL divergence on the objective function. During experiments, $\lambda$ was set to 0.1 to reduce the effect of the compression since the pretrained-language model$p(c)$ tends to prefer shorter sentences. If compressed sentences are very short, this will force the decoder to rely on its own outputs rather than the output from the compressor.
 
 Then the compression model parameters are updated with:
 

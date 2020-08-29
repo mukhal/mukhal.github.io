@@ -38,19 +38,19 @@ Almost all previous uses of attention have considered attending to single entiti
 Features are combined by means of a single-layer perceptron followed by a linear transformation.
 
 
-**Faster Computation with Summed Area Table** : To compute the area atttention with maximum value `$A$` for a memory of size `$M$`, we need `$O(|M| A^2)$` steps. This becomes obvious when you understand that to compute the area attention of maxium size $A$ you will need `$A+ (A-1) + (A-2) + .. + 1$ = $A(A+1) / 2 = O(A^2)$` steps. To overcome such expensive computations, the authors propose to use a pre-computed summed area table that is calculated only once, then it's used to compute the area attention in a constant time.
+**Faster Computation with Summed Area Table** : To compute the area atttention with maximum value $A$ for a memory of size $M$, we need $O(|M| A^2)$ steps. This becomes obvious when you understand that to compute the area attention of maxium size $A$ you will need $A+ (A-1) + (A-2) + .. + 1$ = $A(A+1) / 2 = O(A^2)$ steps. To overcome such expensive computations, the authors propose to use a pre-computed summed area table that is calculated only once, then it's used to compute the area attention in a constant time.
 
-Letting `$I_{x,y} = v_{x,y} + I_{x,y-1} + I_{x-1,y}$`
-where `$x$` and `$y$` are the coordinated of the item in the memory.
+Letting $I_{x,y} = v_{x,y} + I_{x,y-1} + I_{x-1,y}$
+where $x$ and $y$ are the coordinated of the item in the memory.
 
-Now to calculate `$v_{x1,y1,x2,y2}$`, which is the area located with the top-left corner at `$(x_1, y_1)$` and the bottom-right corner at `$(x_2, y_2)$`, we can simply use the pre-computed sum table as follows 
-`$v_{x1,y1,x2,y2} = I_{x2,y2} + I_{x1,y1} - I_{x2,y1} - I_{x1,y2}$`.
+Now to calculate $v_{x1,y1,x2,y2}$, which is the area located with the top-left corner at $(x_1, y_1)$ and the bottom-right corner at $(x_2, y_2)$, we can simply use the pre-computed sum table as follows 
+$v_{x1,y1,x2,y2} = I_{x2,y2} + I_{x1,y1} - I_{x2,y1} - I_{x1,y2}$.
 
- See the sketch below for a sample case where `$(x_1,y_1)=(0,0)$` and `$(x_2,y_2)= (1,1)$`
+ See the sketch below for a sample case where $(x_1,y_1)=(0,0)$ and $(x_2,y_2)= (1,1)$
 
  ![](/images/aa-sum.PNG)
 
- To obtain the mean of an area, all you have to do is to divide `$v_{x1,y1,x2,y2}$` by the number of elements in the area. The standard deviation of an area can be calculated in a similar manner but with a slightly different equation.
+ To obtain the mean of an area, all you have to do is to divide $v_{x1,y1,x2,y2}$ by the number of elements in the area. The standard deviation of an area can be calculated in a similar manner but with a slightly different equation.
 
 
 ## Results
