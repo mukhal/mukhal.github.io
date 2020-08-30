@@ -3,7 +3,7 @@ layout: post
 title: "Notes on Non-negative Matrix Factorization and NLP"
 author: Muhammad Khalifa
 comments: true
-published: true
+published: false
 ---
 
 
