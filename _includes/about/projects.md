@@ -24,7 +24,7 @@ Here's a list of all **research projects** I was involved in:
 
     We proposed a model that leverages Convolutional Neural Networks along with readability indices for book success predition. Unlike previous methods, our method included no count-based, lexical, or syntactic hand-crafted features. Instead, we made use of a pre-trained sentence encoder to encode the book sentences. We showed that only the first 1K sentences are good enough to predict the successability of books. Our proposed model outperformed strong baselines on this task by as large as 6.4% F1-score.
 
-* **FIRE 2019 shared Task for Irony Detection (1st place winner!). [Link](https://www.irit.fr/IDAT2019/)** *(May 2019 - July 2019)
+* **FIRE 2019 shared Task for Irony Detection (1st place winner!). [Link](https://www.irit.fr/IDAT2019/)** *(May 2019 - July 2019)*
 
 
     The dataset size was small (~1K tweets). Therefore,  we applied classical machine learning ensemble (random forest + logitic regression + MLP) on hand-crafted sentiment, and count-based features among others. We submitted 3 systems to the shared task all of which scored the top 3 places. 
