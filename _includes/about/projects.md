@@ -31,9 +31,14 @@ Here's a list of all **research projects** I was involved in:
 
 
 
+* **Arabic Diacritic restoration by character LM pre-training (Independent Project)** *(Jan 2020 - April 2020)*
 
-* Diacritic restoration by character LM pre-training.
-* Dialect to MSA translation with unsupervised word mapping.
+
+    The idea was to pre-train a transformer architecture for character-level language modeling on a large Arabic corpus (arabic wikipedia), and then fine-tune on the sequence labeling task of diacritic restoration (or **diacritization**). We would expect to get some performance boost on the diacritizatin accuracy. However, that was not the case and performance was actually the same (if not worse). My hypothesis is that pre-training task is not very related to the fine-tuning task. In other words, predicting the next character (language modeling) entails some understanding of the context, while diacritization does not require such understanding (maybe in some very specific contexts where, for example knowing that a word represent a subject enables you to diacritize the last character differently than if it was an object). Consequently, pre-training does not help here. 
+
+
+* Unsupervised Dialect to MSA word-level translation.
+
 * Rumors detection by unsupervised time-series clustering.
 * Agatha: Unsupervised time-series anomaly detection for predictive maintenance.
 * Character-level models for sequence labeling
