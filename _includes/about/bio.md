@@ -12,3 +12,6 @@ I am a computer science master's student at *Cairo University*. My master's work
 
 **May 5th, 2020:** Started an Internship in NAVER Labs Europe working on Controlled Text Generation with distributional constraints!
 
+**October 12th, 2020:** Started an applied scientist internship at Amazon Web Services, working with Miguel Ballesteros and Kathleen Mckeown on summarization.
+
+**Jan 12th, 2021:** TWO papers accepted at [ICLR](https://openreview.net/forum?id=jWkw45-9AbL) 2021 and [EACL](https://arxiv.org/abs/2101.04758) 2021. 
