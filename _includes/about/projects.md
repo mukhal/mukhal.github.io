@@ -1,10 +1,9 @@
 ## Projects
 
 
-Here's a list of all **research projects** I was involved in:
+Here's a list of all **research projects** I am/was involved in:
 
-* **Distributionally-controlled Text Generation from pre-trained Language models (internship at NAVER Labs Europe)** *(May - September 2020)*
-
+* **Distributionally-controlled Text Generation from pre-trained Language models (internship at NAVER Labs Europe)** *(May - September 2020)* ICLR 2021 Paper [here](openreview.net/forum?id=jWkw45-9AbL)
 
     Supervised by Hady Elsahar and Marc Dymetman, we proposed a novel aspect of controlled text generation involving moment constraints while minimizing KL divergence with the initial LM distribution to avoid "degeneration" issues. From that target distribution, we arrive at at an explicit EBM (Energy-Based Model) representation.  Then, from that optimal representation, we then train the target controlled autoregressive LM through an adaptive distributional variant of Policy Gradient. We show the effectiveness of our approach in mitigating existing biases in pre-trained generative langauge models.
 
