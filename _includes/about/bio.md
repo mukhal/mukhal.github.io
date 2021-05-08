@@ -1,5 +1,12 @@
+---
+layout: post
+title: "Paper Discussion: Discrete Generative Models for Sentence Compression"
+author: Muhammad Khalifa
+comments: true
+---
+
 ## Muhammad Khalifa
-I am a computer science master's student at *Cairo University*. My master's work is on Low-resource multi-dialectal Arabic NLU and abstractive summarization. Thus, my main research interests are **Natural Language Generation**, **Unsupervised Learning**, and **Low-Resource NLU**. My interests are driven by the urgent need to save scarce-data languages and tasks by building fully unsupervised approaches that perform comparably to supervised ones. I am currenlty an Applied Scientist Intern at Amazon Web Services, working on multiple projects including dialogue summarization and Document Image Understanding. I previously did a research internship at Naver Labs Europe and worked on Controlled text generation and Energy-based models. Before that, I worked as a Machine learning research engineer at Sypron Solutions, where I investigated **time-series analyis and anomaly detection** for a predictive maintenance system, and designed a multi-node stream processing pipeline with *Spark Streaming*, *Kafka*, and *Cassandra DB*. 
+I am a computer science master's student at *Cairo University*. My master's work is on Low-resource multi-dialectal Arabic NLU and abstractive summarization. Thus, my main research interests are **Natural Language Generation**, **Unsupervised Learning**, and **Low-Resource NLU**. My interests are driven by the urgent need to save scarce-data languages and tasks by building fully unsupervised approaches that perform comparably to supervised ones. I am currenlty an Applied Scientist Intern at Amazon Web Services, working on multiple projects including dialogue summarization and Document Image Understanding. I previously did a research internship at Naver Labs Europe and worked on Controlled text generation and Energy-based models. Before that, I worked as a Machine learning research engineer at Sypron Solutions, where I investigated **time-series analyis and anomaly detection** for a predictive maintenance system, and designed a multi-node stream processing pipelineeeeee with *Spark Streaming*, *Kafka*, and *Cassandra DB*. 
 
 
 **Updates:**

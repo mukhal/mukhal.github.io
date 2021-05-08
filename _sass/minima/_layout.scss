@@ -3,20 +3,21 @@
  */
 
 .site-header {
-  background: #111;
+  background: rgb(0, 64, 83);
   opacity: 0.8;
   min-height: $spacing-unit * 1.865;
   position: relative;
 }
 
 .site-title {
-  @include relative-font-size(1.625);
-  font-weight: 600;
+  @include relative-font-size(1.4);
+  font-weight: 400;
   color: #ffffff; // $crimson-color;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: $base-line-height * $base-font-size * 2.2;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
+  font-family: monospace;
 
   &,
   &:visited {
