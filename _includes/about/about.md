@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180>
 
-My name is `M(u|o)hammad Khalifa`. I am a computer science master's student at *Cairo University*. My master's work is on Low-resource multi-dialectal Arabic NLU and abstractive summarization. Thus, my main research interests are **Generation**, **Representation Learning**, and **Few-Shot Learning**. I am currently an Applied Scientist Intern at Amazon Web Services, supervised by [Miguel Ballesteros](http://miguelballesteros.com/) and Prof. [Kathleen Mckeown](http://www.cs.columbia.edu/~kathy/), working on multiple projects including Dialogue Summarization and Document Image Understanding. Previously, I was an intern at Naver Labs Europe where I worked on Controlled Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en). Before that, I worked as a Machine learning research engineer at Sypron Solutions, where I worked on **Big data time-series analyis and anomaly detection** and **Stream Processing** for preventive maintenance.
+My name is `M(u|o)hammad` Khalifa. I am a computer science master's student at *Cairo University*. My master's work is on Low-resource multi-dialectal Arabic NLU and abstractive summarization. My main research interests are **Generation**, **Representation Learning**, and **Few-Shot Learning**. I am currently an Applied Scientist Intern at Amazon Web Services, supervised by [Miguel Ballesteros](http://miguelballesteros.com/) and Prof. [Kathleen Mckeown](http://www.cs.columbia.edu/~kathy/), working on multiple projects including Dialogue Summarization and Document Image Understanding. Previously, I was an intern at Naver Labs Europe where I worked on Controlled Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en). Before that, I worked as a Machine learning research engineer at Sypron Solutions, where I worked on **Big data time-series analyis, anomaly detection**, and **stream processing** for preventive maintenance.
 
 <div align="center">
 (
@@ -9,6 +9,8 @@ My name is `M(u|o)hammad Khalifa`. I am a computer science master's student at *
 <a href="https://linkedin.com/in/muhammaad-khalifa-9a467b100/"> LinkedIn </a>
 /
 <a href="https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en"> Scholar </a>
+/
+<a href="github.com/mohammadKhalifa/"> Scholar </a>
 /
 <a href="#"> CV </a>
 )
