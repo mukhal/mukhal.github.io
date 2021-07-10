@@ -1,6 +1,8 @@
 <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180>
 
-My name is `M(u|o)hammad` Khalifa. I am a computer science master's student at *Cairo University*. My master's work is on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). My main research interests are **Generation**, **Representation Learning**, and **Few-Shot Learning**. I am currently an Applied Scientist Intern at Amazon Web Services, supervised by [Miguel Ballesteros](http://miguelballesteros.com/) and Prof. [Kathleen Mckeown](http://www.cs.columbia.edu/~kathy/), working on multiple projects including Dialogue Summarization and Document Image Understanding. Previously, I was an intern at Naver Labs Europe where I worked on Controlled Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en). Before that, I worked as a Machine learning research engineer at Sypron Solutions under the supervision of Dr. [Alaa Khamis](https://www.alaakhamis.org/), where I investigated **time-series anomaly detection** for preventive maintenance.
+My name is `M(u|o)hammad` Khalifa. I am a computer science master's student at *Cairo University*. My master's work is on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). My main research interests are **Generation**, **Representation Learning**, and **Few-Shot Learning**. I am currently an Applied Scientist Intern at Amazon AI, supervised by [Miguel Ballesteros](http://miguelballesteros.com/) and Prof. [Kathleen Mckeown](http://www.cs.columbia.edu/~kathy/), working on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Previously, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en). Before that, I worked as a Machine learning research engineer at Sypron Solutions under the supervision of Dr. [Alaa Khamis](https://www.alaakhamis.org/), where I investigated **time-series anomaly detection** for preventive maintenance.
+
+On a side note, I'm an avid reader about phsychology, philosophy, and self-improvement. In my freetime, I play the piano, write and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). 
 
 <div align="center">
 (
@@ -18,13 +20,13 @@ My name is `M(u|o)hammad` Khalifa. I am a computer science master's student at *
 
 
 ## News
-**March 1st, 2021:** My internship at AWS was extended. Now I am working on Document Image Understanding!
+**March 1st, 2021:** My internship at Amazon AI was extended. Excited to be working with [Yogarshi Vyas](https://scholar.google.com/citations?user=k6k7i1IAAAAJ&hl=en) and [Shuai Wang](https://www.amazon.science/author/shuai-wang) Now I am working on zero-shot classification and semi-structured language models pre-training.
 
 **Jan 12th, 2021:** My paper on "A Distributional Approach To Controlled Text Generation" was accepted to ICLR 2021 (Top 2.2% of submissions and Oral Presentation). [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
 
 **Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
 
-**October 12th, 2020:** Started an applied scientist internship at Amazon Web Services, working with Miguel Ballesteros and Kathleen Mckeown.
+**October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
 **July 21th, 2020:** My paper on book success prediction (with Professor Aminul Islam) via pre-trained embeddings and readability scores is now live on [arxiv](https://arxiv.org/abs/2007.11073).
 
