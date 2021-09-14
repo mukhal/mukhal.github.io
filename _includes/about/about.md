@@ -20,6 +20,8 @@ On a side note, I'm an avid reader about phsychology, philosophy, and self-impro
 
 
 ## News
+**August 30th, 2021:** Started my PhD journey at UMich!
+
 **August 26th, 2021:** Two papers accepted into [EMNLP2021](http://2021.emnlp.org/) and [HICSS-55](https://hicss.hawaii.edu/)!!
 
 **August 7th, 2021:** Successfully defended my masters thesis!!
