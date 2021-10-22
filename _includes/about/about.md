@@ -34,10 +34,6 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
-**July 21th, 2020:** My paper on book success prediction (with Professor Aminul Islam) via pre-trained embeddings and readability scores is now live on [arxiv](https://arxiv.org/abs/2007.11073).
-
-**May 5th, 2020:** Started an Internship in NAVER Labs Europe working on Controlled Text Generation with distributional constraints!
-
 ## Research
 **Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume 2021 (pp. 769–782). Association for Computational Linguistics. [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
 
