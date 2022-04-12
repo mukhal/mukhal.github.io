@@ -2,7 +2,7 @@
 
 My name is Muhammad Khalifa. I am a first-year PhD student at the University of Michigan in Ann Arbor. I am fortunate to be advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Reasoning**, **Representation Learning**, and **Few-Shot Learning**.  Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). Previously, I was an Applied Scientist Intern at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
-On a side note, I'm an avid reader of psychology, philosophy, and self-improvement. In my free time, I play the piano, write and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research or a potential collaboration, or mentoring, ping me at `[lastname]m@umich.edu.`
+On a side note, I'm an avid reader of psychology, philosophy, and self-improvement. In my free time, I play the piano, write and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or would like to collaborate, ping me at `[lastname]m@umich.edu.`
 
 <div align="center">
 (
