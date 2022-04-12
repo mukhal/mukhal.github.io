@@ -35,6 +35,9 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
 ## Research
+**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
+
+
 **Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume 2021 (pp. 769–782). Association for Computational Linguistics. [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
 
 **Muhammad Khalifa***, Hady Elsahar*, Marc Dymetman*. "A Distributional Approach to Controlled Text Generation". In International Conference on Learning Representations 2021. [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
