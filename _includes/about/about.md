@@ -12,7 +12,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 /
 <a href="https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en"> Scholar </a>
 /
-<a href="github.com/mohammadKhalifa/"> Github </a>
+<a href="github.com/mukhal"> Github </a>
 /
 <a href="#"> CV </a>
 )
@@ -20,6 +20,8 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 
 ## News
+
+**May 25th, 2022:** New [preprint](https://github.com/mukhal/mukhal.github.io/raw/new-template/LEPUS-2022.pdf) on unsupervised Multi-hop reranking with large language models!
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
 
