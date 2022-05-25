@@ -12,7 +12,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 /
 <a href="https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en"> Scholar </a>
 /
-<a href="github.com/mukhal"> Github </a>
+<a href="https://github.com/mukhal"> Github </a>
 /
 <a href="#"> CV </a>
 )
