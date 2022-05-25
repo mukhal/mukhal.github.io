@@ -21,7 +21,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 ## News
 
-**May 25th, 2022:** New [preprint](https://github.com/mukhal/mukhal.github.io/raw/new-template/LEPUS-2022.pdf) on unsupervised Multi-hop reranking with large language models!
+**May 24th, 2022:** New [preprint](https://github.com/mukhal/mukhal.github.io/raw/new-template/LEPUS-2022.pdf) on unsupervised Multi-hop reranking with large language models!
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
 
