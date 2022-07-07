@@ -39,11 +39,9 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
-## Research
+## Research Highlights
 **Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. LEPUS: Prompt-based Unsupervised Multi-hop Reranking for Open-domain QA. _In submission_. [[Preprint](https://arxiv.org/abs/2205.12650)]
 
-
-**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
 
 **Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
 
@@ -52,8 +50,8 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **Muhammad Khalifa***, Hady Elsahar*, Marc Dymetman*. "A Distributional Approach to Controlled Text Generation". In International Conference on Learning Representations 2021. [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
 
-Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)]
+<!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
 
 **Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)]
 
-**Muhammad Khalifa**, Noura Hussein. "Ensemble Learning for Irony Detection in Arabic Tweets". In FIRE (Working Notes), pp. 433-438. 2019. [[Paper](http://ceur-ws.org/Vol-2517/T4-7.pdf)]
+<!--- **Muhammad Khalifa**, Noura Hussein. "Ensemble Learning for Irony Detection in Arabic Tweets". In FIRE (Working Notes), pp. 433-438. 2019. [[Paper](http://ceur-ws.org/Vol-2517/T4-7.pdf)] --->
