@@ -21,7 +21,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 ## News
 
-**May 24th, 2022:** New [preprint](https://github.com/mukhal/mukhal.github.io/raw/new-template/LEPUS-2022.pdf) on unsupervised Multi-hop reranking with large language models!
+**May 24th, 2022:** New [preprint](https://arxiv.org/abs/2205.12650) on unsupervised Multi-hop reranking with large language models!
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
 
@@ -40,6 +40,11 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
 ## Research
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. LEPUS: Prompt-based Unsupervised Multi-hop Reranking for Open-domain QA. _In submission_. [[Preprint](https://arxiv.org/abs/2205.12650)]
+
+
+**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
+
 **Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
 
 
