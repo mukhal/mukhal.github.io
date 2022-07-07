@@ -48,7 +48,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume 2021 (pp. 769–782). Association for Computational Linguistics. [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
 
-**Muhammad Khalifa***, Hady Elsahar*, Marc Dymetman*. "A Distributional Approach to Controlled Text Generation". In International Conference on Learning Representations 2021. [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
+**Muhammad Khalifa\***, Hady Elsahar\*, Marc Dymetman\*. "A Distributional Approach to Controlled Text Generation". In International Conference on Learning Representations 2021. [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
 
 <!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
 
