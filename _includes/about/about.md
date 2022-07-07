@@ -27,7 +27,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
 
-**August 26th, 2021:** Two papers accepted into [EMNLP2021](http://2021.emnlp.org/) and [HICSS-55](https://hicss.hawaii.edu/)!!
+**August 26th, 2021:** Two papers accepted into [EMNLP '21](http://2021.emnlp.org/) and [HICSS-55](https://hicss.hawaii.edu/)!!
 
 **August 7th, 2021:** Successfully defended my masters thesis!!
 
