@@ -21,11 +21,11 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 ## News
 
+**July 10th, 2022:** Attending NAACL 2022 in Seattle. Reach out if you want to have a chat!
+
 **May 24th, 2022:** New [preprint](https://arxiv.org/abs/2205.12650) on unsupervised Multi-hop reranking with large language models!
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
-
-**August 30th, 2021:** Started my PhD journey at UMich!
 
 **August 26th, 2021:** Two papers accepted into [EMNLP2021](http://2021.emnlp.org/) and [HICSS-55](https://hicss.hawaii.edu/)!!
 
@@ -35,7 +35,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 **Jan 12th, 2021:** Our paper on "A Distributional Approach To Controlled Text Generation" was accepted to ICLR 2021 (Top 2.2% of submissions and Oral Presentation). [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
 
-**Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
+<!--- **Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)] --->
 
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
