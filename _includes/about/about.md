@@ -20,6 +20,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and self-improveme
 
 
 ## News
+**Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for structured document classification! 
 
 **July 10th, 2022:** Attending NAACL 2022 in Seattle. Reach out if you want to have a chat!
 
