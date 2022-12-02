@@ -20,7 +20,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 
 ## News
-**Nov 30th, 2022:** I was awarded the Rackham Fellowship for International Graduate Students as a PhD precandidate!!
+**Nov 30th, 2022:** I was awarded the Rackham Fellowship for Outstanding International Students as a PhD precandidate!!
 **Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for semi-structured document classification! 
 
 **July 10th, 2022:** Attending NAACL 2022 in Seattle. Reach out if you want to have a chat!
