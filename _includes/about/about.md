@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180>
 
-My name is Muhammad Khalifa. I am a first-year PhD student at the University of Michigan in Ann Arbor. I am fortunate to be advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Reasoning**, **Representation Learning**, and **Few-Shot Learning**.  Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+My name is Muhammad Khalifa. I am a second-year PhD student at the University of Michigan in Ann Arbor. I will be joining Ai2 as an intern for summer 2023. I am fortunate to be advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**,amd **Controlled Generation**  Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
 On a side note, I'm an avid reader of psychology, philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
@@ -41,8 +41,8 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
-## Research Highlights
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. LEPUS: Prompt-based Unsupervised Multi-hop Reranking for Open-domain QA. _In submission_. [[Preprint](https://arxiv.org/abs/2205.12650)]
+## Highlighted Papers
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. LEPUS: [Prompt-based Unsupervised Multi-hop Reranking for Open-domain QA](https://arxiv.org/abs/2205.12650). _Preprint_. [[Preprint](https://arxiv.org/abs/2205.12650)]
 
 
 **Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
@@ -56,4 +56,3 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 **Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)]
 
-<!--- **Muhammad Khalifa**, Noura Hussein. "Ensemble Learning for Irony Detection in Arabic Tweets". In FIRE (Working Notes), pp. 433-438. 2019. [[Paper](http://ceur-ws.org/Vol-2517/T4-7.pdf)] --->
