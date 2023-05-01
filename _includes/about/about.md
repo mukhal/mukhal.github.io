@@ -42,7 +42,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
 
 ## Highlighted Papers
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. LEPUS: [Prompt-based Unsupervised Multi-hop Reranking for Open-domain QA](https://arxiv.org/abs/2205.12650). _Preprint_. [[Preprint](https://arxiv.org/abs/2205.12650)]
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. Few-shot Reranking for Multi-hop QA via Language Model Prompting. [[Preprint](https://arxiv.org/abs/2205.12650)]
 
 
 **Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
