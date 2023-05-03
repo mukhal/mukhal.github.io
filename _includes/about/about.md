@@ -21,8 +21,11 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 ## News
 **May, 2023:** Three papers accepted at ACL 2023 (two in the main conference and one at Findings)! 
+
 **Feb, 2023:** I will be joining Ai2 as an intern for summer 2023!
+
 **Nov 30th, 2022:** I was awarded the Rackham Fellowship for Outstanding International Students as a PhD precandidate!
+
 **Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for semi-structured document classification. 
 
 **July 10th, 2022:** Attending NAACL 2022 in Seattle. Reach out if you want to have a chat!
