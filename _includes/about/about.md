@@ -20,7 +20,7 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 
 ## News
-**May, 2023:** Three papers accepted at ACL 2023 (two in the main conference and one at Findings)! 
+**May, 2023:** Three papers accepted at ACL 2023 (two at the main conference and one at Findings)! 
 
 **Feb, 2023:** I will be joining Ai2 as an intern for summer 2023!
 
@@ -40,11 +40,9 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 <!--- **March 1st, 2021:** My internship at Amazon AI was extended. Excited to be working with [Yogarshi Vyas](https://scholar.google.com/citations?user=k6k7i1IAAAAJ&hl=en) and [Shuai Wang](https://www.amazon.science/author/shuai-wang) on zero-shot classification and semi-structured language models pre-training. --->
 
-
-
 <!--- **Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)] --->
 
-**October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown.
+<!--- **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown. --->
 
 ## Highlighted Papers
 **Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. 2022. Few-shot Reranking for Multi-hop QA via Language Model Prompting. [[Preprint](https://arxiv.org/abs/2205.12650)]
@@ -59,5 +57,5 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 <!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
 
-**Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)]
+<!--- **Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)] --->
 
