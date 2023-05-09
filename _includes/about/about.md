@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180>
 
-My name is Muhammad Khalifa. I am a second-year PhD student at the University of Michigan in Ann Arbor. I am fortunate to be advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**,amd **Controlled Generation**  Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+My name is Muhammad Khalifa. I am a second-year PhD student at the University of Michigan in Ann Arbor and an incoming intern at Ai2. I am fortunate to be advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**, and **Controlled Generation**. Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
 On a side note, I'm an avid reader of psychology, philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
@@ -28,19 +28,19 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 **Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for semi-structured document classification. 
 
-**July 10th, 2022:** Attending NAACL 2022 in Seattle. Reach out if you want to have a chat!
-
 **May 24th, 2022:** New [preprint](https://arxiv.org/abs/2205.12650) on few-shot Multi-hop reranking with LLMs.
 
 **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters!
 
 **August 26th, 2021:** Two papers accepted into [EMNLP '21](http://2021.emnlp.org/) and [HICSS-55](https://hicss.hawaii.edu/)!!
 
-**August 7th, 2021:** Successfully defended my masters thesis!!
-
-**March 1st, 2021:** My internship at Amazon AI was extended. Excited to be working with [Yogarshi Vyas](https://scholar.google.com/citations?user=k6k7i1IAAAAJ&hl=en) and [Shuai Wang](https://www.amazon.science/author/shuai-wang) on zero-shot classification and semi-structured language models pre-training.
-
 **Jan 12th, 2021:** Our paper on "A Distributional Approach To Controlled Text Generation" was accepted to ICLR 2021 (Top 2.2% of submissions and Oral Presentation). [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
+
+<!--- **August 7th, 2021:** Successfully defended my masters thesis!! --->
+
+<!--- **March 1st, 2021:** My internship at Amazon AI was extended. Excited to be working with [Yogarshi Vyas](https://scholar.google.com/citations?user=k6k7i1IAAAAJ&hl=en) and [Shuai Wang](https://www.amazon.science/author/shuai-wang) on zero-shot classification and semi-structured language models pre-training. --->
+
+
 
 <!--- **Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)] --->
 
