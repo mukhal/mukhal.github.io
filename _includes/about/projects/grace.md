@@ -10,9 +10,23 @@ In the context of multi-step reasoning, language models (LMs) probabilities are 
 ---
 
 
-## Results
+## High-level Overview
+The discriminator is used to guide step-wise decoding by scoring candidate next steps. 
 
-*Discuss some of your findings and results here.*
+<img width="1391" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/2e4c88a8-0726-4187-9a55-76e8a6900c4d">
+
+## Discriminator Training
+The discriminator is trained over 3 steps:
+**Sampling:** Sampling incorrect solutions from the model.
+**Alignment:** Aligning incorrect solutions with gold ones to create examples to train the discriminator.
+**Learning:** Train the discriminaotr with max-margin loss. 
+
+
+## Results Summary
+Using GRACE for multi-step solution decoding outperforms greedy decoding and self-consistency with temperature sampling 
+<img width="1225" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/9a369510-3a9b-40e9-965e-f8ff36dc5fa6">
+
+
 
 ---
 
