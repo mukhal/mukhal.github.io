@@ -3,10 +3,10 @@
 <p align="center">by Muhammad Khalifa and Lajanujen Logeswaran</p>
 <p align="center">
   <a href="https://github.com/mukhal/grace">
-   <img src="https://w7.pngwing.com/pngs/12/369/png-transparent-black-and-white-cat-illustration-github-computer-icons-icon-design-github-cat-like-mammal-carnivoran-logo.png" alt="Code" width="25" height="25"> code  
+   <img src="https://w7.pngwing.com/pngs/12/369/png-transparent-black-and-white-cat-illustration-github-computer-icons-icon-design-github-cat-like-mammal-carnivoran-logo.png" alt="Code" width="25" height="25" style="display:inline"> code  
   </a>
   <a href="https://arxiv.org/abs/2305.14934">
-    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-paper-icon-image_1131168.jpg" alt="Paper" width="25" height="25"> paper
+    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-paper-icon-image_1131168.jpg" alt="Paper" width="25" height="25" style="display:inline"> paper
   </a>
 </p>
 
