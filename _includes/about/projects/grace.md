@@ -29,7 +29,7 @@ The discriminator is used to guide step-wise decoding by scoring candidate next 
 
 ## Results Summary
 Using GRACE for multi-step solution decoding outperforms greedy decoding and self-consistency with temperature sampling 
-<img width="1225" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/9a369510-3a9b-40e9-965e-f8ff36dc5fa6">
+<img width="991" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/ab7ae24f-8d89-45e8-999f-45a535a5d365">
 
 
 
