@@ -16,11 +16,7 @@ The discriminator is used to guide step-wise decoding by scoring candidate next 
 <img width="1391" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/2e4c88a8-0726-4187-9a55-76e8a6900c4d">
 
 ## Discriminator Training
-The discriminator is trained over 3 steps:
-**Sampling:** Sampling incorrect solutions from the model.
-**Alignment:** Aligning incorrect solutions with gold ones to create examples to train the discriminator.
-**Learning:** Train the discriminaotr with max-margin loss. 
-
+<img width="1469" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/00c69ee7-205d-4066-9cad-8e55c3c37f3d">
 
 ## Results Summary
 Using GRACE for multi-step solution decoding outperforms greedy decoding and self-consistency with temperature sampling 
