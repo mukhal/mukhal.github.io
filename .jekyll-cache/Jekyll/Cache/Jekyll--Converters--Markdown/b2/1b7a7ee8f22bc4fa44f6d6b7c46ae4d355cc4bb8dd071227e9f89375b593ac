@@ -1,5 +1,0 @@
-I"¥<blockquote>
-  <p>I have recently came across a very interesting paper named 
-The prime motivation of the paper is that models suffer from quadratic time complexity in terms of the the input size. This papers proposes a variant of the convolution operation named Lightweight Convolutions that scales linearly with the input size while performaing comparably with state-of-the-art self-attention models.</p>
-</blockquote>
-:ET
