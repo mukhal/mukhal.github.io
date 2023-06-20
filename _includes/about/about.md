@@ -46,19 +46,19 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 
 ## Highlighted Papers
 
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Discriminator-Guided Multi-step Reasoning with Language Models. Arxiv 2023. [[Preprint](https://arxiv.org/abs/2305.14934)] [[Code](https://github.com/mukhal/grace)].
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Discriminator-Guided Multi-step Reasoning with Language Models. *Arxiv 2023*. [[Preprint](https://arxiv.org/abs/2305.14934)] [[Code](https://github.com/mukhal/grace)].
 
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models. [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. *ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models.* [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
 
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Few-shot Reranking for Multi-hop QA via Language Model Prompting. ACL 2023 [[Paper](https://arxiv.org/abs/2205.12650)] [[Code](https://github.com/mukhal/PromptRank)].
-
-
-**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Few-shot Reranking for Multi-hop QA via Language Model Prompting. *ACL 2023* [[Paper](https://arxiv.org/abs/2205.12650)] [[Code](https://github.com/mukhal/PromptRank)].
 
 
-**Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." EACL 2021. [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
+**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. *EMNLP 2021 (short paper)* [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
 
-**Muhammad Khalifa\***, Hady Elsahar\*, Marc Dymetman\*. "A Distributional Approach to Controlled Text Generation". ICLR 2021. [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
+
+**Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." *EACL 2021.* [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
+
+**Muhammad Khalifa\***, Hady Elsahar\*, Marc Dymetman\*. "A Distributional Approach to Controlled Text Generation". *ICLR 2021.* [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
 
 <!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
 
