@@ -45,7 +45,12 @@ On a side note, I'm an avid reader of psychology, philosophy, and an all-time li
 <!--- **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown. --->
 
 ## Highlighted Papers
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Few-shot Reranking for Multi-hop QA via Language Model Prompting. ACL 2023 [[Preprint](https://arxiv.org/abs/2205.12650)]
+
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Discriminator-Guided Multi-step Reasoning with Language Models. Arxiv 2023. [[Preprint](https://arxiv.org/abs/2305.14934)] [[Code](https://github.com/mukhal/grace)].
+
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models. [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
+
+**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Few-shot Reranking for Multi-hop QA via Language Model Prompting. ACL 2023 [[Paper](https://arxiv.org/abs/2205.12650)] [[Code](https://github.com/mukhal/PromptRank)].
 
 
 **Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 8014–8022, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
