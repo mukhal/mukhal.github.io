@@ -23,13 +23,14 @@ In the context of multi-step reasoning, language models (LMs) probabilities are 
 <img width="1391" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/742cd7b6-b34c-41fd-8e7e-c7e109486de5">
 
 ## Discriminator Training
+<img width="1469" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/7ae75f7a-010c-48d5-a13e-ddddf6662598">
+
 **1. Sampling:** Sampling incorrect solutions from the LM. 
 
 **2. Alignment:** Align sampled solutions with the reference solution to create training examples to train the discriminator. 
 
 **3. Learning:** Train the discriminator with max-margin loss. 
 
-<img width="1469" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/7ae75f7a-010c-48d5-a13e-ddddf6662598">
 
 
 ## Results Summary
