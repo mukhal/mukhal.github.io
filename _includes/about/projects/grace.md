@@ -20,19 +20,29 @@ In the context of multi-step reasoning, language models (LMs) probabilities are 
 
 
 ## High-level Overview
-The discriminator is used to guide step-wise decoding by scoring candidate next steps. 
-
-<img width="1391" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/2e4c88a8-0726-4187-9a55-76e8a6900c4d">
+<img width="1391" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/742cd7b6-b34c-41fd-8e7e-c7e109486de5">
 
 ## Discriminator Training
-<img width="1469" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/00c69ee7-205d-4066-9cad-8e55c3c37f3d">
+**1. Sampling:** Sampling incorrect solutions from the LM. 
+
+**2. Alignment:** Align sampled solutions with the reference solution to create training examples to train the discriminator. 
+
+**3. Learning:** Train the discriminator with max-margin loss. 
+
+<img width="1469" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/7ae75f7a-010c-48d5-a13e-ddddf6662598">
+
 
 ## Results Summary
-Using GRACE for multi-step solution decoding outperforms greedy decoding and self-consistency with temperature sampling 
+We evaluate GRACE over 4 math (GSM8K, SVAMP, MultiArith, MathQA-Gain) and 2 symbolic reasoning tasks (Coin Flip and Tracking Shuffled Objects). 
+Using GRACE for multi-step solution decoding outperforms greedy decoding and vanilla self-consistency with temperature sampling. 
+
+**Performance on Math Reasoning:**
 <img width="991" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/ab7ae24f-8d89-45e8-999f-45a535a5d365">
 
-
-
+**Performance on Symbolic Reasoning:**
+<p align="center">
+<img width="400" alt="image" src="https://github.com/mukhal/mukhal.github.io/assets/5109053/1ec5c985-cfd5-4669-8f4f-6e8f98dca1fd">
+</p>
 ---
 
 
