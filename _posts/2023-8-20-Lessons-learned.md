@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 > 
-When I started my program two years ago. So I started a habit that proved to be quite beneficial: I dedicated a page in my research notebook titled Lessons Learned. I made sure to update this page on a semi-regular basis, typically whenever I learn something from my mentors/advisors, reflect on my progress, or come across an “Aha” moment about something that I should have done differently. This blog post elaborates and expands on some of the key entries on that notebook page. 
+When I started my program two years ago, I started a habit that proved to be quite beneficial: I dedicated a page in my research notebook titled Lessons Learned. I made sure to update this page on a semi-regular basis, typically whenever I learn something from my mentors/advisors, reflect on my progress, or come across an “Aha” moment about something that I should have done differently. This blog post elaborates and expands on some of the key entries on that notebook page. 
 As it is almost the end of the summer (sad, I know), I hope this article is timely for the many students who are starting their Ph.D. in the fall. You will find that the first four lessons in this article are high-level, more abstract, and related to the way we should view ourselves as Ph.D. students and our research. The last four lessons include more practical advice that you can adopt on a day-to-day basis. 
 <!--more-->
 
