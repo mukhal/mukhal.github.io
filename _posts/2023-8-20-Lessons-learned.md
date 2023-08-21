@@ -6,14 +6,13 @@ comments: true
 published: true
 ---
 > 
-### Introduction:
 When I started my program two years ago. So I started a habit that proved to be quite beneficial: I dedicated a page in my research notebook titled Lessons Learned. I made sure to update this page on a semi-regular basis, typically whenever I learn something from my mentors/advisors, reflect on my progress, or come across an “Aha” moment about something that I should have done differently. This blog post elaborates and expands on some of the key entries on that notebook page. 
 As it is almost the end of the summer (sad, I know), I hope this article is timely for the many students who are starting their Ph.D. in the fall. You will find that the first four lessons in this article are high-level, more abstract, and related to the way we should view ourselves as Ph.D. students and our research. The last four lessons include more practical advice that you can adopt on a day-to-day basis. 
+<!--more-->
 
 Prior to beginning, I'd like to express gratitude to Prof. Rada Mihalcea for invaluable feedback and to Aurelia Bunescu and Katsumi Ibaraki for proofreading.
 
 **Note:** This blog post was also published at the Michigan AI [blog](https://ai.engin.umich.edu/2023/08/17/eight-lessons-learned-in-two-years-of-ph-d/).
-<!--more-->
 
 ### 1. Enjoy the process, not the product
 Getting a Ph.D. is a long journey and not only because it is 4-6 years long, but also because it's hard and this difficulty contributes significantly to its length. In my interview with Wilka Carvalho, a recent Ph.D. graduate from CSE, Wilka described the Ph.D. as the hardest thing he’s ever done. Now I would argue that the difficulty of doing a Ph.D. largely stems from one thing: being so focused on the end product and not enjoying the process of getting there. The end product is usually getting a paper accepted, passing the prelims, or a successful defense. The process is about the long nights spent debugging our code, running an error analysis, and the things we learn along the way. Under this mindset, the Ph.D. is akin to a reinforcement learning environment with extremely sparse rewards (e.g., reward = 1 if paper accepted otherwise 0). This setting is detrimental to our own happiness since the things we do 99.9% of the time are not associated with any reward of any kind. 
