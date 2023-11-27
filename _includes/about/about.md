@@ -20,7 +20,9 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 
 ## News
-**Nov, 2023:** Gave an invited talk at NAVER Labs Europe on Discriminator-Guided Chain-of-Thought. Slides are [here](https://github.com/mukhal/mukhal.github.io/blob/new-template/resources/notebooks/guided-cot-talk-nov-2023.pdf)
+
+**Nov, 2023:** Gave an invited talk at NAVER Labs Europe on Discriminator-Guided Chain-of-Thought. Slides are [here](https://github.com/mukhal/mukhal.github.io/blob/new-template/resources/notebooks/guided-cot-talk-nov-2023.pdf).
+
 **Oct, 2023:** Two papers accepted at EMNLP 2023 (Findings and main)! 
 
 **May, 2023:** Three papers accepted at ACL 2023 (two at the main conference and one at Findings)! 
