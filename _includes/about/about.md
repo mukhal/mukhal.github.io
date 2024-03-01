@@ -4,7 +4,7 @@ My name is Muhammad Khalifa. I am a third-year PhD candidate at the University o
 
 On a side note, I'm an avid reader of psychology, and philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
-**Update:** I'm looking for an internship for summer 2024 that is well aligned with my research, so reach out if you'd like to work together!
+**Update:** I'm looking for a research internship for summer 2024 that is well aligned with my research, so reach out if you have a relevant position!
 
 
 <div align="center">
