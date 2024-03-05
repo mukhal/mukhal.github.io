@@ -25,6 +25,7 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 ## News
 **March, 2024:** Gave a talk on LLM Reasoning at ML Collective DLCT reading group. Video is [here](https://www.youtube.com/watch?v=x7kg0JR8dTg&list=PLfeYlJzwvDN3HmOGKtB78VjkB0W7E7Sy8&index=2&t=529s&ab_channel=MLCollective).
+
 **Nov, 2023:** Gave an invited talk at NAVER Labs Europe on Discriminator-Guided Chain-of-Thought. Slides are [here](https://github.com/mukhal/mukhal.github.io/blob/new-template/resources/notebooks/guided-cot-talk-nov-2023.pdf).
 
 **Oct, 2023:** Two papers accepted at EMNLP 2023 (Findings and main)! 
