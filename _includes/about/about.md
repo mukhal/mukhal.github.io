@@ -4,8 +4,6 @@ My name is Muhammad Khalifa. I am a third-year PhD candidate at the University o
 
 On a side note, I'm an avid reader of psychology, and philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
-**Update:** I'm looking for a research internship for summer 2024 that is well aligned with my research, so reach out if you have a relevant position!
-
 
 <div align="center">
 (
@@ -24,6 +22,11 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 
 ## News
+**June 2024:** Started my internship at Cohere!
+
+
+**April 2024:** My work with Ai2 on on source-aware training is released on [arxiv](https://arxiv.org/abs/2404.01019)
+
 **March, 2024:** Gave a talk on LLM Reasoning at ML Collective DLCT reading group. Video is [here](https://www.youtube.com/watch?v=x7kg0JR8dTg&list=PLfeYlJzwvDN3HmOGKtB78VjkB0W7E7Sy8&index=2&t=529s&ab_channel=MLCollective).
 
 **Nov, 2023:** Gave an invited talk at NAVER Labs Europe on Discriminator-Guided Chain-of-Thought. Slides are [here](https://github.com/mukhal/mukhal.github.io/blob/new-template/resources/notebooks/guided-cot-talk-nov-2023.pdf).
