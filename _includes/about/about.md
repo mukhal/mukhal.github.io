@@ -1,6 +1,6 @@
 <!--- <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180> --->
 <img src="https://i.ibb.co/9YDR3xg/headshot-circle.png" width=180 height=180>
-I am a third-year PhD candidate at the University of Michigan in Ann Arbor and an intern at Ai2. I am advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**, and **Controlled Generation**.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+I am a fourth-year PhD candidate at the University of Michigan in Ann Arbor and an intern at Ai2. I am advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**, and **Controlled Generation**.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
 On a side note, I'm an avid reader of psychology, and philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
@@ -22,6 +22,17 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 
 ## News
+
+**April 2025** Our work on Generative Process Reward Models is [out!](https://arxiv.org/abs/2504.16828).
+
+**April 2025** Was awarded the CSE Service Award at UMich! 🎉
+
+**April 2025** Gave a talk on model merging at [DLCT](https://mlcollective.org/dlct/). Here are the [Slides](https://docs.google.com/presentation/d/1edq_l9eFarEFEKv9lWnT3esJPBHsEt_2XPtmO66_hP0/edit?usp=sharing)
+
+**March 2025** Co-organized the [NLP@Michigan Day](https://eecs.engin.umich.edu/event/nlp-michigan-day-2/)
+
+**December 2024** My work at Cohere on large-scale model merging optimization is [out!](https://arxiv.org/abs/2412.04144)
+
 **July 2024:** Two papers accepted at COLM and ACL Findings!
 
 **June 2024:** Started my internship at Cohere!
@@ -36,13 +47,13 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 **May, 2023:** Three papers accepted at ACL 2023 (two at the main conference and one at Findings)! 
 
-**Feb, 2023:** I will be joining Ai2 as an intern for summer 2023!
+<!--- **Feb, 2023:** I will be joining Ai2 as an intern for summer 2023! --->
 
 **Nov 30th, 2022:** I was awarded the Rackham Fellowship for Outstanding International Students!
 
 <!--- **Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for semi-structured document classification. ---> 
 
-**May 24th, 2022:** New [preprint](https://arxiv.org/abs/2205.12650) on few-shot Multi-hop reranking with LLMs.
+<!--- **May 24th, 2022:** New [preprint](https://arxiv.org/abs/2205.12650) on few-shot Multi-hop reranking with LLMs. --->
 
 <!--- **May 3rd, 2022:** Won best poster award in UMich NLP Day on my [ICLR 2021](https://github.com/mukhal/mukhal.github.io/raw/new-template/iclr2021-nlp%20day-posert.pdf) work competing with over 20 other posters! --->
 
@@ -58,9 +69,7 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 <!--- **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown. --->
 
-## Highlighted Papers
-
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Discriminator-Guided Multi-step Reasoning with Language Models. *EMNLP 2023 - Findings*. [[Preprint](https://arxiv.org/abs/2305.14934)] [[Code](https://github.com/mukhal/grace)].
+## Highlighted Papers (Likely outdated; For an up-to-date list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
 
 **Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. *ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models.* [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
 
