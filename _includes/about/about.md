@@ -21,7 +21,7 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 
 
-## News
+# News
 
 **April 2025** Our work on Generative Process Reward Models is [out!](https://arxiv.org/abs/2504.16828).
 
@@ -70,7 +70,7 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 <!--- **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown. --->
 
 
-## Highlighted Papers 
+# Highlighted Papers 
 (Likely outdated; For an up-to-date list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
 
 **Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. *ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models.* [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
