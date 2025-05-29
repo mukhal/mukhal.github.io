@@ -49,5 +49,6 @@ List of **open-source implementations/tools**:
 * Sequence tagging with xlm-roberta. [link]()
 * Fairseq-tagging. [link]()
 * Arabic Diacritic restoration with transformers. [link](https://github.com/mohammadKhalifa/transformer-diacritization)
+* ThinkPRM: A web-based tool for managing personal relationships. [link](/thinkprm)
 
 

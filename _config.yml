@@ -16,6 +16,8 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+include:
+  - projects/thinkprm
 kramdown:
   input: GFM
   auto_ids: true
