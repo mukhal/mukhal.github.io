@@ -29,7 +29,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -195,7 +195,7 @@
           <div class="figure">
             <img src="./static/images/scaling_verifier_compute.png" alt="Graph showing ThinkPRM's scaling capabilities with increased computation">
             <p class="caption">
-              <strong>Figure 2:</strong> ThinkPRM supports scaling verification compute by thinking longer. The graph shows F1-scores on ProcessBench
+              ThinkPRM supports scaling verification compute by thinking longer. The graph shows F1-scores on ProcessBench
               as we increase the thinking budget (number of tokens). ThinkPRM consistently outperforms both LLM-as-a-judge and discriminative PRM (DiscPRM) baselines,
               with performance improving as we allow more computation. While LLM-as-a-judge shows inconsistent performance with increased compute,
               ThinkPRM demonstrates stable improvements, reaching peak performance around 24K tokens.
@@ -217,7 +217,7 @@
           <div class="figure">
             <img src="./static/images/best-of-n-math.png" alt="Best-of-N performance comparison on AIME '24 and MATH-500">
             <p class="caption">
-              <strong>Figure 3:</strong> Best-of-N performance on AIME '24 and MATH-500. Compared to LLM-as-a-judge, DiscPRM, and (unweighted)
+              Best-of-N performance on AIME '24 and MATH-500. Compared to LLM-as-a-judge, DiscPRM, and (unweighted)
               majority vote, ThinkPRM-14B exhibits the best accuracy scaling curve. On AIME '24 (left), using Qwen2.5-32B-Instruct as generator,
               ThinkPRM-14B consistently outperforms baselines across different numbers of solutions. On MATH-500 (right), with Qwen2.5-14B as generator,
               ThinkPRM-14B shows superior scaling behavior, achieving the highest accuracy as we increase the number of candidate solutions,
@@ -240,7 +240,7 @@
           <div class="figure">
             <img src="./static/images/ood.png" alt="Out-of-domain performance on GPQA-Physics and LiveCodeBench">
             <p class="caption">
-              <strong>Figure 4:</strong> Best-of-N performance on two out-of-domain tasks: science QA (GPQA-Physics) and code generation (LiveCodeBench). 
+              Best-of-N performance on two out-of-domain tasks: science QA (GPQA-Physics) and code generation (LiveCodeBench). 
               Although ThinkPRM was only finetuned on math, it exhibits superior out-of-domain performance compared to the baselines, especially at larger 
               sampling budgets. On GPQA-Physics (left), using Qwen2.5-32B-Instruct as generator, ThinkPRM-14B maintains consistent improvement as the number 
               of solutions increases. On LiveCodeBench (right), with Qwen2.5-Coder-7B as generator, ThinkPRM-14B significantly outperforms all baselines 
