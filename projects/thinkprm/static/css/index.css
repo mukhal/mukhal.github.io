@@ -155,3 +155,23 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.figure .caption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 90%;
+  line-height: 1.4;
+}

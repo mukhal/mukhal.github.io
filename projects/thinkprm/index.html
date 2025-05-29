@@ -49,7 +49,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://mohammadkhalifa.github.io">
+      <a class="navbar-item" href="https://mukhal.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -66,7 +66,7 @@
           <h1 class="title is-1 publication-title">ThinkPRM: Process Reward Models That Think</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://mohammadkhalifa.github.io">Muhammad Khalifa</a>,</span>
+              <a href="https://mukhal.github.io">Muhammad Khalifa</a>,</span>
             <span class="author-block">
               <a href="#">Rishabh Agarwal</a>,</span>
             <span class="author-block">
@@ -164,6 +164,98 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Main Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Main Results</h2>
+        <div class="content has-text-justified">
+          <div class="figure">
+            <img src="./static/images/main_results.png" alt="Main results showing ThinkPRM performance on ProcessBench and MATH-500">
+            <p class="caption">
+              Left: Verifier F1-score on ProcessBench (Zheng et al., 2024). THINKPRM-14B, trained on 8K process
+              labels or 1K synthetic examples, outperforms discriminative PRMs trained on about 100x more data. Right:
+              Accuracy over MATH-500 using Llama-3.2-3B-Instruct as generator with different verifiers. THINKPRM-1.5B,
+              trained using the same 8K labels, outperforms LLM-as-a-judge and discriminative verifiers in reward-guided
+              search on MATH-500. The LLM-as-a-judge in both figures uses the same base model as THINKPRM.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Scaling Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Scaling Verification Compute</h2>
+        <div class="content has-text-justified">
+          <div class="figure">
+            <img src="./static/images/scaling_verifier_compute.png" alt="Graph showing ThinkPRM's scaling capabilities with increased computation">
+            <p class="caption">
+              <strong>Figure 2:</strong> ThinkPRM supports scaling verification compute by thinking longer. The graph shows F1-scores on ProcessBench
+              as we increase the thinking budget (number of tokens). ThinkPRM consistently outperforms both LLM-as-a-judge and discriminative PRM (DiscPRM) baselines,
+              with performance improving as we allow more computation. While LLM-as-a-judge shows inconsistent performance with increased compute,
+              ThinkPRM demonstrates stable improvements, reaching peak performance around 24K tokens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Best-of-N Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Best-of-N Selection Performance</h2>
+        <div class="content has-text-justified">
+          <div class="figure">
+            <img src="./static/images/best-of-n-math.png" alt="Best-of-N performance comparison on AIME '24 and MATH-500">
+            <p class="caption">
+              <strong>Figure 3:</strong> Best-of-N performance on AIME '24 and MATH-500. Compared to LLM-as-a-judge, DiscPRM, and (unweighted)
+              majority vote, ThinkPRM-14B exhibits the best accuracy scaling curve. On AIME '24 (left), using Qwen2.5-32B-Instruct as generator,
+              ThinkPRM-14B consistently outperforms baselines across different numbers of solutions. On MATH-500 (right), with Qwen2.5-14B as generator,
+              ThinkPRM-14B shows superior scaling behavior, achieving the highest accuracy as we increase the number of candidate solutions,
+              demonstrating its effectiveness in selecting the best solution from a larger pool of candidates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Out-of-Domain Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Out-of-Domain Performance</h2>
+        <div class="content has-text-justified">
+          <div class="figure">
+            <img src="./static/images/ood.png" alt="Out-of-domain performance on GPQA-Physics and LiveCodeBench">
+            <p class="caption">
+              <strong>Figure 4:</strong> Best-of-N performance on two out-of-domain tasks: science QA (GPQA-Physics) and code generation (LiveCodeBench). 
+              Although ThinkPRM was only finetuned on math, it exhibits superior out-of-domain performance compared to the baselines, especially at larger 
+              sampling budgets. On GPQA-Physics (left), using Qwen2.5-32B-Instruct as generator, ThinkPRM-14B maintains consistent improvement as the number 
+              of solutions increases. On LiveCodeBench (right), with Qwen2.5-Coder-7B as generator, ThinkPRM-14B significantly outperforms all baselines 
+              including DiscPRM-14B, which struggles despite being trained on an order of magnitude more process labels. This demonstrates ThinkPRM's strong 
+              generalization capabilities beyond its training domain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -241,7 +333,7 @@
       <a class="icon-link" href="https://arxiv.org/pdf/2504.16828">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/mohammadkhalifa/thinkprm" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/mukhal/thinkprm" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
