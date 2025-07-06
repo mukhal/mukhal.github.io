@@ -7,6 +7,8 @@ published: true
 ---
 > 
 Few things give me the satisfaction I get when I build something and share it with the world. Yes, I have always loved learning new things via reading, watching documentaries, or looking something up. However, the joy of learning has always been dwarfed by that of producing. I recently came across a powerful quote from Will Durant in his book "Fallen Leaves": "Let us ask the gods not for possessions, but for things to do; happiness is in making things rather than in consuming them."
+<!--more-->
+
 
 This simple statement hit me like a revelation. In our modern world, we're constantly consuming—social media, entertainment, products, content. Even what one may call "productive" consumption—e.g., watching educational videos, or reading a cool blog post—is a *passive* activity whose benefit doesn't last long for two reasons. First, there is tons of research on how learning by doing is much more effective than learning by watching or reading. Second, you are only benefiting yourself, not others. When it comes to learning a new concept, the irony is we learn it dramatically better if we *teach it to others*. A valuable habit I have been learning to adopt is whenever I learn something new, I call my Dad or a friend and tell them about it. The effect of this on my learning is magical, and I have in fact shared it with the world. That is why good teachers usually have a fundamental understanding of their materials, and there is a self-sustaining cycle here that ensues: their teaching informs their learning and their learning makes them better teachers and so on. 
 
