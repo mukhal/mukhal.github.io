@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Produce not consume"
+title: "Don't consume. Produce."
 author: Muhammad Khalifa
 comments: true
 published: true
