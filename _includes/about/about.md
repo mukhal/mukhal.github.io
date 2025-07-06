@@ -1,8 +1,8 @@
 <!--- <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180> --->
 <img src="https://i.ibb.co/9YDR3xg/headshot-circle.png" width=180 height=180>
-I am a fourth-year PhD candidate at the University of Michigan in Ann Arbor and an intern at Ai2. I am advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**, and **Controlled Generation**.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I spent 10 months at Amazon AI working with [Miguel Ballesteros](http://miguelballesteros.com/) and [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/) on multiple projects including Dialogue Summarization and Semi-structured documents understanding. Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+I am a fourth-year PhD candidate at the University of Michigan in Ann Arbor. I'm currently an intern at LG AI Research working on web agents. I am advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). My main research interests are **Large Language Models**, **Reasoning**, and **Controlled Generation**.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> Previously, I was at AI2 wokring with Iz Beltagy and Hao Peng. In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
-On a side note, I'm an avid reader of psychology, and philosophy, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
+On a side note, I'm an avid reader of philosophy of mind, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
 
 <div align="center">
@@ -22,6 +22,7 @@ On a side note, I'm an avid reader of psychology, and philosophy, and an all-tim
 
 
 # News
+**July 2025** Gave an invited talk on [ThinkPRM](https://arxiv.org/abs/2504.16828) at Tsinghua University. Here are the [slides](https://docs.google.com/presentation/d/1O7HIoQLFn6ACJgAwD-e_O8c643fQUSRqbjJjO4S4s2I/edit?usp=sharing)
 
 **April 2025** Our work on Generative Process Reward Models is [out!](https://arxiv.org/abs/2504.16828).
 
