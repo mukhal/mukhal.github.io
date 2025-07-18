@@ -7,18 +7,20 @@ published: true
 ---
 
 > 
-LLMs learn tons of world knowledge from pretraining, but as much of this knowledge changes, becomes obsolete, or is completely wrong, an LLM user should be able to judge for themselves whether a piece of knowledge is accurate.  Last year we had a [paper](https://arxiv.org/abs/2404.01019) at COLM '24, where we explored a new task that we referred to as *intrinsic source citation*, a task where LLMs not only needs to answer a user query e.g., Who starred in Before Sunrise?, but also provide a *link* to a source i.e., a citation where can this information be verified. 
+Can we train LLMs to not only answer questions, but also cite exactly where their knowledge comes from? Yes and we should train them to!
 <!--more-->
 
 
-You might be wondering: what happened to retrieval augmented generation (RAG) then? why can't we just first retrieve relevant sources, then use the LLM to answer questions based on them. RAG is indeed one solution to this and can provide some credible citations to retrieved sources. But let's admit it; RAG is not neat, and adds an extra layer of complexity and overhead. Also, RAG can not help us attribute *parametetric* knowledge stored in the model's weights and not present in the retrieval corpus. We sought a first-principles solution that can build this into the model from the ground up. 
+LLMs learn tons of world knowledge from pretraining, but as much of this knowledge changes, becomes obsolete, or is completely wrong, an LLM user should be able to judge for themselves whether a piece of knowledge is accurate. This post is about a setup in which LLMs not only needs to answer a user query e.g., Who starred in Before Sunrise?, but also provide a *link* to a source i.e., a citation where can this information be verified. 
+
+Can we do the same thing using retrieval augmented generation (RAG)? That is, retrieve relevant sources, then use the LLM to answer questions based on them. RAG is indeed one solution to this and can provide some credible citations to retrieved sources. But let's admit it; RAG is not neat, and adds an extra layer of complexity and overhead. Also, RAG can not help us attribute *parametetric* knowledge stored in the model's weights and not present in the retrieval corpus. We sought a first-principles solution that can build this into the model from the ground up. 
 
 
 ## Source-Aware Training: A First Step
 
 In our COLM '24 paper, [Khalifa et al., 2024](https://arxiv.org/abs/2404.01019), we introduced the concept of **intrinsic source citation**. 
 
-<img src="/images/intrinsic-source-citation.png" alt="Intrinsic Source Citation" style="max-width: 600px; width: 100%; display: block; margin: 1.5em auto;" />
+<img src="/images/intrinsic-source-citation.png" alt="Intrinsic Source Citation" style="max-width: 500px; width: 100%; display: block; margin: 1.5em auto;" />
 
 
 The core idea is to make LLMs aware of the source of their knowledge during pretraining, so that they can later cite the source when generating an answer. How do we do that? The simple approach we started with was to *inject* document identifiers during pretraining. Our approach, called **source-aware training**, involves two main steps:
