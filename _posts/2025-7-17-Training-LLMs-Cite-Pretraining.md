@@ -13,32 +13,30 @@ You might be wondering: what happened to retrieval augmented generation (RAG) th
 
 ## Source-Aware Training: A First Step
 
-In our COLM '24 paper, [Khalifa et al., 2024](https://arxiv.org/abs/2404.01019), we introduced the concept of **intrinsic source citation**. The core idea is to make LLMs aware of the source of their knowledge during pretraining, so that they can later cite the source when generating an answer. 
+In our COLM '24 paper, [Khalifa et al., 2024](https://arxiv.org/abs/2404.01019), we introduced the concept of **intrinsic source citation**. 
 
-<img src="images/intrinsic-source-citation.png" alt="Intrinsic Source Citation" style="max-width: 600px; width: 100%; display: block; margin: 1.5em auto;" />
+<img src="/images/intrinsic-source-citation.png" alt="Intrinsic Source Citation" style="max-width: 600px; width: 100%; display: block; margin: 1.5em auto;" />
 
 
-Our approach, called **source-aware training**, involves two main steps:
+The core idea is to make LLMs aware of the source of their knowledge during pretraining, so that they can later cite the source when generating an answer. How do we do that? The simple approach we started with was to *inject* document identifiers during pretraining. Our approach, called **source-aware training**, involves two main steps:
 
-1. **Source Tagging During Pretraining:** Each document in the pretraining corpus is tagged with a unique identifier. The model is trained to associate facts with these source tags.
-2. **Instruction Tuning for Citation:** After pretraining, we fine-tune the model with instructions that prompt it to answer questions and provide the supporting source identifier.
+1. **Document ID injection:** Each document in the pretraining corpus is tagged with its unique identifier. *Where* we inject the identifier in the pretraining text. The goal is to teach the model to associate the knowledge i.e., facts in a document with the document ID.
+2. **Instruction Tuning for Citation:** The first step will not be sufficient to teach the model to spit the ID when needed. Here, we fine-tune the model answer questions and provide the supporting source identifier.
 
-We found that this simple recipe enables LLMs to attribute their answers to the correct pretraining source with high fidelity—at least in synthetic settings. Importantly, this is achieved with minimal changes to the model architecture or training pipeline, and without a significant hit to language modeling performance.
+Our findings in this paper were mostly: We showed that it is possible to achieve that level of attribution, but with a caveat. We need **data augmentation** for the model to associate each individual fact with the document ID. Precisely, if we inject the ID once at the end of the document, the model simply can not associate each individual fact with the ID, it can only associate the document *as a whole*. In other words, it can extract individual fact and map them to the ID. We connected this to limitations of transformers identifier in [Physics of LLMs 3.1](https://arxiv.org/abs/2309.14316). Importantly, this is achieved with minimal changes to the model architecture or training pipeline, and without a significant hit to language modeling performance.
 
-## Beyond Verbatim: The Challenge of Paraphrase and Composition
+<img src="/images/doc-aug.png" alt="Document Augmentation" style="max-width: 600px; width: 100%; display: block; margin: 1.5em auto;" />
 
-While source-aware training works well for verbatim memorization, real-world knowledge is often paraphrased or composed from multiple sources. This is where the recent work by [Huang et al., 2025](https://arxiv.org/abs/2506.17585) makes a significant advance.
 
-They introduce **Cite Pretrain**, a framework for **retrieval-free knowledge attribution**. Their key insight is that simply appending source IDs (what they call “Passive Indexing”) is not enough—models struggle to attribute paraphrased or compositional facts. To address this, they propose:
+Our work was a proof of concept on synthetic data, and the next step was to scale this up to real-world knowledge. Real-world knowledge is certainly messier, and is often paraphrased or composed from multiple sources. This is where the recent work by [Huang et al., 2025](https://arxiv.org/abs/2506.17585) makes an impressive follow-up. Their findings, which agree with ours, that step 1 of our approach (what they call “Passive Indexing”) is not enough—models struggle to attribute paraphrased or compositional facts. To address this, they propose:
 
-- **Active Indexing:** During continual pretraining, the model is exposed to synthetic QA pairs that restate each fact in diverse forms and require the model to both generate content from a cited source and attribute its own answers.
-- **Bidirectional Training:** The model learns both to answer questions given a source and to cite the source given a fact, reinforcing the association.
+- **Active Indexing:** During continual pretraining, the model is exposed to synthetic QA pairs that restate each fact in diverse forms and require the model to both generate content from a cited source and attribute its own answers. This is a more fancy form of the data augmentation we played with. 
+- **Bidirectional Training:** This is a clever auxiliary objective that teaches the model both to **(i)** answer questions given a source and to **(ii)**  cite the source given a fact, reinforcing the fact-ID association.
 
-Their experiments on the CitePretrainBench benchmark show that Active Indexing dramatically improves citation precision, especially for paraphrased and multi-fact questions. Performance continues to improve as the amount of augmented data increases, suggesting that scaling up this approach could yield even more reliable attribution.
 
 ## Where Are We Headed?
 
-Together, these works point to a future where LLMs can not only provide answers, but also transparently cite the origins of their knowledge—without the need for external retrieval. This has major implications for transparency, trust, and the responsible deployment of language models.
+I'm personally excited about this direction. Together, these works point to a future where LLMs can not only provide answers, but also transparently cite the origins of their knowledge—without the need for external retrieval. This has major implications for transparency, trust, and the responsible deployment of language models.
 
 Of course, challenges remain: scaling these methods to real-world corpora, handling ambiguous or multi-source facts, and ensuring that citation does not come at the cost of language modeling quality. But the progress so far is promising, and the field is moving rapidly.
 
