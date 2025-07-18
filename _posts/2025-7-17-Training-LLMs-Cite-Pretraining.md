@@ -6,7 +6,8 @@ comments: true
 published: true
 ---
 
-> LLMs learn tons of world knowledge from pretraining, but as much of this knowledge changes, becomes obsolete, or is completely wrong, an LLM user should be able to judge for themselves whether a piece of knowledge is accurate.  Last year we had a [paper](https://arxiv.org/abs/2404.01019) at COLM '24, where we explored a new task that we referred to as *intrinsic source citation*, a task where LLMs not only needs to answer a user query e.g., Who starred in Before Sunrise?, but also provide a *link* to a source i.e., a citation where can this information be verified. 
+> 
+LLMs learn tons of world knowledge from pretraining, but as much of this knowledge changes, becomes obsolete, or is completely wrong, an LLM user should be able to judge for themselves whether a piece of knowledge is accurate.  Last year we had a [paper](https://arxiv.org/abs/2404.01019) at COLM '24, where we explored a new task that we referred to as *intrinsic source citation*, a task where LLMs not only needs to answer a user query e.g., Who starred in Before Sunrise?, but also provide a *link* to a source i.e., a citation where can this information be verified. 
 <!--more-->
 You might be wondering: what happened to retrieval augmented generation (RAG) then? why can't we just first retrieve relevant sources, then use the LLM to answer questions based on them. RAG is indeed one solution to this and can provide some credible citations to retrieved sources. But let's admit it; RAG is not neat, and adds an extra layer of complexity and overhead. Also, RAG can not help us attribute *parametetric* knowledge stored in the model's weights and not present in the retrieval corpus. We sought a first-principles solution that can build this into the model from the ground up. 
 
