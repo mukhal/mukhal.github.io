@@ -41,12 +41,10 @@ Our work was a proof of concept on synthetic data, and the next step was to scal
 
 ## Where Are We Headed?
 
-I'm personally excited about this direction. Together, these works point to a future where LLMs can not only provide answers, but also transparently cite the origins of their knowledge—without the need for external retrieval. This has major implications for transparency, trust, and the responsible deployment of language models.
-
-Of course, challenges remain: scaling these methods to real-world corpora, handling ambiguous or multi-source facts, and ensuring that citation does not come at the cost of language modeling quality. But the progress so far is promising, and the field is moving rapidly.
+I'm excited about a future where LLMs can not only provide answers, but cite supporting evidence of their parametric knowledge. That said, I can still see the value of RAG for working with external knowledge, and so a hybrid approach of this directions and RAG would be likely be the way to go.
 
 
 
 **References:
-Khalifa et al., 2024. "Source-Aware Training Enables Knowledge Attribution in Language Models." arXiv:2404.01019
+Khalifa et al., 2024. "Source-Aware Training Enables Knowledge Attribution in Language Models." COLM 2024.
 Huang et al., 2025. "Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models." arXiv:2506.17585
