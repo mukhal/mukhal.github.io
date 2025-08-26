@@ -5,6 +5,9 @@ I am a fourth-year PhD candidate at the University of Michigan in Ann Arbor advi
 On a side note, I'm an avid reader of philosophy of mind, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
 
+**I'm on the job market for research scientist positions in the industry, so reach out if you for potential fits!**
+
+
 <div align="center">
 (
 <a href="https://twitter.com/mkhalifaaaa"> Twitter </a>
@@ -18,6 +21,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 <a href="#"> CV </a>
 )
 </div>
+
 
 
 
