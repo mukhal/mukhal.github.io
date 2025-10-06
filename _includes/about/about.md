@@ -1,6 +1,6 @@
 <!--- <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180> --->
 <img src="https://i.ibb.co/9YDR3xg/headshot-circle.png" width=180 height=180>
-I am a fourth-year PhD candidate at the University of Michigan in Ann Arbor advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). I'm currently an intern at LG AI Research working on web agents. I am interested in test-time techniques for LLM reasoning, controlled generation, and knowledge attribution.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I was fortunate to work in different places with so many amazing people. In summer 2024, I was at Cohere working on large scale model merging for 100B+ models. In summer 2023, I was AI2 working with Iz Beltagy and Hao Peng on training models to cite their pretraining [data](https://arxiv.org/abs/2404.01019). In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+I am a final-year PhD candidate at the University of Michigan in Ann Arbor advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). I'm currently an intern at LG AI Research working on web agents. I am interested in test-time techniques for LLM reasoning, controlled generation, and knowledge attribution.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I was fortunate to work in different places with so many amazing people. In summer 2023, I was AI2 working with Iz Beltagy and Hao Peng on training models to cite their pretraining [data](https://arxiv.org/abs/2404.01019). In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
 On a side note, I'm an avid reader of philosophy of mind, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
 
@@ -18,10 +18,30 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 /
 <a href="https://github.com/mukhal"> Github </a>
 /
-<a href="#"> CV </a>
+<a href="/cv/muhammad-khalifa.pdf" target="_blank" rel="noopener"> CV </a>
 )
 </div>
 
+<!-- Job Market Flyer -->
+<div style="border: 2px solidrgb(60, 160, 231); border-radius: 6px; padding: 16px 18px; margin: 20px 0; background: #fff7f6;">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+    <h3 style="margin: 0; color:rgb(39, 200, 170);">On the job market</h3>
+    <a href="/cv/muhammad.khalifa.pdf" target="_blank" rel="noopener" style="text-decoration: none;">
+      <button style="background:rgb(11, 177, 172); color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">CV (SEPT 2025)</button>
+    </a>
+  </div>
+  <p style="margin: 10px 0 12px;">
+    I’m seeking <b>full-time research scientist</b> roles starting <b>early 2026</b>. If there’s a good fit, please contact me at <code>{last_name}{first_name}@gmail.com</code>.
+  </p>
+  <p style="margin: 0 0 6px;"><b>At a very high-level</b>, my work aims to build verifiable, reliable, and trustworthy reasoning systems. Here’s a summary of my relevant work:</p>
+  <ul style="margin-top: 8px;">
+    <li>My work on test-time scaling for reasoning involved early works to train process reward models for reasoning without step-level human annotations <a href="https://arxiv.org/abs/2305.14934">GRACE</a>.</li>
+    <li>Proposed data-efficient generative process reward model (ThinkPRM) that can scale verifier compute by thinking longer about verification. ThinkPRM outperforms existing PRMs with 1% of the labels. <a href="https://arxiv.org/abs/2504.16828">ThinkPRM</a>.</li>
+    <li>I did foundational and early work on LLM alignment without KL-penalties using an energy-based formulation that allows for both point wise and distributional constraints on LLM outputs <a href="https://openreview.net/forum?id=jWkw45-9AbL">ICLR 2021 (Oral)</a>.</li>
+    <li>Proposed a recipe to train LLMs that can cite their own pretraining data, thus enabling verifiability of their parametric knowledge—a property existing LLMs do not have. <a href="https://arxiv.org/abs/2404.01019">Source-aware training</a>.</li>
+  </ul>
+</div>
+<!-- /Job Market Flyer -->
 
 
 
