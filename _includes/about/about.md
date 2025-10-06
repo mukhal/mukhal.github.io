@@ -17,7 +17,7 @@
   <ul style="margin-top: 8px;">
     <li>My work on test-time scaling for reasoning involved early works to train process reward models for reasoning without step-level human annotations <a href="https://arxiv.org/abs/2305.14934">GRACE</a>.</li>
     <li>Proposed data-efficient generative process reward model (ThinkPRM) that can scale verifier compute by thinking longer about verification. ThinkPRM outperforms existing PRMs with 1% of the labels. <a href="https://arxiv.org/abs/2504.16828">ThinkPRM</a>.</li>
-    <li>I did foundational and early work on LLM alignment without KL-penalties using an energy-based formulation that allows for both point wise and distributional constraints on LLM outputs <a href="https://openreview.net/forum?id=jWkw45-9AbL">ICLR 2021 (Oral)</a>.</li>
+    <li>I did foundational <a href="https://openreview.net/forum?id=jWkw45-9AbL"> work </a> on LLM alignment without KL-penalties using an energy-based formulation that allows for both pointwise and distributional constraints on LLM outputs.</li>
     <li>Proposed a recipe to train LLMs that can cite their own pretraining data, thus enabling verifiability of their parametric knowledge—a property existing LLMs do not have. <a href="https://arxiv.org/abs/2404.01019">Source-aware training</a>.</li>
   </ul>
 </div>
