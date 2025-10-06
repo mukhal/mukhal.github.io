@@ -10,15 +10,15 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 <div align="center">
 (
-<a href="https://twitter.com/mkhalifaaaa"> Twitter </a>
+<a href="https://twitter.com/mkhalifaaaa">🐦 Twitter </a>
 /
-<a href="https://linkedin.com/in/muhammaad-khalifa-9a467b100/"> LinkedIn </a>
+<a href="https://linkedin.com/in/muhammaad-khalifa-9a467b100/">💼 LinkedIn </a>
 /
-<a href="https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en"> Scholar </a>
+<a href="https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en">🎓 Scholar </a>
 /
-<a href="https://github.com/mukhal"> Github </a>
+<a href="https://github.com/mukhal">💻 Github </a>
 /
-<a href="/cv/muhammad-khalifa.pdf" target="_blank" rel="noopener"> CV </a>
+<a href="/cv/muhammad-khalifa.pdf" target="_blank" rel="noopener">📄 CV </a>
 )
 </div>
 
@@ -26,12 +26,12 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 <div style="border: 2px solidrgb(60, 160, 231); border-radius: 6px; padding: 16px 18px; margin: 20px 0; background: #fff7f6;">
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
     <h3 style="margin: 0; color:rgb(39, 200, 170);">On the job market</h3>
-    <a href="/cv/muhammad.khalifa.pdf" target="_blank" rel="noopener" style="text-decoration: none;">
+    <a href="/cv/muhammad-khalifa.pdf" target="_blank" rel="noopener" style="text-decoration: none;">
       <button style="background:rgb(11, 177, 172); color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">CV (SEPT 2025)</button>
     </a>
   </div>
   <p style="margin: 10px 0 12px;">
-    I’m seeking <b>full-time research scientist</b> roles starting <b>early 2026</b>. If there’s a good fit, please contact me at <code>{last_name}{first_name}@gmail.com</code>.
+    I’m seeking <b>full-time research scientist</b> roles starting <b>early 2026</b>. If there’s a good fit, please contact me at <code>{last_name}m@umich.com</code>.
   </p>
   <p style="margin: 0 0 6px;"><b>At a very high-level</b>, my work aims to build verifiable, reliable, and trustworthy reasoning systems. Here’s a summary of my relevant work:</p>
   <ul style="margin-top: 8px;">
