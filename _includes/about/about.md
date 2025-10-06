@@ -11,7 +11,7 @@
     </a>
   </div>
   <p style="margin: 10px 0 12px;">
-    I’m seeking <b>full-time research scientist</b> roles starting <b>early 2026</b>. If there’s a good fit, please contact me at <code>{last_name}m@umich.com</code>.
+    I’m seeking <b>full-time research scientist</b> roles starting <b>early 2026</b>. If there’s a good fit, please contact me at <code>{last_name}{first_name[0]}@umich.com</code>.
   </p>
   <p style="margin: 0 0 6px;"><b>At a very high-level</b>, my work aims to build verifiable, reliable, and trustworthy reasoning systems. Here’s a summary of my relevant work:</p>
   <ul style="margin-top: 8px;">
