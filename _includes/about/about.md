@@ -49,6 +49,8 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 
 # News
+**October 2025** Co-organizing [SCALR@COLM](https://scalr-workshop.github.io/), which is the first workshop on test-time scaling and reasoning models.
+
 **July 2025** Gave an invited talk on [ThinkPRM](https://arxiv.org/abs/2504.16828) at Tsinghua University. Here are the [slides](https://docs.google.com/presentation/d/1O7HIoQLFn6ACJgAwD-e_O8c643fQUSRqbjJjO4S4s2I/edit?usp=sharing)
 
 **April 2025** Our work on Generative Process Reward Models is [out!](https://arxiv.org/abs/2504.16828).
