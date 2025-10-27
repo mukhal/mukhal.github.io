@@ -16,7 +16,7 @@
   <p style="margin: 0 0 6px;"><b>At a very high-level</b>, my work aims to build verifiable, reliable, and trustworthy reasoning systems. Here's a summary of my relevant work/interests:</p>
   <ul style="margin-top: 8px;">
       <li>I am highly interested in building reliable and universal verifiers for AI reasoning. This includes <a href="https://arxiv.org/abs/2305.14934">process reward models for reasoning without step-level human annotations (GRACE)</a> and proposing <a href="https://arxiv.org/abs/2504.16828">data-efficient generative process reward models (ThinkPRM)</a> that can scale verifier compute by thinking longer about verification. My work also studied verification <a href="https://arxiv.org/abs/2404.17140">bottleneck for self-correction in reasoning</a>.</li>
-    <li>I am also interested in post-training techniques including training for <a href="https://openreview.net/forum?id=jWkw45-9AbL">alignment</a>, attribution via <a href="https://arxiv.org/abs/2404.01019">pretraining data citation</a> and <a href="https://arxiv.org/abs/2412.04144">large-scale model merging</a>.</li>
+    <li>I am also interested in post-training techniques including aligning LLMs via <a href="https://openreview.net/forum?id=jWkw45-9AbL">energy-based models without KL pentalties</a>, a recipe for knowedlge attribution via <a href="https://arxiv.org/abs/2404.01019">pretraining data citation</a> and large-scale optimization of <a href="https://arxiv.org/abs/2412.04144">model merging to mitigate task tradeoffs</a>.</li>
     <li>Most recently, I've focused on evaluation of <a href="https://arxiv.org/abs/2504.09702">AI research agents</a> and studying issues with reward design and LLM-as-a-judge.</li>
   </ul>
 </div>
