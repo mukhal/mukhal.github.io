@@ -3,11 +3,11 @@
 
 
 <!-- Job Market Flyer -->
-<div style="border: 2px solidrgb(60, 160, 231); border-radius: 6px; padding: 16px 18px; margin: 20px 0; background: #fff7f6;">
+<div style="border: 2px solid rgb(60, 160, 231); border-radius: 6px; padding: 16px 18px; margin: 20px 0; background: #fff7f6;">
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-    <h3 style="margin: 0; color:rgb(39, 200, 170);">On the job market</h3>
+    <h3 style="margin: 0; color: rgb(39, 200, 170);">On the job market</h3>
     <a href="/cv/muhammad-khalifa.pdf" target="_blank" rel="noopener" style="text-decoration: none;">
-      <button style="background:rgb(11, 177, 172); color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">CV (SEPT 2025)</button>
+      <button style="background: rgb(11, 177, 172); color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">CV (SEPT 2025)</button>
     </a>
   </div>
   <p style="margin: 10px 0 12px;">
@@ -15,9 +15,9 @@
   </p>
   <p style="margin: 0 0 6px;"><b>At a very high-level</b>, my work aims to build verifiable, reliable, and trustworthy reasoning systems. Here's a summary of my relevant work/interests:</p>
   <ul style="margin-top: 8px;">
-      <li>I am highly interested in building reliable and universal verifiers for AI reasoning. This includes <a href="https://arxiv.org/abs/2305.14934">process reward models for reasoning without step-level human annotations (GRACE)</a> and proposing <a href="https://arxiv.org/abs/2504.16828">data-efficient generative process reward models (ThinkPRM)</a> that can scale verifier compute by thinking longer about verification. My work also studied verification <a href="https://arxiv.org/abs/2404.17140">bottlneck for self-correction in reasoning</a>.
-    <li>I am also interested in post-training techniques including training for <a href="https://openreview.net/forum?id=jWkw45-9AbL">alignment</a>, attribution via <a href="https://arxiv.org/abs/2404.01019">pretraining data ciattion</a> and <a href="https://arxiv.org/abs/2412.04144">large-scale model merging</a> </li>
-    <li>Most recently, I've focused on evaluation of<a href="https://arxiv.org/abs/2504.09702"> AI research agents</a> and studying issues with reward design and LLM-as-a-judge.</li>
+      <li>I am highly interested in building reliable and universal verifiers for AI reasoning. This includes <a href="https://arxiv.org/abs/2305.14934">process reward models for reasoning without step-level human annotations (GRACE)</a> and proposing <a href="https://arxiv.org/abs/2504.16828">data-efficient generative process reward models (ThinkPRM)</a> that can scale verifier compute by thinking longer about verification. My work also studied verification <a href="https://arxiv.org/abs/2404.17140">bottleneck for self-correction in reasoning</a>.</li>
+    <li>I am also interested in post-training techniques including training for <a href="https://openreview.net/forum?id=jWkw45-9AbL">alignment</a>, attribution via <a href="https://arxiv.org/abs/2404.01019">pretraining data citation</a> and <a href="https://arxiv.org/abs/2412.04144">large-scale model merging</a>.</li>
+    <li>Most recently, I've focused on evaluation of <a href="https://arxiv.org/abs/2504.09702">AI research agents</a> and studying issues with reward design and LLM-as-a-judge.</li>
   </ul>
 </div>
 <!-- /Job Market Flyer -->
