@@ -1,6 +1,6 @@
-## Projects
+## Fun projects
 
-### Featured GitHub Projects
+I like to work on fun side projects in my free time, especially during weekends. These are usually tools or ideas that I find interesting or useful, built purely for the joy of exploration and learning.
 
 * **[codebase-to-puzzles](https://github.com/mukhal/codebase-to-puzzles)**  
   Turn any codebase into coding puzzles to maximize understanding. An LLM-powered tool that analyzes GitHub repositories and generates hands-on coding exercises.
