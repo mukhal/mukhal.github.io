@@ -1,5 +1,5 @@
 <!--- <img src="https://i.imgur.com/UE1yXQ5.png" width=180 height=180> --->
-<img src="https://i.ibb.co/9YDR3xg/headshot-circle-2.png" width=180 height=180>
+<img src="https://i.ibb.co/xtbdfkDx/headshot-circle-2.png" width=180 height=180>
 
 
 <!-- Job Market Flyer -->
