@@ -46,6 +46,117 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 
 
+# Selected Works
+(Likely outdated; For an up-to-date list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Process Reward Models That Think</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">2025</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://arxiv.org/abs/2504.16828" target="_blank" rel="noopener">[Paper]</a>
+        <a href="https://github.com/mukhal/thinkprm" target="_blank" rel="noopener">[Code]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-thinkprm.png" alt="ThinkPRM visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">A Distributional Approach to Controlled Text Generation</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa*</strong>, Hady Elsahar*, Marc Dymetman*</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">ICLR 2021</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://openreview.net/forum?id=jWkw45-9AbL" target="_blank" rel="noopener">[Paper]</a>
+        <a href="https://github.com/naver/gdc" target="_blank" rel="noopener">[Code]</a>
+        <a href="https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/" target="_blank" rel="noopener">[Blog]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-distributional-control.png" alt="Distributional Control visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">GRACE: Discriminator-Guided Chain-of-Thought Reasoning</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, et al.</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">EMNLP Findings 2023</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://arxiv.org/abs/2305.14934" target="_blank" rel="noopener">[Paper]</a>
+        <a href="https://github.com/mukhal/grace" target="_blank" rel="noopener">[Code]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-grace.png" alt="GRACE visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Learning to Reason via Program Generation, Emulation, and Search</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Nathaniel Weir*</strong>, <strong>Muhammad Khalifa*</strong>, Linlu Qiu, Orion Weller, Peter Clark</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">NeurIPS 2024</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/401ece9f5d1cfa8600c22049ef43930e-Abstract-Conference.html" target="_blank" rel="noopener">[Paper]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-cogex.png" alt="COGEX visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Source-Aware Training Enables Knowledge Attribution in Language Models</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, David Wadden, Emma Strubell, Honglak Lee, Lu Wang, Iz Beltagy, Hao Peng</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">COLM 2024</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://arxiv.org/abs/2404.01019" target="_blank" rel="noopener">[Paper]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-source-aware.png" alt="Source-Aware Training visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">If You Can't Use Them, Recycle Them: Optimizing Merging at Scale Mitigates Performance Tradeoffs</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Yi-Chern Tan, Arash Ahmadian, Tom Hosking, Honglak Lee, Lu Wang, Ahmet Üstün, Tom Sherborne, Matthias Gallé</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">arXiv 2024</p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="https://arxiv.org/abs/2412.04144" target="_blank" rel="noopener">[Paper]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="/images/papers/placeholder-model-merging.png" alt="Model Merging visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
+
+<!--- **Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)] --->
+
+
+
+
+
 
 # News
 **October 2025** Co-organizing [SCALR@COLM](https://scalr-workshop.github.io/), which is the first workshop on test-time scaling and reasoning models.
@@ -97,24 +208,3 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 <!--- **Jan 10th, 2021:** My paper on Zero-shot multi-dialectal Arabic sequence labeling was accepted to EACL 2021! [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)] --->
 
 <!--- **October 12th, 2020:** Started an applied scientist internship at Amazon AI, working with Miguel Ballesteros and Kathleen Mckeown. --->
-
-
-# Highlighted Papers 
-(Likely outdated; For an up-to-date list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
-
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Exploring Demonstration Ensembling for In-context Learning. *ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models.* [[Paper](https://openreview.net/forum?id=9kK4R_8nAsD)].
-
-**Muhammad Khalifa**, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang. Few-shot Reranking for Multi-hop QA via Language Model Prompting. *ACL 2023* [[Paper](https://arxiv.org/abs/2205.12650)] [[Code](https://github.com/mukhal/PromptRank)].
-
-
-**Muhammad Khalifa**, Miguel Ballesteros, and Kathleen McKeown. 2021. A Bag of Tricks for Dialogue Summarization. *EMNLP 2021 (short paper)* [[Paper](https://aclanthology.org/2021.emnlp-main.631/)].
-
-
-**Muhammad Khalifa**, Muhammad Abdul-Mageed, Khaled Shaalan. "Self-Training Pre-Trained Language Models for Zero-and Few-Shot Multi-Dialectal Arabic Sequence Labeling." *EACL 2021.* [[Paper](https://www.aclweb.org/anthology/2021.eacl-main.65/)] [[Code](https://github.com/mohammadKhalifa/zero-shot-arabic-dialects)] [[Bibtex](https://www.aclweb.org/anthology/2021.eacl-main.65.bib)]
-
-**Muhammad Khalifa\***, Hady Elsahar\*, Marc Dymetman\*. "A Distributional Approach to Controlled Text Generation". *ICLR 2021.* [[Paper](https://openreview.net/forum?id=jWkw45-9AbL)] [[Code](https://github.com/naver/gdc)] [[Blog](https://europe.naverlabs.com/blog/debiasing-large-pretrained-language-models-using-distributional-control/)]
-
-<!--- Mustafa Jarrar, Eman Karajah, **Muhammad Khalifa**, Khaled Shaalan. "Extracting Synonyms from Bilingual Dictionaries". In Proceedings of the 11th International Global Wordnet Conference (GWC2021). Global Wordnet Association (2021). [[Paper](https://arxiv.org/abs/2012.00600)] --->
-
-<!--- **Muhammad Khalifa**, Khaled Shaalan. "Character Convolutions for Arabic Named Entity Recognition with Long Short-Term Memory Networks". In Speech & Language, Volume 58, 2019, Pages 335-346, ISSN 0885-2308. [[Paper](https://www.researchgate.net/publication/333326547_Character_Convolutions_for_Arabic_Named_Entity_Recognition_with_Long_Short-Term_Memory_Networks)] --->
-
