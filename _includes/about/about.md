@@ -22,12 +22,10 @@
 </div>
 <!-- /Job Market Flyer -->
 
-I am a final-year PhD candidate at the University of Michigan in Ann Arbor advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). I'm currently an intern at LG AI Research working on web agents. I am interested in test-time techniques, reasoning agents, and LLM post-training.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I was fortunate to work in different places with so many amazing people. In summer 2023, I was AI2 working with Iz Beltagy and Hao Peng on training models to cite their pretraining [data](https://arxiv.org/abs/2404.01019). In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
+I am a final-year PhD candidate at the University of Michigan in Ann Arbor advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). I'm currently an intern at LG AI Research working on web agents. I am interested in test-time techniques, reasoning agents, and LLM post-training.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I was fortunate to work in different places with so many amazing people. In summer 2024, I was part of CodeGen team at Cohere led by [Matthias Gallé](https://scholar.google.com/citations?user=P-md_yYAAAAJ&hl=en) where I worked on large-scale model merging. In summer 2023, I was AI2 working with Iz Beltagy and Hao Peng on training models to cite their pretraining [data](https://arxiv.org/abs/2404.01019). In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
-On a side note, I'm an avid reader of philosophy of mind, and an all-time listener of uplifting trance music. In my free time, I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r). If you'd like to chat about research, mentoring, or potentially collaborate, ping me at `[lastname]m@umich.edu.`
+**Fun fact:** I play the piano, write, and produce my own [music](https://soundcloud.com/muhammad-khalifa/sets/1iesbut8u66r).
 
-
-**I'm on the job market for research scientist positions in the industry, so reach out if you see a fit!**
 
 
 <div align="center">
@@ -47,7 +45,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 
 # Selected Works
-(Likely outdated; For an up-to-date list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
+(For a complete list, visit my [google scholar](https://scholar.google.com/citations?user=tnmUr30AAAAJ&hl=en&authuser=3))
 
 <div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
   <div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -158,7 +156,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 
 
-# News
+<!---  # News 
 **October 2025** Co-organizing [SCALR@COLM](https://scalr-workshop.github.io/), which is the first workshop on test-time scaling and reasoning models.
 
 **July 2025** Gave an invited talk on [ThinkPRM](https://arxiv.org/abs/2504.16828) at Tsinghua University. Here are the [slides](https://docs.google.com/presentation/d/1O7HIoQLFn6ACJgAwD-e_O8c643fQUSRqbjJjO4S4s2I/edit?usp=sharing)
@@ -185,11 +183,11 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
 
 **Oct, 2023:** Two papers accepted at EMNLP 2023 (Findings and main)! 
 
-**May, 2023:** Three papers accepted at ACL 2023 (two at the main conference and one at Findings)! 
+**May, 2023:** Three papers accepted at ACL 2023 (two at the main conference and one at Findings)! ---> 
 
 <!--- **Feb, 2023:** I will be joining Ai2 as an intern for summer 2023! --->
 
-**Nov 30th, 2022:** I was awarded the Rackham Fellowship for Outstanding International Students!
+<!--- **Nov 30th, 2022:** I was awarded the Rackham Fellowship for Outstanding International Students! --->
 
 <!--- **Oct 11th, 2022:** New [preprint](https://arxiv.org/abs/2210.05613) on contrastive training for semi-structured document classification. ---> 
 
