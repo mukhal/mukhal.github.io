@@ -61,7 +61,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-thinkprm.png" alt="ThinkPRM visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/thinkprm.png' | relative_url }}" alt="ThinkPRM visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
@@ -79,7 +79,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-distributional-control.png" alt="Distributional Control visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/gdc.png' | relative_url }}" alt="Distributional Control visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
@@ -96,7 +96,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-grace.png" alt="GRACE visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/grace.png' | relative_url }}" alt="GRACE visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
@@ -112,7 +112,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-cogex.png" alt="COGEX visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/cogex.png' | relative_url }}" alt="COGEX visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
@@ -128,7 +128,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-source-aware.png" alt="Source-Aware Training visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/source-aware.png' | relative_url }}" alt="Source-Aware Training visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
@@ -144,7 +144,7 @@ On a side note, I'm an avid reader of philosophy of mind, and an all-time listen
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
-      <img src="/images/papers/placeholder-model-merging.png" alt="Model Merging visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+      <img src="{{ '/images/papers/merging.png' | relative_url }}" alt="Model Merging visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
