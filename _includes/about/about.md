@@ -55,7 +55,7 @@ I am a final-year PhD candidate at the University of Michigan in Ann Arbor advis
   <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
       <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Process Reward Models That Think</h3>
-      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Moontae Lee, Honglak Lee, Lu Wang</p>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Rishabh Agarwal, Lajanugen Logeswaran, Jaekyeom Kim, Hao Peng, Moontae Lee, Honglak Lee, Lu Wang</p>
       <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">2025</p>
       <p style="margin: 10px 0 0 0;">
         <a href="https://arxiv.org/abs/2504.16828" target="_blank" rel="noopener">[Paper]</a>
