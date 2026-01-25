@@ -54,6 +54,22 @@ I am a final-year PhD candidate at the University of Michigan in Ann Arbor advis
 <div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
   <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
+      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Gaming the Judge: Unfaithful Chain-of-Thought Can Undermine Agent Evaluation</h3>
+      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Jaekyeom Kim, Sungryull Sohn, Yunxiang Zhang, Moontae Lee, Hao Peng, Lu Wang, Honglak Lee</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;"></p>
+      <p style="margin: 10px 0 0 0;">
+        <a href="#" target="_blank" rel="noopener">[Paper]</a>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <img src="{{ '/images/papers/gaming.png' | relative_url }}" alt="Gaming the Judge visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
+    </div>
+  </div>
+</div>
+
+<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div style="flex: 1;">
       <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Process Reward Models That Think</h3>
       <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Rishabh Agarwal, Lajanugen Logeswaran, Jaekyeom Kim, Hao Peng, Moontae Lee, Honglak Lee, Lu Wang</p>
       <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">2025</p>
@@ -64,22 +80,6 @@ I am a final-year PhD candidate at the University of Michigan in Ann Arbor advis
     </div>
     <div style="flex: 1; min-width: 200px;">
       <img src="{{ '/images/papers/thinkprm.png' | relative_url }}" alt="ThinkPRM visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
-    </div>
-  </div>
-</div>
-
-<div style="margin: 30px 0; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa;">
-  <div style="display: flex; gap: 20px; align-items: flex-start;">
-    <div style="flex: 1;">
-      <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Gaming the Judge: Unfaithful Chain-of-Thought Can Undermine Agent Evaluation</h3>
-      <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Jaekyeom Kim, Sungryull Sohn, Yunxiang Zhang, Moontae Lee, Hao Peng, Lu Wang, Honglak Lee</p>
-      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;"></p>
-      <p style="margin: 10px 0 0 0;">
-        <a href="#" target="_blank" rel="noopener">[Paper]</a>
-      </p>
-    </div>
-    <div style="flex: 1; min-width: 200px;">
-      <img src="{{ '/images/papers/gaming.png' | relative_url }}" alt="Gaming the Judge visualization" style="width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 4px; background: #fff; padding: 10px;">
     </div>
   </div>
 </div>
