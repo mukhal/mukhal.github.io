@@ -2,7 +2,7 @@
 layout: post
 title: "A Distributional Approach to Controlled Text Generation"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 > 

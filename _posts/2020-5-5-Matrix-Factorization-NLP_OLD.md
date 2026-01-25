@@ -2,7 +2,7 @@
 layout: post
 title: "Matrix Factorization in NLP"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: false
 ---
 

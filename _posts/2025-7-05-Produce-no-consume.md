@@ -2,7 +2,7 @@
 layout: post
 title: "Don't consume. Produce."
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 > 

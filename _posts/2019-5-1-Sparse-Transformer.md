@@ -2,7 +2,7 @@
 layout: post
 title: "Paper Discussion: Discrete Generative Models for Sentence Compression"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: false
 ---
 

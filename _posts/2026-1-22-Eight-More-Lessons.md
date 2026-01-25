@@ -2,7 +2,7 @@
 layout: post
 title: "Eight (More) Lessons Learned in Two Years of Ph.D. -- Part 2"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 

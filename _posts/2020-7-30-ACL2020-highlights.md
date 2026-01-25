@@ -2,7 +2,7 @@
 layout: post
 title: "ACL 2020: My Highlights"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 

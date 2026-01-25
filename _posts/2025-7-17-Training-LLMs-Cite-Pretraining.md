@@ -2,7 +2,7 @@
 layout: post
 title: "Training LLMs to Cite their Pretraining Data"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 

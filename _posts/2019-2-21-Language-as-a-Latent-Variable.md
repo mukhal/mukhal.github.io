@@ -2,7 +2,7 @@
 layout: post
 title: "Paper Discussion: Discrete Generative Models for Sentence Compression"
 author: Muhammad Khalifa
-comments: true
+comments: false
 ---
 
 > I will discuss the 2016 paper Language as a Latent Variable: Discrete Generative Models for Sentence Compression. The reason why I chose this paper is two-fold : First, it combines a lot of important ideas and concepts such as **Variational Auto Encoders**, **Semi-Supervised learning** and **Reinforcement Learning**.

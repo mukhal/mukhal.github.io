@@ -2,7 +2,7 @@
 layout: post
 title: "Lightweight and Dynamic Convolutions Explained"
 author: Muhammad Khalifa
-comments: true
+comments: false
 published: true
 ---
 
