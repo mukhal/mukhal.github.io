@@ -58,7 +58,7 @@ I am a final-year PhD candidate at the University of Michigan in Ann Arbor advis
       <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Jaekyeom Kim, Sungryull Sohn, Yunxiang Zhang, Moontae Lee, Hao Peng, Lu Wang, Honglak Lee</p>
       <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;"></p>
       <p style="margin: 10px 0 0 0;">
-        <a href="#" target="_blank" rel="noopener">[Paper]</a>
+        <a href="https://arxiv.org/abs/2601.14691" target="_blank" rel="noopener">[Paper]</a>
       </p>
     </div>
     <div style="flex: 1; min-width: 200px;">
