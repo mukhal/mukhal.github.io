@@ -6,6 +6,10 @@ comments: false
 published: true
 ---
 
+> This is a follow-up of my earlier article on lessons learned in my first two years of PhD. This one is more tailored to later, more experienced PHD students or researchers, and includes things I have relefected on deeply during the last two years in my PhD.
+
+<!--more-->
+
 Two years ago, I published a Michgian AI Blog [article](https://ai.engin.umich.edu/2023/08/17/eight-lessons-learned-in-two-years-of-ph-d/) to help students just starting out in the PhD program navigate their degree. I am very grateful that, to this day, people are still telling me how much they learned from that blog post. However, the article primarily targeted early-career PhD students, focusing on how to begin research and develop good habits. It paid far less attention to the second phase of the PhD—when you have already dipped your toes into research but are still uncertain how to make a meaningful impact.
 
 Unfortunately, many students sail through the second half of their PhDs without refining their research skills enough to set themselves up for the research career they aim for. Even worse, some students do so without having a chance to work on problems they [really care about](https://ai.engin.umich.edu/2025/11/07/follow-passion-not-fashion-andrew-barto-on-modern-ai-safety-and-the-art-of-engineering/). 
