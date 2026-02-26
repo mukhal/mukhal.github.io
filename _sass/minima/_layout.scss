@@ -3,32 +3,29 @@
  */
 
 .site-header {
-  background: transparent;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 2;
+  background: rgb(0, 64, 83);
+  opacity: 0.8;
+  min-height: $spacing-unit * 1.865;
   position: relative;
-  padding: 0.5em 0;
 }
 
 .site-title {
-  @include relative-font-size(1.2);
-  font-weight: 500;
-  color: $text-color;
-  line-height: $base-line-height * $base-font-size * 2;
-  letter-spacing: 0;
+  @include relative-font-size(1.4);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: $base-line-height * $base-font-size * 2.2;
+  letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
   font-family: "Georgia", "Times New Roman", serif;
-  text-decoration: none;
 
   &,
   &:visited {
-    color: $text-color;
-    text-decoration: none;
+    color: #ffffff;
   }
 
   &:hover {
-    color: $brand-color;
+    color: $crimson-color-light;
     text-decoration: none;
     cursor: pointer;
   }
@@ -37,8 +34,8 @@
 .site-nav {
   float: right;
   text-align: right;
-  line-height: $base-line-height * $base-font-size * 2;
-  padding-right: 0;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  padding-right: 10px;
 
   .nav-trigger {
     display: none;
@@ -49,18 +46,16 @@
   }
 
   .page-link {
-    color: $grey-color-dark;
+    color: #ffffff;
     line-height: $base-line-height;
-    text-decoration: none;
-    @include relative-font-size(0.95);
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 10px;
     }
 
     &:hover {
-      color: $brand-color;
+      color: $crimson-color-light;
       text-decoration: none;
       cursor: pointer;
     }
