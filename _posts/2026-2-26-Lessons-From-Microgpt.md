@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lessons from Karpathy's microgpt"
+title: "A closer look Karpathy's microgpt"
 author: Muhammad Khalifa
 comments: false
 published: true
@@ -18,31 +18,16 @@ As he puts it in the opening docstring:
 
 That last line is profound. Let's dig into what we can learn from this code and its evolution.
 
-### 1. Simplicity is the Ultimate Sophistication
+### Simplicity is the Ultimate Sophistication
+
+> "Simplicity is the ultimate sophistication." — Leonardo da Vinci
 
 It is mind-boggling that the core tech behind the AI revolution can fit in a 200-line Python script. Okay, this may be an oversimplification, but you get the idea. 
 
 Looking at the revision history, you can see Karpathy actively *removing* complexity with each revision.
 
-### 2. Comments Should Explain the "Why", Not the "What"
 
-This is quite minor, but one thing I noticed across revisions is how comments evolved. Early versions had more mechanical comments. Later versions have comments that read almost like prose, explaining *intent* rather than mechanics:
-
-```python
-random.seed(42)  # Let there be order among chaos
-```
-
-```python
-loss = (1 / n) * sum(losses)  # final average loss over the document sequence. May yours be low.
-```
-
-```python
-# Let there be Adam, the blessed optimizer and its buffers
-```
-
-There's a playfulness here, but also wisdom. These comments tell you what role each piece plays in the larger story. Compare this to comments like `# increment counter by 1` which add nothing. The best comments answer the question: "Why is this here?"
-
-### 3. The Autograd Implementation is a Masterclass in Minimalism
+### The Autograd Implementation is a Masterclass in Minimalism
 
 The `Value` class that implements automatic differentiation is perhaps the most instructive part of the code. Looking at the revision history, we can see a beautiful simplification.
 
@@ -125,7 +110,7 @@ This refactoring:
 </div>
 
 
-### 4. Architectural Simplifications That Don't Hurt
+### Architectural Simplifications That Don't Hurt
 
 The code makes several simplifications compared to GPT-2:
 

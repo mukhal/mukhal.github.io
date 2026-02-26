@@ -1,37 +1,40 @@
-@import "fonts";
 @import "rouge-github";
 
 @charset "utf-8";
 
-// Define defaults for each variable.
-$base-font-family: Helvetica, Arial, sans-serif !default;
-$base-font-size:   16px !default;
+// Bear Blog inspired minimal design
+// Clean, readable, focused on content
+
+// Typography - system fonts for speed and consistency
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$base-font-size:   18px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.65 !default;
+$base-line-height: 1.7 !default;
 
-$spacing-unit:     30px !default;
+$spacing-unit:     28px !default;
 
-$text-color:       #111 !default;
+// Minimal color palette
+$text-color:       #1a1a1a !default;
 $background-color: #ffffff !default;
-$brand-color:      #005ac0 !default;
+$brand-color:      #1a73e8 !default;
 
-$grey-color:       #044a79 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color:       #6b7280 !default;
+$grey-color-light: #e5e7eb !default;
+$grey-color-dark:  #374151 !default;
 
-$crimson-color:         #168ba8;
-$crimson-color-light:   #3f61f9;
-$crimson-color-very-light:   lighten($crimson-color, 40%) !default;
-$crimson-color-dark:    #1230b7;
+$crimson-color:         $brand-color;
+$crimson-color-light:   #4285f4;
+$crimson-color-very-light:   #f3f4f6 !default;
+$crimson-color-dark:    #1557b0;
 
 $orange-color:          #ff8f26;
 
-// Width of the content area
-$content-width:    800px !default;
+// Width of the content area - slightly wider for readability
+$content-width:    720px !default;
 
-$on-palm:          400px !default;
-$on-laptop:        600px !default;
+$on-palm:          480px !default;
+$on-laptop:        720px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {

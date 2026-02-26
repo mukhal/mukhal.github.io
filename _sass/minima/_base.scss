@@ -13,8 +13,8 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid $crimson-color-very-light;
-    margin: 2em 0;
+    border-top: 1px solid $grey-color-light;
+    margin: 2.5em 0;
     padding: 0; 
 }
 
@@ -31,7 +31,8 @@ body {
        -o-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
   font-kerning: normal;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .share-buttons {
@@ -141,15 +142,39 @@ li {
 /**
  * Table
  */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  @include relative-font-size(0.9);
+
+  th, td {
+    padding: 0.75em 1em;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid $grey-color-light;
+  }
+
+  th {
+    font-weight: 600;
+    background-color: #f9fafb;
+    border-bottom: 2px solid $grey-color-light;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
 table.info {
   max-width: 100%;
-  border-top: 2px solid $grey-color;
-  border-bottom: 2px solid $grey-color;
+  border-top: 2px solid $grey-color-light;
+  border-bottom: 2px solid $grey-color-light;
   margin: 20px auto;
   font-size: 90%;
 
   th, td {
-    padding: 2px 6px;
+    padding: 0.5em 1em;
     text-align: left;
     vertical-align: top;
   }
@@ -165,7 +190,8 @@ table.info {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+  font-weight: 600;
+  color: $text-color;
 }
 
 
@@ -175,7 +201,9 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $brand-color;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba($brand-color, 0.3);
+  text-underline-offset: 2px;
 
   &:visited {
     color: $brand-color;
@@ -183,7 +211,7 @@ a {
 
   &:hover {
     color: $crimson-color-light;
-    text-decoration: underline;
+    text-decoration-color: $crimson-color-light;
   }
 
   .social-media-list &:hover {
@@ -200,13 +228,13 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: #777777;
-  border-left: 4px solid #bbbbbb;
-  padding: 10px;
-  margin: 10px;
-  padding-left: 25px;
-  @include relative-font-size(0.9);
-  background: #f0f0f0;
+  color: $grey-color-dark;
+  border-left: 3px solid $grey-color-light;
+  padding: 0.5em 0 0.5em 1.5em;
+  margin: 1.5em 0;
+  @include relative-font-size(1);
+  font-style: italic;
+  background: transparent;
 
   > :last-child {
     margin-bottom: 0;
@@ -220,28 +248,35 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #f2f2f2;
+  font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  @include relative-font-size(0.85);
+  border-radius: 4px;
 }
 
 code {
-  padding: 1px 5px;
+  padding: 0.2em 0.4em;
+  background-color: #f6f8fa;
+  border: none;
 }
 
 pre {
-  padding: 4px 6px;
+  padding: 1em 1.2em;
   overflow-x: auto;
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  line-height: 1.5;
 
   > code {
     border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0;
+    background-color: transparent;
   }
 
   .lineno {
-    @include relative-font-size(0.9);
+    @include relative-font-size(0.85);
+    color: $grey-color;
+    padding-right: 1em;
+    user-select: none;
   }
 }
 
