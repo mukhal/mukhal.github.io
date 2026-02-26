@@ -106,7 +106,7 @@ This refactoring:
 - Makes the code easier to understand
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="{{ '/images/micro-gpt/howard.png' | relative_url }}" alt="Howard" style="max-width: 100%; border-radius: 4px;">
+  <img src="{{ '/images/micro-gpt/howard.png' | relative_url }}" alt="Howard" style="max-width: 80%; border-radius: 4px;">
 </div>
 
 
