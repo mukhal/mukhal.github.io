@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lessons from Karpathy's microgpt: What 200 Lines of Python Teach Us About Deep Learning"
+title: "Lessons from Karpathy's microgpt"
 author: Muhammad Khalifa
 comments: false
 published: true
