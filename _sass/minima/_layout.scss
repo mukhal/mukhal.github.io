@@ -12,13 +12,13 @@
 
 .site-title {
   @include relative-font-size(1.2);
-  font-weight: 600;
+  font-weight: 500;
   color: $text-color;
   line-height: $base-line-height * $base-font-size * 2;
   letter-spacing: 0;
   margin-bottom: 0;
   float: left;
-  font-family: $base-font-family;
+  font-family: "Georgia", "Times New Roman", serif;
   text-decoration: none;
 
   &,
