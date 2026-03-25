@@ -2,8 +2,8 @@
 <img src="https://i.ibb.co/xtbdfkDx/headshot-circle-2.png" width=180 height=180>
 
 
-<!--
-<!-- Job Market Flyer -->
+
+<!-- Job Market Flyer
 <div style="border: 2px solid rgb(60, 160, 231); border-radius: 6px; padding: 16px 18px; margin: 20px 0; background: #fff7f6;">
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
     <h3 style="margin: 0; color: rgb(39, 200, 170);">On the job market</h3>
@@ -21,8 +21,8 @@
     <li>Most recently, I've focused on evaluation of <a href="https://arxiv.org/abs/2504.09702">AI research agents</a> and studying issues with reward design and LLM-as-a-judge.</li>
   </ul>
 </div>
-<!-- /Job Market Flyer -->
--->
+/Job Market Flyer -->
+
 
 I am a final-year PhD candidate at the University of Michigan in Ann Arbor advised by [Lu Wang](https://web.eecs.umich.edu/~wangluxy/) and [Honglak Lee](https://web.eecs.umich.edu/~honglak/). I'm currently an intern at LG AI Research working on web agents. I am interested in test-time techniques, reasoning agents, and LLM post-training.<!---Previously, I did my master's in the computer science department at *Cairo University*, where I focused on Low-resource [multi-dialectal Arabic NLU](https://www.aclweb.org/anthology/2021.eacl-main.65/). ---> I was fortunate to work in different places with so many amazing people. In summer 2024, I was part of CodeGen team at Cohere led by [Matthias Gallé](https://scholar.google.com/citations?user=P-md_yYAAAAJ&hl=en) where I worked on large-scale model merging. In summer 2023, I was AI2 working with Iz Beltagy and Hao Peng on training models to cite their pretraining [data](https://arxiv.org/abs/2404.01019). In 2021, I was Amazon AWS working with [Kathy Mckeown](http://www.cs.columbia.edu/~kathy/). Prior to that, I was an intern at Naver Labs Europe where I worked on Controllable Text Generation and Energy-based models with [Hady Elsahar](https://www.hadyelsahar.io/) and [Marc Dymetman](https://scholar.google.com.eg/citations?user=D6J5pooAAAAJ&hl=en).
 
