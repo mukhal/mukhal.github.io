@@ -62,7 +62,7 @@ I am a research scientist at NVIDIA working on AI4Science. I completed my PhD at
     <div style="flex: 1;">
       <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Gaming the Judge: Unfaithful Chain-of-Thought Can Undermine Agent Evaluation</h3>
       <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Lajanugen Logeswaran, Jaekyeom Kim, Sungryull Sohn, Yunxiang Zhang, Moontae Lee, Hao Peng, Lu Wang, Honglak Lee</p>
-      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;"></p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">EMNLP 2026 Findings</p>
       <p style="margin: 10px 0 0 0;">
         <a href="https://arxiv.org/abs/2601.14691" target="_blank" rel="noopener">[Paper]</a>
       </p>
@@ -78,7 +78,7 @@ I am a research scientist at NVIDIA working on AI4Science. I completed my PhD at
     <div style="flex: 1;">
       <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Process Reward Models That Think</h3>
       <p style="margin: 5px 0; font-size: 0.9em; color: #666;"><strong>Muhammad Khalifa</strong>, Rishabh Agarwal, Lajanugen Logeswaran, Jaekyeom Kim, Hao Peng, Moontae Lee, Honglak Lee, Lu Wang</p>
-      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">2025</p>
+      <p style="margin: 5px 0; font-size: 0.85em; color: #888; font-style: italic;">TMLR 2026</p>
       <p style="margin: 10px 0 0 0;">
         <a href="https://arxiv.org/abs/2504.16828" target="_blank" rel="noopener">[Paper]</a>
         <a href="https://github.com/mukhal/thinkprm" target="_blank" rel="noopener">[Code]</a>
