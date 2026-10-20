@@ -44,6 +44,10 @@ I am a research scientist at NVIDIA working on AI4Science. I completed my PhD at
 )
 </div>
 
+<p>
+  <strong>Email:</strong> <code>m[khalifa]@nvidia.com</code>
+  <span style="font-size: 0.85em; color: #777;">(remove brackets)</span>
+</p>
 
 <br>
 <br>
